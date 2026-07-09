@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c4mkkbqtvakdx"]
+
+[ext_resource type="Script" uid="uid://c4kuv7su4wosd" path="res://starter_kit/pooling_utils/object_pooler.gd" id="1_6ochv"]
+[ext_resource type="Script" uid="uid://bkf5weuebvjd4" path="res://starter_kit/ui_components/heart_containers/heart_containers.gd" id="1_vaale"]
+[ext_resource type="PackedScene" uid="uid://bi84i1ax2yrub" path="res://starter_kit/ui_components/heart_containers/health_container.tscn" id="2_vmme5"]
+
+[node name="HeartContainers" type="Control" unique_id=2105205339]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vaale")
+
+[node name="HeartPooler" type="Node" parent="." unique_id=817230342]
+script = ExtResource("1_6ochv")
+_pool_object = ExtResource("2_vmme5")
+_pool_size = 20
+_pool_expand_by = 5
+metadata/_custom_type_script = "uid://c4kuv7su4wosd"

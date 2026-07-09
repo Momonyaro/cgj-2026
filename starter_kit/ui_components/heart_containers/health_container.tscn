@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bi84i1ax2yrub"]
+
+[ext_resource type="Texture2D" uid="uid://co1mey03j6io8" path="res://starter_kit/ui_components/heart_containers/heart.png" id="1_pkose"]
+[ext_resource type="Script" uid="uid://bpvyn27vun74j" path="res://starter_kit/ui_components/heart_containers/health_container.gd" id="2_r3rnt"]
+
+[sub_resource type="Curve" id="Curve_r3rnt"]
+_limits = [0.0, 1.0, 0.0, 0.20145631]
+_data = [Vector2(0, 0), 0.0, 7.3529406, 0, 1, Vector2(0.068, 0.5), 0.0, 0.0, 0, 0, Vector2(0.20145631, 0), -3.7465446, 0.0, 1, 0]
+point_count = 3
+
+[node name="HealthContainer" type="TextureProgressBar" unique_id=1472321659]
+clip_children = 2
+texture_filter = 1
+offset_right = 16.0
+offset_bottom = 16.0
+offset_transform_enabled = true
+max_value = 1.0
+step = 0.001
+value = 1.0
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_under = ExtResource("1_pkose")
+texture_progress = ExtResource("1_pkose")
+tint_under = Color(0.19434929, 0.19434926, 0.19434926, 1)
+tint_progress = Color(0.94939166, 0, 0.1830332, 1)
+script = ExtResource("2_r3rnt")
+_tween_scale_curve = SubResource("Curve_r3rnt")
+
+[node name="Whiteout" type="ColorRect" parent="." unique_id=1347635141]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

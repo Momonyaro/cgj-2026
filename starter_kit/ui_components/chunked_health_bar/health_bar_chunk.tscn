@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cdqf28wiyu6r2"]
+
+[ext_resource type="Script" uid="uid://bq2hm3ly7p2c2" path="res://starter_kit/ui_components/chunked_health_bar/health_bar_chunk.gd" id="1_783yu"]
+
+[sub_resource type="Gradient" id="Gradient_783yu"]
+offsets = PackedFloat32Array(0.08522727, 0.36647728, 0.6988636, 1)
+colors = PackedColorArray(0.9391011, 0.7979296, 7.70092e-07, 1, 0.952529, 0.80219066, 0.12919919, 0.7795031, 0.9672172, 0.8068517, 0.2705235, 0.5383116, 0.9999996, 0.8172545, 0.5859429, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0i0dd"]
+gradient = SubResource("Gradient_783yu")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e00b0"]
+texture = SubResource("GradientTexture2D_0i0dd")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40gng"]
+draw_center = false
+border_width_left = 1
+border_width_bottom = 2
+border_color = Color(0.8758714, 0.78822124, 0, 1)
+
+[node name="HealthBarChunk" type="Panel" unique_id=641910894]
+offset_right = 16.0
+offset_bottom = 16.0
+offset_transform_enabled = true
+theme_override_styles/panel = SubResource("StyleBoxTexture_e00b0")
+script = ExtResource("1_783yu")
+
+[node name="Panel" type="Panel" parent="." unique_id=441011986]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_40gng")

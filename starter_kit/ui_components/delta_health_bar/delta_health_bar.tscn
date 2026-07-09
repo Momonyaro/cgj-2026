@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bcebwhe7skfvg"]
+
+[ext_resource type="Script" uid="uid://brt8ma8m3fkwv" path="res://starter_kit/ui_components/delta_health_bar/delta_health_bar.gd" id="1_6vdaa"]
+
+[sub_resource type="Curve" id="Curve_6vdaa"]
+_limits = [0.0, 1.0, 0.0, 0.75]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 0), 0.0, 1.5, 1, 0, Vector2(0.75, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_ndq33"]
+font_size = 12
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndq33"]
+bg_color = Color(0.12955844, 0.1295585, 0.12955838, 1)
+
+[node name="DeltaHealthBar" type="MarginContainer" unique_id=1535535252]
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+script = ExtResource("1_6vdaa")
+delta_tween_curve = SubResource("Curve_6vdaa")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1151204173]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=955228864]
+layout_mode = 2
+text = "Title"
+label_settings = SubResource("LabelSettings_ndq33")
+uppercase = true
+
+[node name="HealthBarBase" type="Panel" parent="VBoxContainer" unique_id=1740930158]
+custom_minimum_size = Vector2(200, 16)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ndq33")
+
+[node name="DeltaNegative" type="ColorRect" parent="VBoxContainer/HealthBarBase" unique_id=1123094807]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.907344, 0.9073441, 0, 1)
+
+[node name="CurrentHealth" type="ColorRect" parent="VBoxContainer/HealthBarBase" unique_id=873794145]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.80877227, 0, 0.18186489, 1)
+
+[node name="DeltaPositive" type="ColorRect" parent="VBoxContainer/HealthBarBase" unique_id=262643961]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_right = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.51959664, 0.2373881, 1)

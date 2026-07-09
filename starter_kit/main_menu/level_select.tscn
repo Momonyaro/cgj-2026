@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b4nv02tnbtgvy"]
+
+[ext_resource type="Script" uid="uid://cqwooxvms5417" path="res://starter_kit/main_menu/level_select.gd" id="1_s1gw6"]
+[ext_resource type="PackedScene" uid="uid://lpr04opeuc0w" path="res://starter_kit/main_menu/level_button.tscn" id="2_x5t4b"]
+
+[node name="LevelSelect" type="VBoxContainer" unique_id=1631620383]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -45.5
+offset_right = 250.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+script = ExtResource("1_s1gw6")
+level_button_prefab = ExtResource("2_x5t4b")
+
+[node name="Label" type="Label" parent="." unique_id=624672459]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Level Select"
+horizontal_alignment = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="." unique_id=1036342887]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+alignment = 1

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GameLayoutResource" format=3 uid="uid://cjft288wyeltj"]
+
+[ext_resource type="Script" uid="uid://0kgyevokhecf" path="res://starter_kit/level_utils/level_resource.gd" id="1_1lyii"]
+[ext_resource type="Script" uid="uid://05wudtwgmqgu" path="res://starter_kit/level_utils/game_layout_resource.gd" id="2_n44qs"]
+
+[resource]
+script = ExtResource("2_n44qs")
+metadata/_custom_type_script = "uid://05wudtwgmqgu"

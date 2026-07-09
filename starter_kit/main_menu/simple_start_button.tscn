@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bd4302tq3c17u"]
+
+[ext_resource type="Script" uid="uid://dt0vlf1r1212j" path="res://starter_kit/main_menu/simple_start_button.gd" id="1_pu1su"]
+
+[node name="StartGame" type="Button" unique_id=948910487]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -159.0
+offset_right = 53.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "START GAME"
+script = ExtResource("1_pu1su")
