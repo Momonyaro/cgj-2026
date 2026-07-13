@@ -1,8 +1,8 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://2pr8x6hrxt1p"]
 
-[ext_resource type="Texture2D" uid="uid://gl4hwhxhb3sp" path="res://test/cursor/hand_open.png" id="1_gwbfx"]
-[ext_resource type="Texture2D" uid="uid://blawjo5l5e005" path="res://test/cursor/hand_closed.png" id="2_6s8ox"]
-[ext_resource type="Texture2D" uid="uid://vrw8vjv8pboe" path="res://test/cursor/hand_point.png" id="3_fs2j6"]
+[ext_resource type="Texture2D" uid="uid://gl4hwhxhb3sp" path="res://src/shared/cursor/hand_open.png" id="1_gwbfx"]
+[ext_resource type="Texture2D" uid="uid://blawjo5l5e005" path="res://src/shared/cursor/hand_closed.png" id="2_6s8ox"]
+[ext_resource type="Texture2D" uid="uid://vrw8vjv8pboe" path="res://src/shared/cursor/hand_point.png" id="3_fs2j6"]
 
 [resource]
 animations = [{

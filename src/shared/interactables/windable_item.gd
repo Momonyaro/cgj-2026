@@ -1,3 +1,4 @@
+class_name WindableItem
 extends Area3D
 
 signal wind(delta_radians: float, progress: float)

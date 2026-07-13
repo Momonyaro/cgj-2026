@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1qdgxslk1mls"]
 
-[ext_resource type="Script" uid="uid://bjygq27q5a3r7" path="res://test/cursor/cursor.gd" id="1_b2bh4"]
-[ext_resource type="SpriteFrames" uid="uid://2pr8x6hrxt1p" path="res://test/cursor/cursor_frames.tres" id="2_b2bh4"]
+[ext_resource type="Script" uid="uid://bjygq27q5a3r7" path="res://src/shared/cursor/cursor.gd" id="1_b2bh4"]
+[ext_resource type="SpriteFrames" uid="uid://2pr8x6hrxt1p" path="res://src/shared/cursor/cursor_frames.tres" id="2_b2bh4"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_a1n5f"]
 
