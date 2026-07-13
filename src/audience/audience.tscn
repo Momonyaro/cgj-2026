@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bsci4jei4qa8y"]
+
+[ext_resource type="Script" uid="uid://dsnlduhdbbbd1" path="res://src/audience/audience.gd" id="1_cgjbo"]
+
+[node name="Audience" type="Node3D" unique_id=1273790735]
+script = ExtResource("1_cgjbo")
+rows = 8
+col_lengths = Array[int]([16, 15, 16, 15, 16, 15, 16, 15])
+spectator_height_padding = -0.6
+spectator_height = 1.2
+spectator_width = 1.1
+magnitude = 0.33
+speed = 0.04
+exitement = 1.0
