@@ -2,7 +2,6 @@
 extends Node
 
 const SPECTATOR_SCENE := preload("uid://cqk7fxxktr1da")
-const Spectator := preload("res://src/audience/spectator/spectator.gd")
 
 @export_category("Settings")
 @export var rows := 1
@@ -34,14 +33,19 @@ func spawn_audience():
 	
 	_create_audience()
 	_spectators.shuffle()
+	
+	if Engine.is_editor_hint():
+		EditorInterface.mark_scene_as_unsaved()
 
 func spawn_spectator(col: float, row: float, center: float) -> Node3D:
 	var inv_r := rows - row - 1
 	
-	var spectator := SPECTATOR_SCENE.instantiate() as Spectator
+	var spectator := SPECTATOR_SCENE.instantiate() as Node3D
 	assert(spectator != null)
 	
 	add_child(spectator)
+	spectator.owner = get_tree().edited_scene_root
+	
 	spectator.position.x = center + col * spectator_width + spectator_width * .5
 	spectator.position.y = inv_r * spectator_height + spectator_height + inv_r * spectator_height_padding
 	spectator.position.z = 0 - inv_r * spectator_depth + spectator_depth
@@ -50,6 +54,7 @@ func spawn_spectator(col: float, row: float, center: float) -> Node3D:
 func _clear():
 	var spectators := get_children()
 	for spectator in spectators:
+		spectator.owner = null
 		spectator.queue_free()
 
 func _create_audience():

@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://cqk7fxxktr1da"]
 
-[ext_resource type="Script" uid="uid://bd33qq4sep5ul" path="res://src/audience/spectator/spectator.gd" id="1_sg15y"]
-
 [sub_resource type="SphereMesh" id="SphereMesh_25acc"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_c7k3m"]
 
 [node name="Spectator" type="Node3D" unique_id=1181972335]
-script = ExtResource("1_sg15y")
 
 [node name="Offset" type="Node3D" parent="." unique_id=921184343]
 
