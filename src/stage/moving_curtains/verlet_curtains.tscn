@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cb6fc5w6070xs"]
+
+[ext_resource type="Script" uid="uid://cvmjk2m4dsvq6" path="res://src/stage/moving_curtains/verlet_curtains.gd" id="1_eqjjg"]
+[ext_resource type="Script" uid="uid://cmsne5i2ksrpl" path="res://src/stage/moving_curtains/curtain_controller.gd" id="1_ra165"]
+[ext_resource type="Material" uid="uid://dt3yq4pjpmovu" path="res://src/stage/curtain_mat_unlit.tres" id="3_5exsh"]
+
+[node name="VerletCurtains" type="Node3D" unique_id=224548086 node_paths=PackedStringArray("curtain_l", "curtain_r")]
+script = ExtResource("1_ra165")
+curtain_l = NodePath("VerletCurtainL")
+curtain_r = NodePath("VerletCurtainR")
+min_max_move = Vector2(0, 5.7)
+move_amount = 1.0
+
+[node name="Top" type="Node3D" parent="." unique_id=750394654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="VerletCurtainL" type="MeshInstance3D" parent="." unique_id=1072805585]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.919, 4.864, -0.1)
+script = ExtResource("1_eqjjg")
+columns = 20
+rows = 14
+spacing = 0.395
+gravity = Vector3(0, -5, 0)
+iterations = 4
+damping = 0.88
+curtain_material = ExtResource("3_5exsh")
+
+[node name="VerletCurtainR" type="MeshInstance3D" parent="." unique_id=283737988]
+transform = Transform3D(1, 0, -1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 4.869, 4.864, 0)
+script = ExtResource("1_eqjjg")
+columns = 20
+rows = 14
+spacing = 0.395
+gravity = Vector3(0, -5, 0)
+iterations = 4
+damping = 0.88
+curtain_material = ExtResource("3_5exsh")

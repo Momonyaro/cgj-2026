@@ -3,4 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c3k46vdqtau2c" path="res://src/stage/curtain_Vorhang.png" id="1_yq7x3"]
 
 [resource]
+cull_mode = 2
+diffuse_mode = 3
+specular_mode = 1
 albedo_texture = ExtResource("1_yq7x3")

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dt3yq4pjpmovu"]
+
+[ext_resource type="Texture2D" uid="uid://c3k46vdqtau2c" path="res://src/stage/curtain_Vorhang.png" id="1_qnvt8"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_qnvt8")
