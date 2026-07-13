@@ -24,9 +24,10 @@ func _process(_delta: float) -> void:
 
 		prev_angle = new_angle
 
+		cursor.constrain_cursor()
+
 
 func get_angle_to_hand() -> float:
-	print("get angle to hand")
 	var look_direction := (cursor.get_grab_position() - global_position)
 	look_direction.z = 0
 	look_direction = look_direction.normalized()

@@ -5,10 +5,14 @@
 [ext_resource type="Environment" uid="uid://dnd6epb1q22x3" path="res://test/interactable/test_sky_environment.tres" id="2_qji5j"]
 [ext_resource type="Script" uid="uid://bdikod1okhnrq" path="res://test/interactable/grabbable_item.gd" id="3_sl7vg"]
 [ext_resource type="Script" uid="uid://bexljowsux72e" path="res://test/interactable/windable_item.gd" id="4_iybb1"]
+[ext_resource type="Texture2D" uid="uid://b35dpwamaqcj4" path="res://test/interactable/bunny_sitting.png" id="4_r5hf4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a1n5f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5l4dq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r5hf4"]
+size = Vector3(1.7280273, 2.361084, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_sl7vg"]
 top_radius = 0.2
@@ -74,6 +78,26 @@ mesh = SubResource("BoxMesh_a1n5f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GrabbableCube2" unique_id=668089527]
 shape = SubResource("BoxShape3D_5l4dq")
+
+[node name="Bunny" type="RigidBody3D" parent="." unique_id=1805843888 node_paths=PackedStringArray("grab_point")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18553925, 2.4618309, 0)
+collision_layer = 3
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+freeze_mode = 1
+script = ExtResource("3_sl7vg")
+grab_point = NodePath("GrabPoint")
+
+[node name="GrabPoint" type="Marker3D" parent="Bunny" unique_id=1204441762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10395825, 1.43416, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bunny" unique_id=397338629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36401367, 0.22717285, 0)
+shape = SubResource("BoxShape3D_r5hf4")
+
+[node name="Sprite3D" type="Sprite3D" parent="Bunny" unique_id=2048702061]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+texture = ExtResource("4_r5hf4")
 
 [node name="WindableThingy" type="Area3D" parent="." unique_id=1390787306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.327818, 2.4618309, 0)

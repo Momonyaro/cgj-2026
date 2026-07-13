@@ -13,7 +13,9 @@ func _process(delta: float) -> void:
 		var target_position := cursor.get_grab_position()
 		if grab_point:
 			target_position -= grab_point.position
-		global_position = global_position.move_toward(target_position, MAX_SPEED * delta)
+		var motion = target_position - global_position
+		motion = motion.limit_length(MAX_SPEED * delta)
+		move_and_collide(motion)
 
 
 func grab(p_cursor: Cursor) -> void:
