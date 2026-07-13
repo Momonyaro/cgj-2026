@@ -9,6 +9,7 @@ const RAY_LENGTH = 1000.0
 
 var hovered_object: CollisionObject3D
 var grabbed_object: CollisionObject3D
+var local_hand_pos: Vector3
 
 var interact_plane: Plane
 
@@ -30,27 +31,29 @@ func _process(_delta: float) -> void:
 	var hit := physics.intersect_ray(get_pick_ray(pos3d, normal))
 	hovered_object = hit.collider as CollisionObject3D if hit else null
 
+	if Input.is_action_just_pressed("click"):
+		if hovered_object and hovered_object.has_method("grab"):
+			grabbed_object = hovered_object
+			interact_plane = Plane(Vector3.BACK, grabbed_object.global_position)
+			local_hand_pos = grabbed_object.global_transform.affine_inverse() * hit.position
+			hovered_object.grab.call_deferred(self) # deferred so that grab_point is initialized when called :/
+	if Input.is_action_just_released("click"):
+		if grabbed_object:
+			if grabbed_object.has_method("ungrab"):
+				grabbed_object.ungrab(self)
+			grabbed_object = null
+
 	if grabbed_object:
 		grab_point.position = interact_plane.intersects_ray(pos3d, normal)
+		animated_sprite.global_position = cam.unproject_position(grabbed_object.transform * local_hand_pos)
+	else:
+		animated_sprite.position = Vector2.ZERO
 
 	animated_sprite.animation = get_animation()
 
 
 func get_grab_position() -> Vector3:
 	return grab_point.global_position
-
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("click"):
-		if hovered_object and hovered_object.has_method("grab"):
-			grabbed_object = hovered_object
-			interact_plane = Plane(Vector3.BACK, grabbed_object.global_position)
-			hovered_object.grab(self)
-	if event.is_action_released("click"):
-		if grabbed_object:
-			if grabbed_object.has_method("ungrab"):
-				grabbed_object.ungrab(self)
-			grabbed_object = null
 
 
 func get_animation() -> String:

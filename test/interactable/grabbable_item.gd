@@ -5,15 +5,15 @@ extends RigidBody3D
 var is_grabbed: bool
 var cursor: Cursor
 
-const MAX_THROW_SPEED = 5.0
+const MAX_SPEED = 100.0
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if is_grabbed:
-		global_position = cursor.get_grab_position()
-		linear_velocity = linear_velocity.limit_length(MAX_THROW_SPEED)
+		var target_position := cursor.get_grab_position()
 		if grab_point:
-			global_position -= grab_point.position
+			target_position -= grab_point.position
+		global_position = global_position.move_toward(target_position, MAX_SPEED * delta)
 
 
 func grab(p_cursor: Cursor) -> void:
@@ -25,4 +25,4 @@ func grab(p_cursor: Cursor) -> void:
 func ungrab(_cursor: Cursor) -> void:
 	is_grabbed = false
 	freeze = false
-	linear_velocity = linear_velocity.limit_length(MAX_THROW_SPEED)
+	linear_velocity = linear_velocity.limit_length(MAX_SPEED)
