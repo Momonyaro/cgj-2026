@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dum042ljjtn83"]
+
+[ext_resource type="PackedScene" uid="uid://doo5xcvy5q11" path="res://src/stage/curtain.glb" id="1_dnqew"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntm8r"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Stage" type="Node3D" unique_id=1423160689]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1257652140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -1)
+size = Vector3(21, 5, 3)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=2064151987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0.5277505)
+size = Vector3(15, 5, 0.001)
+material = SubResource("StandardMaterial3D_ntm8r")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1776297488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -4)
+size = Vector3(13, 5, 3)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1814900562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7293744, 0)
+size = Vector3(15, 2, 1)
+material = SubResource("StandardMaterial3D_ntm8r")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1740116719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -6)
+size = Vector3(11, 5, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1349013266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -7)
+size = Vector3(9, 5, 1)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1922488885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=779735266]
+transform = Transform3D(-0.64380527, -0.3825948, -0.66267353, 0, -0.8660254, 0.50000006, -0.7651895, 0.32190266, 0.5575517, 0, 3, 0)
+
+[node name="curtain" parent="." unique_id=1555814128 instance=ExtResource("1_dnqew")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 5.6213665, 0.3596292, 0.912107)
+
+[node name="curtain2" parent="." unique_id=596264142 instance=ExtResource("1_dnqew")]
+transform = Transform3D(-1.5, 0, 0, 0, 1.5, 2.2649371e-07, 0, -2.2649371e-07, 1.5, -5.621, 0.3596292, 0.912)

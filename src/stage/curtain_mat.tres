@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dbvtdinncxsst"]
+
+[ext_resource type="Texture2D" uid="uid://c3k46vdqtau2c" path="res://src/stage/curtain_Vorhang.png" id="1_yq7x3"]
+
+[resource]
+albedo_texture = ExtResource("1_yq7x3")
