@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cpdjn5bylxps8"]
+
+[ext_resource type="PackedScene" uid="uid://c1qdgxslk1mls" path="res://test/cursor/cursor.tscn" id="1_5l4dq"]
+[ext_resource type="Script" uid="uid://bi2kpm04ym2v1" path="res://test/interactable/interactable.gd" id="2_ioit7"]
+[ext_resource type="Environment" uid="uid://dnd6epb1q22x3" path="res://test/test_sky_environment.tres" id="2_qji5j"]
+[ext_resource type="Script" uid="uid://bdikod1okhnrq" path="res://test/grabbable_item.gd" id="3_sl7vg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a1n5f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5l4dq"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sl7vg"]
+
+[node name="InteractTest" type="Node3D" unique_id=529548822]
+
+[node name="Cursor" parent="." unique_id=1756082694 instance=ExtResource("1_5l4dq")]
+interactable_mask = 2
+
+[node name="InteractableCube" type="Area3D" parent="." unique_id=1843629447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9606533)
+collision_layer = 3
+script = ExtResource("2_ioit7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="InteractableCube" unique_id=694636287]
+mesh = SubResource("BoxMesh_a1n5f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableCube" unique_id=683650136]
+shape = SubResource("BoxShape3D_5l4dq")
+
+[node name="GrabbableCube" type="RigidBody3D" parent="." unique_id=73244408 node_paths=PackedStringArray("grab_point")]
+transform = Transform3D(0.78765625, 0.5135116, 0.34044603, -0.47136557, 0.85808265, -0.20373677, -0.39675203, 0, 0.91792583, 3.0964494, 2.4618309, 0)
+collision_layer = 3
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+freeze_mode = 1
+script = ExtResource("3_sl7vg")
+grab_point = NodePath("GrabPoint")
+
+[node name="GrabPoint" type="Marker3D" parent="GrabbableCube" unique_id=1018837029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5537808, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GrabbableCube" unique_id=705977642]
+mesh = SubResource("BoxMesh_a1n5f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrabbableCube" unique_id=1433669347]
+shape = SubResource("BoxShape3D_5l4dq")
+
+[node name="GrabbableCube2" type="RigidBody3D" parent="." unique_id=1356934544 node_paths=PackedStringArray("grab_point")]
+transform = Transform3D(0.78765625, 0.5135116, 0.34044603, -0.47136557, 0.85808265, -0.20373677, -0.39675203, 0, 0.91792583, -2.8267078, 2.4618309, 0)
+collision_layer = 3
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+freeze_mode = 1
+script = ExtResource("3_sl7vg")
+grab_point = NodePath("GrabPoint")
+
+[node name="GrabPoint" type="Marker3D" parent="GrabbableCube2" unique_id=1270484778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5537808, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GrabbableCube2" unique_id=1831222782]
+mesh = SubResource("BoxMesh_a1n5f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrabbableCube2" unique_id=668089527]
+shape = SubResource("BoxShape3D_5l4dq")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=595624532]
+transform = Transform3D(1, 0, 0, 0, 0.93295354, 0.3599968, 0, -0.3599968, 0.93295354, 0, 5.225, 11.252)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1034324891]
+environment = ExtResource("2_qji5j")
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1319830957]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1081231145]
+shape = SubResource("WorldBoundaryShape3D_sl7vg")
