@@ -1,5 +1,7 @@
 extends Node3D
 
+signal finished_spin
+
 # Front and back relative to the camera
 @export var front_material: StandardMaterial3D
 @export var back_material: StandardMaterial3D
@@ -52,6 +54,7 @@ func _do_spin() -> void:
 	face_root.rotation_degrees.y = 180 * _spin_direction
 	_tween = create_tween()
 	_tween.tween_method(_spin_tween, 0.0, 1.0, spin_duration)
+	_tween.finished.connect(finished_spin.emit)
 
 func _spin_tween(x: float) -> void:
 	if _spin_direction > 0:

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://7a50512ks4is"]
+
+[ext_resource type="Script" uid="uid://cyvljmchtkt42" path="res://src/shared/act_engine/act_engine.gd" id="1_ufwy5"]
+[ext_resource type="Resource" uid="uid://cgwtf8ps6h00n" path="res://test/test_act_engine/test_acts.tres" id="2_tr4se"]
+[ext_resource type="PackedScene" uid="uid://b8lftmrjj2j6u" path="res://src/shared/magician/magician.tscn" id="3_kxcgx"]
+
+[node name="TestActEngine" type="Node3D" unique_id=248595300]
+
+[node name="Engine" type="Node" parent="." unique_id=1882332925 node_paths=PackedStringArray("magician")]
+script = ExtResource("1_ufwy5")
+act = ExtResource("2_tr4se")
+magician = NodePath("../Magician")
+
+[node name="Magician" parent="." unique_id=1219081681 instance=ExtResource("3_kxcgx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=370641584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.7332296)
