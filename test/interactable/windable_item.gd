@@ -22,10 +22,10 @@ func _process(_delta: float) -> void:
 		var new_angle := get_angle_to_hand()
 		if not first_grab_frame:
 			var angle_diff := angle_difference(prev_angle, new_angle)
+			angle_diff = clampf(angle_diff, -TAU * .25, TAU * .25)
 			rotation.z += angle_diff
 			rotation.z = clampf(rotation.z, min_rotation, max_rotation)
 			var progress := clampf(rotation.z / max_rotation, 0, 1)
-			print(rad_to_deg(rotation.z), progress)
 			wind.emit(angle_diff, progress)
 		else:
 			first_grab_frame = false

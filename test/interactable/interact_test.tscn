@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://c1qdgxslk1mls" path="res://test/cursor/cursor.tscn" id="1_5l4dq"]
 [ext_resource type="Script" uid="uid://bi2kpm04ym2v1" path="res://test/interactable/interactable.gd" id="2_ioit7"]
-[ext_resource type="Environment" uid="uid://dnd6epb1q22x3" path="res://test/test_sky_environment.tres" id="2_qji5j"]
-[ext_resource type="Script" uid="uid://bdikod1okhnrq" path="res://test/grabbable_item.gd" id="3_sl7vg"]
-[ext_resource type="Script" uid="uid://bexljowsux72e" path="res://test/windable_item.gd" id="4_iybb1"]
+[ext_resource type="Environment" uid="uid://dnd6epb1q22x3" path="res://test/interactable/test_sky_environment.tres" id="2_qji5j"]
+[ext_resource type="Script" uid="uid://bdikod1okhnrq" path="res://test/interactable/grabbable_item.gd" id="3_sl7vg"]
+[ext_resource type="Script" uid="uid://bexljowsux72e" path="res://test/interactable/windable_item.gd" id="4_iybb1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a1n5f"]
 
@@ -79,7 +79,7 @@ shape = SubResource("BoxShape3D_5l4dq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.327818, 2.4618309, 0)
 collision_layer = 3
 script = ExtResource("4_iybb1")
-max_rotation = 14.137166941154069
+max_rotation = 14.137166941154067
 
 [node name="Marker3D" type="Marker3D" parent="WindableThingy" unique_id=2002557923]
 
