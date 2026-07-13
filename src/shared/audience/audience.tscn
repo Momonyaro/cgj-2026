@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bsci4jei4qa8y"]
 
-[ext_resource type="Script" uid="uid://dsnlduhdbbbd1" path="res://src/audience/audience.gd" id="1_cgjbo"]
-[ext_resource type="PackedScene" uid="uid://cqk7fxxktr1da" path="res://src/audience/spectator/spectator.tscn" id="2_yaek1"]
+[ext_resource type="Script" uid="uid://dsnlduhdbbbd1" path="res://src/shared/audience/audience.gd" id="1_cgjbo"]
+[ext_resource type="PackedScene" uid="uid://cqk7fxxktr1da" path="res://src/shared/audience/spectator/spectator.tscn" id="2_yaek1"]
 
 [node name="Audience" type="Node3D" unique_id=1273790735 node_paths=PackedStringArray("spectators")]
 script = ExtResource("1_cgjbo")
