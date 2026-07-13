@@ -57,7 +57,7 @@ func get_animation() -> String:
 	if grabbed_object:
 		return "grab"
 	if hovered_object:
-		return "point"
+		return "hover"
 	return "default"
 
 

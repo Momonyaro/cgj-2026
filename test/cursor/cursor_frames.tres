@@ -8,7 +8,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gwbfx")
+"texture": ExtResource("3_fs2j6")
 }],
 "loop": 1,
 "name": &"default",
@@ -24,9 +24,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_fs2j6")
+"texture": ExtResource("1_gwbfx")
 }],
 "loop": 1,
-"name": &"point",
+"name": &"hover",
 "speed": 5.0
 }]

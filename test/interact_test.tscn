@@ -4,10 +4,22 @@
 [ext_resource type="Script" uid="uid://bi2kpm04ym2v1" path="res://test/interactable/interactable.gd" id="2_ioit7"]
 [ext_resource type="Environment" uid="uid://dnd6epb1q22x3" path="res://test/test_sky_environment.tres" id="2_qji5j"]
 [ext_resource type="Script" uid="uid://bdikod1okhnrq" path="res://test/grabbable_item.gd" id="3_sl7vg"]
+[ext_resource type="Script" uid="uid://bexljowsux72e" path="res://test/windable_item.gd" id="4_iybb1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a1n5f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5l4dq"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sl7vg"]
+top_radius = 0.2
+bottom_radius = 0.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_a1n5f"]
+radius = 0.3
+height = 0.6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sl7vg"]
+radius = 0.3
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sl7vg"]
 
@@ -62,6 +74,47 @@ mesh = SubResource("BoxMesh_a1n5f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GrabbableCube2" unique_id=668089527]
 shape = SubResource("BoxShape3D_5l4dq")
+
+[node name="WindableThingy" type="Area3D" parent="." unique_id=1390787306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.327818, 2.4618309, 0)
+collision_layer = 3
+script = ExtResource("4_iybb1")
+max_rotation = 14.137166941154069
+
+[node name="Marker3D" type="Marker3D" parent="WindableThingy" unique_id=2002557923]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WindableThingy" unique_id=137267060]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("CylinderMesh_sl7vg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="WindableThingy" unique_id=1667132518]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 1.7747984, 0, 0.23289168)
+mesh = SubResource("SphereMesh_a1n5f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WindableThingy" unique_id=1710891847]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 1.7747984, 0, 0.23289168)
+shape = SubResource("SphereShape3D_sl7vg")
+
+[node name="LightMaybe" type="Area3D" parent="." unique_id=1518094693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3962526, 6.660871, 0)
+collision_layer = 3
+script = ExtResource("4_iybb1")
+min_rotation = -0.7853981633974483
+max_rotation = 0.7853981633974483
+
+[node name="Marker3D" type="Marker3D" parent="LightMaybe" unique_id=396989346]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LightMaybe" unique_id=1771995800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_sl7vg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="LightMaybe" unique_id=1289457127]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -1.775, 0.23289168)
+mesh = SubResource("SphereMesh_a1n5f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightMaybe" unique_id=1410632340]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -1.775, 0.23289168)
+shape = SubResource("SphereShape3D_sl7vg")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=595624532]
 transform = Transform3D(1, 0, 0, 0, 0.93295354, 0.3599968, 0, -0.3599968, 0.93295354, 0, 5.225, 11.252)
