@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c1qdgxslk1mls"]
+
+[ext_resource type="Script" uid="uid://bjygq27q5a3r7" path="res://test/cursor/cursor.gd" id="1_b2bh4"]
+[ext_resource type="SpriteFrames" uid="uid://2pr8x6hrxt1p" path="res://test/cursor/cursor_frames.tres" id="2_b2bh4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_a1n5f"]
+
+[node name="Cursor" type="Node2D" unique_id=888077973 node_paths=PackedStringArray("animated_sprite", "grab_point")]
+script = ExtResource("1_b2bh4")
+animated_sprite = NodePath("Sprite")
+grab_point = NodePath("GrabPoint")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1213114909]
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("2_b2bh4")
+
+[node name="GrabPoint" type="Marker3D" parent="." unique_id=488859553]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GrabPoint" unique_id=767288210]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("SphereMesh_a1n5f")

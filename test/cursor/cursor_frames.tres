@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://2pr8x6hrxt1p"]
+
+[ext_resource type="Texture2D" uid="uid://gl4hwhxhb3sp" path="res://test/cursor/hand_open.png" id="1_gwbfx"]
+[ext_resource type="Texture2D" uid="uid://blawjo5l5e005" path="res://test/cursor/hand_closed.png" id="2_6s8ox"]
+[ext_resource type="Texture2D" uid="uid://vrw8vjv8pboe" path="res://test/cursor/hand_point.png" id="3_fs2j6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fs2j6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6s8ox")
+}],
+"loop": 1,
+"name": &"grab",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gwbfx")
+}],
+"loop": 1,
+"name": &"hover",
+"speed": 5.0
+}]
