@@ -6,9 +6,10 @@ const SPECTATOR_SCENE := preload("uid://cqk7fxxktr1da")
 @export_category("Settings")
 @export var rows := 1
 @export var col_lengths: Array[int] = []
+@export var spectators: Array[Node3D] = []
+@export var spectators_rnd: Array[float] = []
 
 @export var spectator_height_padding := .75
-
 @export var spectator_depth := 1.
 @export var spectator_height := 1.
 @export var spectator_width := 5.
@@ -22,9 +23,6 @@ const SPECTATOR_SCENE := preload("uid://cqk7fxxktr1da")
 
 var _relax_tween: Tween
 var _was_excited := false
-var _spectators_rnd: Array[float] = []
-var _spectators: Array[Node3D] = []
-
 
 ## -- Create Audience --
 func spawn_audience():
@@ -32,7 +30,7 @@ func spawn_audience():
 	_clear()
 	
 	_create_audience()
-	_spectators.shuffle()
+	spectators.shuffle()
 	
 	if Engine.is_editor_hint():
 		EditorInterface.mark_scene_as_unsaved()
@@ -52,14 +50,14 @@ func spawn_spectator(col: float, row: float, center: float) -> Node3D:
 	return spectator
 
 func _clear():
-	var spectators := get_children()
-	for spectator in spectators:
+	var s := get_children()
+	for spectator in s:
 		spectator.owner = null
 		spectator.queue_free()
 
 func _create_audience():
-	_spectators = []
-	_spectators_rnd = []
+	spectators = []
+	spectators_rnd = []
 	for row in rows:
 		var col_length := col_lengths[row]
 		
@@ -71,8 +69,8 @@ func _create_audience():
 				row,
 				total_width * -.5
 			)
-			_spectators.append(spectator)
-			_spectators_rnd.append(.01 + randf() * .025)
+			spectators.append(spectator)
+			spectators_rnd.append(.01 + randf() * .025)
 
 
 # -- Audience Behaviour --
@@ -81,10 +79,10 @@ func _relax_audience():
 		_relax_tween.kill()
 	_relax_tween = create_tween()
 	var relax := func(t: float):
-		var s_size := _spectators.size()
+		var s_size := spectators.size()
 		for idx in range(s_size):
-			var offset := _spectators[idx].get_child(0) as Node3D
-			var rnd := _spectators_rnd[idx]
+			var offset := spectators[idx].get_child(0) as Node3D
+			var rnd := spectators_rnd[idx]
 			offset.position.y = lerpf(offset.position.y, 0., t + rnd)
 	_relax_tween.tween_method(relax, 0., 1., .25)
 	_relax_tween.play()
@@ -95,15 +93,15 @@ func _process(_delta: float):
 			_was_excited = false
 			_relax_audience()
 		return
-	var s_size := _spectators.size()
+	_was_excited = true
+	var s_size := spectators.size()
 	for idx in range(s_size):
-		var offset := _spectators[idx].get_child(0) as Node3D
+		var offset := spectators[idx].get_child(0) as Node3D
 		if idx > exitement * s_size:
 			offset.position.y = offset.position.y * .8
-			return
-		var rnd := _spectators_rnd[idx]
+			continue
+		var rnd := spectators_rnd[idx]
 		offset.position.y = pingpong(
 		Time.get_ticks_msec() * speed * rnd,
 		magnitude
 		)
-	_was_excited = true
