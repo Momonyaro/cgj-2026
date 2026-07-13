@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://b8lftmrjj2j6u"]
+
+[ext_resource type="Script" uid="uid://dl2k2iuv6kotn" path="res://src/shared/magician/magician.gd" id="1_n2g5r"]
+[ext_resource type="Material" uid="uid://2mgs1yamtmew" path="res://src/shared/magician/front_face.tres" id="2_5bege"]
+[ext_resource type="Material" uid="uid://bdqrh3o8060kn" path="res://src/shared/magician/back_face.tres" id="3_vvj04"]
+[ext_resource type="Texture2D" uid="uid://cndepsblf1eo" path="res://src/shared/magician/test_img_2.png" id="4_sd5qa"]
+[ext_resource type="Texture2D" uid="uid://eeixomoxrvfy" path="res://src/shared/magician/test_img_1.png" id="5_oalhj"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_e4l7b"]
+material = ExtResource("2_5bege")
+size = Vector2(2, 2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_40gng"]
+material = ExtResource("3_vvj04")
+size = Vector2(2, 2)
+
+[node name="Magician" type="Node3D" unique_id=1219081681]
+script = ExtResource("1_n2g5r")
+front_material = ExtResource("2_5bege")
+back_material = ExtResource("3_vvj04")
+default_texture = ExtResource("5_oalhj")
+debug_textures = Array[Texture2D]([ExtResource("5_oalhj"), ExtResource("4_sd5qa")])
+
+[node name="ObjRoot" type="Node3D" parent="." unique_id=717765456]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.2786063, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="ObjRoot" unique_id=480698261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3359761, 0)
+radius = 0.1
+height = 5.5
+
+[node name="FaceRoot" type="Node3D" parent="ObjRoot" unique_id=1318095629]
+
+[node name="face0" type="MeshInstance3D" parent="ObjRoot/FaceRoot" unique_id=409287299]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1, -0.13779044)
+mesh = SubResource("QuadMesh_e4l7b")
+
+[node name="face1" type="MeshInstance3D" parent="ObjRoot/FaceRoot" unique_id=204129051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.14438415)
+mesh = SubResource("QuadMesh_40gng")
