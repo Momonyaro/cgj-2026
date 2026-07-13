@@ -16,12 +16,6 @@ func _ready() -> void:
 		push_warning("Must be a child of a Camera3D node!")
 		set_process(false)
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_pressed():
-		if event is InputEventKey:
-			if event.keycode == KEY_SPACE:
-				add_trauma(1)
-
 func _process(delta: float) -> void:
 	if _trauma > 0.0:
 		_trauma = max(_trauma - decay * delta, 0.0)
