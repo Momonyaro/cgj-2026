@@ -18,3 +18,23 @@ note_texture = ExtResource("3_y6hiq")
 [node name="Note3" parent="." unique_id=1972680525 instance=ExtResource("1_yh01j")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.72737324, -0.55912656, 0)
 note_texture = ExtResource("4_y6hiq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798899854]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1013928145]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=375715411]
+layout_mode = 2
+alignment = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=973119404]
+layout_mode = 2
+text = "Close Notes"
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/Button" to="." method="hide"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/Button" to="CanvasLayer" method="hide"]

@@ -12,7 +12,7 @@
 
 [sub_resource type="Resource" id="Resource_wk2ln"]
 script = ExtResource("6_lrs6a")
-expression = "Stage.level_loader.is_loading == false"
+expression = "!Stage.level_loader.is_loading"
 metadata/_custom_type_script = "uid://1qnl6sg2gebf"
 
 [sub_resource type="Resource" id="Resource_5bjvv"]
@@ -32,7 +32,7 @@ metadata/_custom_type_script = "uid://dlxwxd3ua60y4"
 
 [sub_resource type="Resource" id="Resource_11xvn"]
 script = ExtResource("2_5bjvv")
-duration = 3.0
+duration = 2.0
 metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
 [sub_resource type="Resource" id="Resource_8qkce"]

@@ -39,7 +39,9 @@ func load_next():
 
 	add_child(current_level)
 	
+	await await_notes()
 	await _transition_out()
+	
 	is_loading = false
 	loaded_next.emit()
 
@@ -71,6 +73,14 @@ func _transition_out():
 	curtain_tween = create_tween()
 	curtain_tween.tween_property(curtain_controller, "move_amount", 0., curtain_trans_close_durr)
 	await await_curtains()
+
+func await_notes():
+	#Todo: Don't look for the notes node this explicitly
+	if !current_level.has_node("Notes"):
+		return
+	var notes := current_level.get_node("Notes")
+	while notes.visible:
+		await get_tree().process_frame
 
 func await_curtains():
 	await curtain_tween.finished

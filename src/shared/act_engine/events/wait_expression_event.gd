@@ -35,7 +35,7 @@ func execute() -> void:
 		if result is not bool:
 			push_error("Conditional result is not a boolean:", result)
 		
-		if result:
+		if result == true:
 			finished.emit()
 			return
 		
