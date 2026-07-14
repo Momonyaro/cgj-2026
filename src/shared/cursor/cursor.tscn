@@ -7,6 +7,7 @@
 
 [node name="Cursor" type="Node2D" unique_id=888077973 node_paths=PackedStringArray("animated_sprite", "grab_point")]
 script = ExtResource("1_b2bh4")
+interactable_mask = 2
 animated_sprite = NodePath("Sprite")
 grab_point = NodePath("GrabPoint")
 

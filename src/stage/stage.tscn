@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cb6fc5w6070xs" path="res://src/stage/moving_curtains/verlet_curtains.tscn" id="3_78rax"]
 [ext_resource type="PackedScene" uid="uid://bsci4jei4qa8y" path="res://src/shared/audience/audience.tscn" id="4_43xs6"]
 [ext_resource type="PackedScene" uid="uid://c60vnt8wabn5e" path="res://src/stage/stage.glb" id="5_j58fr"]
+[ext_resource type="PackedScene" uid="uid://c1qdgxslk1mls" path="res://src/shared/cursor/cursor.tscn" id="6_y8ixn"]
+[ext_resource type="PackedScene" uid="uid://idhdvq5d4t17" path="res://src/acts/act1/bunny/bunny.tscn" id="7_804oe"]
 
 [sub_resource type="Environment" id="Environment_40gng"]
 ambient_light_source = 2
@@ -39,7 +41,11 @@ albedo_color = Color(0.6575865, 0.37557283, 0.20717609, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43xs6"]
 albedo_color = Color(0.29219002, 0.29219005, 0.29219002, 1)
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_a1n5f"]
+
 [node name="Stage" type="Node3D" unique_id=1423160689]
+
+[node name="Cursor" parent="." unique_id=888077973 instance=ExtResource("6_y8ixn")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=327064883]
 environment = SubResource("Environment_40gng")
@@ -206,3 +212,12 @@ material = SubResource("StandardMaterial3D_y8ixn")
 
 [node name="stage" parent="." unique_id=453809629 instance=ExtResource("5_j58fr")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1)
+
+[node name="StageFloor" type="StaticBody3D" parent="." unique_id=1697756891]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StageFloor" unique_id=1133586769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.997733, 0)
+shape = SubResource("WorldBoundaryShape3D_a1n5f")
+
+[node name="Bunny" parent="." unique_id=2104088067 instance=ExtResource("7_804oe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.971464, 1.7394109, 0)
