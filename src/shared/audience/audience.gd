@@ -20,10 +20,37 @@ const SPECTATOR_SCENE := preload("uid://cqk7fxxktr1da")
 @export var magnitude := 1.
 @export var speed := .5
 @export var excitement_falloff := .01
-@export_range(0., 1.) var excitement := .0
+@export_range(0., 1.) var start_excitement := .044
+
+var excitement := .0
 
 var _relax_tween: Tween
 var _was_excited := false
+
+func _ready():
+	excitement = start_excitement
+
+func _process(delta: float):
+	if excitement <= 0:
+		excitement = 0
+		if _was_excited:
+			_was_excited = false
+			_relax_audience()
+		return
+	_was_excited = true
+	var s_size := spectators.size()
+	for idx in range(s_size):
+		var offset := spectators[idx].get_child(0) as Node3D
+		if idx > excitement * s_size:
+			offset.position.y = offset.position.y * .8
+			continue
+		var rnd := spectators_rnd[idx]
+		offset.position.y = pingpong(
+		Time.get_ticks_msec() * speed * rnd,
+		magnitude
+		)
+	excitement -= delta * excitement_falloff
+
 
 ## -- Create Audience --
 func spawn_audience():
@@ -87,24 +114,4 @@ func _relax_audience():
 			offset.position.y = lerpf(offset.position.y, 0., t + rnd)
 	_relax_tween.tween_method(relax, 0., 1., .25)
 	_relax_tween.play()
-
-func _process(delta: float):
-	if excitement <= 0:
-		excitement = 0
-		if _was_excited:
-			_was_excited = false
-			_relax_audience()
-		return
-	_was_excited = true
-	var s_size := spectators.size()
-	for idx in range(s_size):
-		var offset := spectators[idx].get_child(0) as Node3D
-		if idx > excitement * s_size:
-			offset.position.y = offset.position.y * .8
-			continue
-		var rnd := spectators_rnd[idx]
-		offset.position.y = pingpong(
-		Time.get_ticks_msec() * speed * rnd,
-		magnitude
-		)
-	excitement -= delta * excitement_falloff
+	
