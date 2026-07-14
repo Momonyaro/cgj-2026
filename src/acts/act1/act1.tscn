@@ -13,3 +13,4 @@ magician = NodePath("../Magician")
 metadata/_custom_type_script = "uid://cyvljmchtkt42"
 
 [node name="Magician" parent="." unique_id=1219081681 instance=ExtResource("2_dr7gf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)

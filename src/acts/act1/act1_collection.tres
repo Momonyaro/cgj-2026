@@ -3,13 +3,42 @@
 [ext_resource type="Script" uid="uid://5nkn7cxwp168" path="res://src/shared/act_engine/events/act_event.gd" id="1_56n7f"]
 [ext_resource type="Script" uid="uid://bxsl188rk2b50" path="res://src/shared/act_engine/act_collection.gd" id="2_0p13b"]
 [ext_resource type="Script" uid="uid://b13mrlxyyg60r" path="res://src/shared/act_engine/events/wait_event.gd" id="2_5bjvv"]
+[ext_resource type="Texture2D" uid="uid://cndepsblf1eo" path="res://src/shared/magician/test_img_2.png" id="3_vne4c"]
+[ext_resource type="Script" uid="uid://cshjplosaguh6" path="res://src/shared/act_engine/events/swap_event.gd" id="4_lrs6a"]
+[ext_resource type="Texture2D" uid="uid://eeixomoxrvfy" path="res://src/shared/magician/test_img_1.png" id="5_wk2ln"]
+[ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="res://src/shared/act_engine/events/wait_expression_event.gd" id="6_lrs6a"]
+
+[sub_resource type="Resource" id="Resource_wk2ln"]
+script = ExtResource("6_lrs6a")
+expression = "Stage.level_loader.is_loading == false"
+metadata/_custom_type_script = "uid://1qnl6sg2gebf"
 
 [sub_resource type="Resource" id="Resource_5bjvv"]
 script = ExtResource("2_5bjvv")
 duration = 0.5
 metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
+[sub_resource type="Resource" id="Resource_6i72p"]
+script = ExtResource("4_lrs6a")
+next_sprite = ExtResource("3_vne4c")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
+
+[sub_resource type="Resource" id="Resource_11xvn"]
+script = ExtResource("2_5bjvv")
+duration = 0.5
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
+[sub_resource type="Resource" id="Resource_8qkce"]
+script = ExtResource("4_lrs6a")
+next_sprite = ExtResource("5_wk2ln")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
+
+[sub_resource type="Resource" id="Resource_vne4c"]
+script = ExtResource("2_5bjvv")
+duration = 0.5
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
 [resource]
 script = ExtResource("2_0p13b")
-events = Array[ExtResource("1_56n7f")]([SubResource("Resource_5bjvv")])
+events = Array[ExtResource("1_56n7f")]([SubResource("Resource_wk2ln"), SubResource("Resource_5bjvv"), SubResource("Resource_6i72p"), SubResource("Resource_11xvn"), SubResource("Resource_8qkce"), SubResource("Resource_vne4c")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"

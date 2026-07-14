@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dn2xq61jyauf" path="res://starter_kit/3d_components/camera_shake_3d.gd" id="1_60fcs"]
 [ext_resource type="PackedScene" uid="uid://doo5xcvy5q11" path="res://src/stage/curtain.glb" id="1_dnqew"]
+[ext_resource type="Script" uid="uid://cuwqa42nwlqqm" path="res://src/stage/stage.gd" id="1_puyty"]
 [ext_resource type="PackedScene" uid="uid://cb6fc5w6070xs" path="res://src/stage/moving_curtains/verlet_curtains.tscn" id="3_78rax"]
 [ext_resource type="PackedScene" uid="uid://bsci4jei4qa8y" path="res://src/shared/audience/audience.tscn" id="4_43xs6"]
 [ext_resource type="PackedScene" uid="uid://c60vnt8wabn5e" path="res://src/stage/stage.glb" id="5_j58fr"]
 [ext_resource type="PackedScene" uid="uid://c1qdgxslk1mls" path="res://src/shared/cursor/cursor.tscn" id="6_y8ixn"]
 [ext_resource type="PackedScene" uid="uid://idhdvq5d4t17" path="res://src/acts/act1/bunny/bunny.tscn" id="7_804oe"]
+[ext_resource type="Script" uid="uid://dmlhvbxquam8y" path="res://src/stage/level_loader/level_loader.gd" id="8_pvnpy"]
 
 [sub_resource type="Environment" id="Environment_40gng"]
 ambient_light_source = 2
@@ -44,6 +46,7 @@ albedo_color = Color(0.29219002, 0.29219005, 0.29219002, 1)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_a1n5f"]
 
 [node name="Stage" type="Node3D" unique_id=1423160689]
+script = ExtResource("1_puyty")
 
 [node name="Cursor" parent="." unique_id=888077973 instance=ExtResource("6_y8ixn")]
 
@@ -223,5 +226,9 @@ shape = SubResource("WorldBoundaryShape3D_a1n5f")
 
 [node name="Bunny" parent="." unique_id=2104088067 instance=ExtResource("7_804oe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.010597, 0.98654866, 0)
+
+[node name="LevelLoader" type="Node" parent="." unique_id=132284752 node_paths=PackedStringArray("curtain_controller")]
+script = ExtResource("8_pvnpy")
+curtain_controller = NodePath("../VerletCurtains")
 
 [editable path="Bunny"]

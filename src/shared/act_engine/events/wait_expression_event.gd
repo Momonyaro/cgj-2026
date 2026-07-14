@@ -9,6 +9,7 @@ var _time_started := 0
 
 # -- Binds --
 var inputs := []
+var input_names := []
 var context: Node
 
 
@@ -20,7 +21,7 @@ func execute() -> void:
 	if expression.strip_edges() == "":
 		finished.emit()
 	var e := Expression.new()
-	var error := e.parse(expression)
+	var error := e.parse(expression, input_names)
 	
 	if error != OK:
 		push_error("INVALID EXPRESSION")

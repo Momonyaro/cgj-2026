@@ -74,4 +74,5 @@ func _bind_spawn_event(event: SpawnEvent):
 
 func _bind_condition_event(event: WaitExpressionEvent):
 	event.context = self
-	event.inputs = []
+	event.input_names = ["Stage"]
+	event.inputs = [Stage]
