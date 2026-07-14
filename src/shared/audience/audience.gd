@@ -3,7 +3,7 @@ extends Node
 
 const SPECTATOR_SCENE := preload("uid://cqk7fxxktr1da")
 
-@export_category("Settings")
+@export_subgroup("Create Audience")
 @export var rows := 1
 @export var col_lengths: Array[int] = []
 @export var spectators: Array[Node3D] = []
@@ -19,7 +19,8 @@ const SPECTATOR_SCENE := preload("uid://cqk7fxxktr1da")
 @export_category("Behaviour")
 @export var magnitude := 1.
 @export var speed := .5
-@export_range(0., 1.) var exitement := .0
+@export var excitement_falloff := .01
+@export_range(0., 1.) var excitement := .0
 
 var _relax_tween: Tween
 var _was_excited := false
@@ -87,8 +88,9 @@ func _relax_audience():
 	_relax_tween.tween_method(relax, 0., 1., .25)
 	_relax_tween.play()
 
-func _process(_delta: float):
-	if exitement <= 0:
+func _process(delta: float):
+	if excitement <= 0:
+		excitement = 0
 		if _was_excited:
 			_was_excited = false
 			_relax_audience()
@@ -97,7 +99,7 @@ func _process(_delta: float):
 	var s_size := spectators.size()
 	for idx in range(s_size):
 		var offset := spectators[idx].get_child(0) as Node3D
-		if idx > exitement * s_size:
+		if idx > excitement * s_size:
 			offset.position.y = offset.position.y * .8
 			continue
 		var rnd := spectators_rnd[idx]
@@ -105,3 +107,4 @@ func _process(_delta: float):
 		Time.get_ticks_msec() * speed * rnd,
 		magnitude
 		)
+	excitement -= delta * excitement_falloff

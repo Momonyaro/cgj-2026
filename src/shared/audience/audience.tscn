@@ -14,7 +14,7 @@ spectator_height = 1.2
 spectator_width = 1.7
 magnitude = 0.33
 speed = 0.05
-exitement = 1.0
+excitement = 1.0
 
 [node name="Spectator" type="Node3D" parent="." unique_id=1181972335 instance=ExtResource("2_yaek1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 6.1, -6)
