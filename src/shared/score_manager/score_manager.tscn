@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dcln07uoive6q"]
+
+[ext_resource type="Script" uid="uid://cvwnjptjaxd0r" path="res://src/shared/score_manager/score_manager.gd" id="1_1pllc"]
+[ext_resource type="Script" uid="uid://bb6qohkdx0bl6" path="res://src/shared/score_manager/score_ticker.gd" id="2_4l1ng"]
+
+[node name="ScoreManager" type="Node" unique_id=1408692629 node_paths=PackedStringArray("debug_label")]
+script = ExtResource("1_1pllc")
+debug_label = NodePath("Debug Label")
+
+[node name="Debug Label" type="Label" parent="." unique_id=90069681]
+visible = false
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 56.0
+offset_bottom = 39.0
+
+[node name="SpotlightTicker" type="Node" parent="." unique_id=1856243619]
+script = ExtResource("2_4l1ng")
+key = &"spotlight_target"
+score_per_tick = 1
+tick_delay = 0.4
