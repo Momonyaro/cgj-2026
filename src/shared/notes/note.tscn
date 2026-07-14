@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b776vcixoys55"]
+
+[ext_resource type="Texture2D" uid="uid://ctcvxl7t0tiyh" path="res://src/shared/notes/note_background.png" id="2_g4qow"]
+
+[node name="Note" type="Sprite3D" unique_id=103506030]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.82, 0, 0, 0)
+sorting_offset = 0.1
+
+[node name="NoteBackground" type="Sprite3D" parent="." unique_id=1222959225]
+transparent = false
+texture = ExtResource("2_g4qow")

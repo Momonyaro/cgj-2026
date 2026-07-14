@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b35dpwamaqcj4" path="res://src/acts/act1/bunny/bunny_sitting.png" id="7_pu1pi"]
 [ext_resource type="Script" uid="uid://ddll3vaiwqhtm" path="res://src/shared/vfx/sprite_bouncer.gd" id="8_c65ag"]
 [ext_resource type="PackedScene" uid="uid://ba51fdvs8604o" path="res://src/acts/act1/hat/hat_for_bunny.tscn" id="9_k2h86"]
+[ext_resource type="PackedScene" uid="uid://b776vcixoys55" path="res://src/shared/notes/note.tscn" id="10_sonte"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a1n5f"]
 
@@ -30,7 +31,6 @@ radius = 0.3
 [node name="InteractTest" type="Node3D" unique_id=529548822]
 
 [node name="Cursor" parent="." unique_id=1756082694 instance=ExtResource("1_5l4dq")]
-interactable_mask = 2
 
 [node name="InteractableCube" type="Area3D" parent="." unique_id=1843629447]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9606533)
@@ -149,3 +149,6 @@ amount = 2.0
 
 [node name="HatForBunny" parent="." unique_id=883983318 instance=ExtResource("9_k2h86")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 8.441951, 0.6861434, 0)
+
+[node name="Note" parent="." unique_id=103506030 instance=ExtResource("10_sonte")]
+transform = Transform3D(0.24351037, 0, 0, 0, 0.24351037, 0, 0, 0, 1, -1.9072133, 0.1355995, -9.536743e-07)
