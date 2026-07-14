@@ -31,8 +31,10 @@ func _process(delta: float) -> void:
 	hovered_object = hit.collider as CollisionObject3D if hit else null
 
 	if Input.is_action_just_pressed("click"):
+		SFX.play("grab")
 		grab_object(hovered_object)
 	if Input.is_action_just_released("click"):
+		SFX.play("drop")
 		ungrab_object()
 
 	if grabbed_object:

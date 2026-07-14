@@ -9,6 +9,10 @@ signal landed
 var on_floor := true
 
 
+func _ready() -> void:
+	grabbed.connect(SFX.play.bind("squeak"))
+
+
 func _process(_delta: float) -> void:
 	if is_on_floor():
 		if not on_floor:

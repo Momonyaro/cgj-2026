@@ -14,7 +14,10 @@ func _on_body_entered(body: Node3D) -> void:
 	if not grabbable.is_grabbed and not grabbable.is_on_floor():
 		grabbable.enter_hat()
 		anything_entered.emit()
+		SFX.play("eat_up")
 		if grabbable is Bunny:
-			ActEngine.singleton.append_events(BunnyInHat.events)
+			if ActEngine.singleton:
+				ActEngine.singleton.append_events(BunnyInHat.events)
 		else:
-			ActEngine.singleton.append_events(BunnyNotInHat.events)
+			if ActEngine.singleton:
+				ActEngine.singleton.append_events(BunnyNotInHat.events)
