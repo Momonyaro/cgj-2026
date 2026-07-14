@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://buka2i05layu6" path="res://src/shared/sfx/drop.mp3" id="11_pv0ap"]
 [ext_resource type="AudioStream" uid="uid://ydyu6fr3c1rt" path="res://src/shared/sfx/squeak.mp3" id="12_pv0ap"]
 [ext_resource type="AudioStream" uid="uid://u00lnv46c17v" path="res://src/shared/sfx/eat_up.mp3" id="13_syuep"]
+[ext_resource type="AudioStream" uid="uid://b2vjfdji2c77x" path="res://src/shared/sfx/land.wav" id="14_47jo6"]
 
 [resource]
 script = ExtResource("1_r2xrk")
@@ -28,6 +29,7 @@ _items = Dictionary[String, AudioStream]({
 "drum_roll_looping": ExtResource("9_4lv6k"),
 "eat_up": ExtResource("13_syuep"),
 "grab": ExtResource("10_hjad4"),
+"land": ExtResource("14_47jo6"),
 "murmur_looping": ExtResource("2_reg48"),
 "shock_0": ExtResource("6_hjad4"),
 "squeak": ExtResource("12_pv0ap")

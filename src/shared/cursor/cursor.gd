@@ -32,7 +32,12 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("click"):
 		SFX.play("grab")
-		grab_object(hovered_object)
+		if hovered_object and hovered_object.has_method("grab"):
+			grabbed_object = hovered_object
+			interact_plane = Plane(Vector3.BACK, grabbed_object.global_position)
+			grab_point.position = interact_plane.intersects_ray(pos3d, normal)
+			hovered_object.grab(self)
+
 	if Input.is_action_just_released("click"):
 		SFX.play("drop")
 		ungrab_object()
@@ -78,13 +83,6 @@ func get_pick_ray(origin: Vector3, normal: Vector3) -> PhysicsRayQueryParameters
 	ray.collide_with_areas = true
 	ray.collide_with_bodies = true
 	return ray
-
-
-func grab_object(object: CollisionObject3D) -> void:
-	if object and object.has_method("grab"):
-		grabbed_object = object
-		interact_plane = Plane(Vector3.BACK, grabbed_object.global_position)
-		object.grab(self)
 
 
 func ungrab_object() -> void:
