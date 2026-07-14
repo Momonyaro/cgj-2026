@@ -34,6 +34,7 @@ transform = Transform3D(1.0097826, 0, 0, 0, 1.0097826, 0, 0, 0, 1.129, 0, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D" unique_id=579492501]
 transform = Transform3D(0.050000004, 0, 0, 0, 0.050000004, 0, 0, 0, 0.050000004, 0, 0.31406212, 0)
+cast_shadow = 2
 alpha_cut = 2
 texture = ExtResource("2_me03j")
 

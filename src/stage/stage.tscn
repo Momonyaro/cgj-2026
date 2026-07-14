@@ -230,5 +230,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.010597, 0.98654866, 0)
 [node name="LevelLoader" type="Node" parent="." unique_id=132284752 node_paths=PackedStringArray("curtain_controller")]
 script = ExtResource("8_pvnpy")
 curtain_controller = NodePath("../VerletCurtains")
-
-[editable path="Bunny"]

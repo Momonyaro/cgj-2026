@@ -46,8 +46,8 @@ func _process(_delta: float) -> void:
 	if grabbed_object:
 		grab_point.position = interact_plane.intersects_ray(pos3d, normal)
 		# animated_sprite.global_position = cam.unproject_position(grabbed_object.transform * local_hand_pos)
-	else:
-		animated_sprite.position = Vector2.ZERO
+	# else:
+	# 	animated_sprite.position = Vector2.ZERO
 
 	animated_sprite.animation = get_animation()
 

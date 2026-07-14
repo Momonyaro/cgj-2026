@@ -12,6 +12,7 @@ animated_sprite = NodePath("Sprite")
 grab_point = NodePath("GrabPoint")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1213114909]
+position = Vector2(13, 15)
 sprite_frames = ExtResource("2_b2bh4")
 
 [node name="GrabPoint" type="Marker3D" parent="." unique_id=488859553]
