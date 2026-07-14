@@ -61,6 +61,8 @@ omni_range = 30.903
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1922488885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5)
+keep_aspect = 0
+fov = 107.4
 
 [node name="CameraShake3D" type="Node" parent="Camera3D" unique_id=51681373]
 script = ExtResource("1_60fcs")
