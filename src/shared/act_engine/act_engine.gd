@@ -5,6 +5,8 @@ signal finished
 
 const Magician := preload("res://src/shared/magician/magician.gd")
 
+static var singleton: ActEngine = null
+
 @export var loop := false
 @export var act: ActCollection
 
@@ -16,11 +18,19 @@ var act_events: Array[ActEvent] = []
 var _time_started_ms := 0
 var _current_event: ActEvent
 
+
+func _enter_tree() -> void:
+	if singleton != null and is_instance_valid(singleton) and !singleton.is_queued_for_deletion():
+		singleton.queue_free()
+	singleton = self
+
 func _ready():
 	finished.connect(print.bind("Act Finished! (%dms)" % (Time.get_ticks_msec() - _time_started_ms)))
 	assert(act and act.events.size() > 0)	
 	_start_act()
 
+
+# -- API --
 func execute_event(event: ActEvent):
 	if act_events.size() > 0:
 		var next = act_events.pop_front()
@@ -34,13 +44,19 @@ func execute_event(event: ActEvent):
 	_current_event = event
 	event.execute()
 
-func append_events(events: Array[ActEvent]):
-	act_events.append_array(events)
+func append_events(new_events: Array[ActEvent]):
+	var target_index := act_events.find(_current_event) if !act_events.is_empty() else 0
+	act_events = act_events.slice(0, target_index) + new_events.duplicate() + act_events.slice(target_index)
+	_bind_events(act_events)
+	
 	if _current_event.finished.is_connected(_finish):
 		_current_event.finished.disconnect(_finish)
-	_current_event.finished.connect(func(): execute_event(events[0]), CONNECT_ONE_SHOT)
+	
+	var next = act_events.pop_front()
+	_current_event.finished.connect(func(): execute_event(next), CONNECT_ONE_SHOT)
 
 
+# -- Event Handlers
 func _start_act(starting_event: ActEvent = null):
 	_time_started_ms = Time.get_ticks_msec()
 	act_events = act.events.duplicate()
@@ -51,9 +67,9 @@ func _start_act(starting_event: ActEvent = null):
 	else:
 		execute_event(act_events.pop_front())
 
-
 func _finish():
 	finished.emit()
+
 
 # -- Bindings --
 func _bind_events(events):
