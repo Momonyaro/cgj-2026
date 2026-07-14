@@ -4,7 +4,7 @@ class_name ActEvent
 
 signal finished()
 
-enum { WALK, SWAP, WAIT, CONDITIONAL, SPAWN, CALL }
+enum { WALK, SWAP, WAIT, WAIT_EXPRESSION, SPAWN, CALL }
 
 @abstract
 func get_type() -> int

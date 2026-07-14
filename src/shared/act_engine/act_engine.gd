@@ -55,6 +55,8 @@ func _bind_events():
 				_bind_wait_event(event)
 			ActEvent.SPAWN:
 				_bind_spawn_event(event)
+			ActEvent.WAIT_EXPRESSION:
+				_bind_condition_event(event)
 
 func _bind_walk_event(event: WalkEvent):
 	event.magician = magician
@@ -68,3 +70,7 @@ func _bind_wait_event(event: WaitEvent):
 
 func _bind_spawn_event(event: SpawnEvent):
 	event.root = self
+
+func _bind_condition_event(event: WaitExpressionEvent):
+	event.context = self
+	event.inputs = []

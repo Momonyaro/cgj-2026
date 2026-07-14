@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://eeixomoxrvfy" path="res://src/shared/magician/test_img_1.png" id="6_huerw"]
 [ext_resource type="Script" uid="uid://bxsl188rk2b50" path="res://src/shared/act_engine/act_collection.gd" id="7_5lek6"]
 [ext_resource type="Script" uid="uid://4gi3mbocwio5" path="res://src/shared/act_engine/events/spawn_event.gd" id="7_rwcc3"]
+[ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="wait_expression_event.gd" id="8_t4wox"]
 
 [sub_resource type="Resource" id="Resource_s7r7y"]
 script = ExtResource("2_rwcc3")
@@ -27,10 +28,10 @@ script = ExtResource("5_1hhkv")
 next_sprite = ExtResource("4_y46ol")
 metadata/_custom_type_script = "uid://cshjplosaguh6"
 
-[sub_resource type="Resource" id="Resource_vodn8"]
-script = ExtResource("2_rwcc3")
-duration = 0.5
-metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+[sub_resource type="Resource" id="Resource_5nkoa"]
+script = ExtResource("8_t4wox")
+expression = "get_window().size <= Vector2i(500, 500)"
+metadata/_custom_type_script = "uid://1qnl6sg2gebf"
 
 [sub_resource type="Resource" id="Resource_t4wox"]
 script = ExtResource("7_rwcc3")
@@ -54,5 +55,5 @@ metadata/_custom_type_script = "uid://cshjplosaguh6"
 
 [resource]
 script = ExtResource("7_5lek6")
-events = Array[ExtResource("1_vodn8")]([SubResource("Resource_s7r7y"), SubResource("Resource_vydyc"), SubResource("Resource_7doi7"), SubResource("Resource_vodn8"), SubResource("Resource_t4wox"), SubResource("Resource_qen2c"), SubResource("Resource_1kpxg")])
+events = Array[ExtResource("1_vodn8")]([SubResource("Resource_s7r7y"), SubResource("Resource_vydyc"), SubResource("Resource_7doi7"), SubResource("Resource_5nkoa"), SubResource("Resource_t4wox"), SubResource("Resource_qen2c"), SubResource("Resource_1kpxg")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"
