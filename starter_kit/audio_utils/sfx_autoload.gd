@@ -9,16 +9,17 @@ var _fadeout_streams: Dictionary
 
 # ---- Godot Events ---
 
+
 func _enter_tree() -> void:
 	var project_setting_exists := ProjectSettings.has_setting("application/resources/sfx_library")
 	if project_setting_exists:
 		var path: String = ProjectSettings.get_setting("application/resources/sfx_library")
-		if path != "" && FileAccess.file_exists(path):
+		if path != "" && ResourceLoader.exists(path):
 			_sfx_library = ResourceLoader.load(path)
 			_initialized = true
 			return
-			
-	var is_in_root := FileAccess.file_exists("res://sfx_library.tres")
+
+	var is_in_root := ResourceLoader.exists("res://sfx_library.tres")
 	if is_in_root:
 		_sfx_library = ResourceLoader.load("res://sfx_library.tres")
 		_initialized = true
@@ -26,11 +27,12 @@ func _enter_tree() -> void:
 		printerr("Could not find sound library resource, please add a sfx_library.tres to project root or in project settings.")
 		return
 
+
 func _process(delta: float):
 	var stream = _get_active_stream()
 	if stream == null:
 		return
-	
+
 	for key in _fadeout_streams.keys():
 		if stream.is_stream_playing(key):
 			_fadeout_streams[key] = maxf(_fadeout_streams[key] - delta * 0.75, 0)
@@ -43,15 +45,17 @@ func _process(delta: float):
 			_fadeout_streams.erase(key)
 
 # ---- Public Functions ----
-	
+
+
 func play(key: String) -> void:
 	var stream := _get_active_stream()
 	var play_index = stream.play_stream(_sfx_library.get_item(key), 0, 0, randf_range(0.99, 1.01))
-	
+
 	for existing in _stream_lookup.keys():
 		if _stream_lookup[existing] == play_index:
 			_stream_lookup.erase(existing) # Duplicate entry, this stream will be dead
 	_stream_lookup[key] = play_index
+
 
 func stop(key: String) -> void:
 	var stream := _get_active_stream()
@@ -59,28 +63,32 @@ func stop(key: String) -> void:
 		stream.stop_stream(_stream_lookup[key])
 		_stream_lookup.erase(key)
 
+
 func fade_out(key: String) -> void:
 	if _stream_lookup.has(key):
 		_fadeout_streams[_stream_lookup[key]] = 1.0
 		_stream_lookup.erase(key)
 
+
 # NOTE: Figure out where in the scenetree to place the resulting nodes.
 func play_positional_2d(key: String, position: Vector2) -> void:
 	var sound_item: AudioStreamPlayer2D = load("2d_sound_item.gd").new()
 	sound_item.stream = _sfx_library.get_item(key)
-	
+
 	if get_tree().current_scene == null:
 		printerr("Could not play sound, current scene is null.")
 		return
-	
+
 	get_tree().current_scene.add_child(sound_item)
 	sound_item.global_position = position
+
 
 func play_positional_3d(_key: String, _position: Vector3) -> void:
 	push_error("Not implemented.")
 	pass
 
 # ---- Private Functions ----
+
 
 func _get_active_stream() -> AudioStreamPlaybackPolyphonic:
 	return _polyphonic_player.get_stream_playback() as AudioStreamPlaybackPolyphonic

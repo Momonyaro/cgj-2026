@@ -27,8 +27,10 @@ var excitement := .0
 var _relax_tween: Tween
 var _was_excited := false
 
+
 func _ready():
 	excitement = start_excitement
+
 
 func _process(delta: float):
 	if excitement <= 0:
@@ -46,8 +48,8 @@ func _process(delta: float):
 			continue
 		var rnd := spectators_rnd[idx]
 		offset.position.y = pingpong(
-		Time.get_ticks_msec() * speed * rnd,
-		magnitude
+			Time.get_ticks_msec() * speed * rnd,
+			magnitude,
 		)
 	excitement -= delta * excitement_falloff
 
@@ -56,26 +58,28 @@ func _process(delta: float):
 func spawn_audience():
 	assert(rows == col_lengths.size())
 	_clear()
-	
+
 	_create_audience()
 	spectators.shuffle()
-	
+
 	if Engine.is_editor_hint():
-		EditorInterface.mark_scene_as_unsaved()
+		Engine.get_singleton("EditorInterface").mark_scene_as_unsaved()
+
 
 func spawn_spectator(col: float, row: float, center: float) -> Node3D:
 	var inv_r := rows - row - 1
-	
+
 	var spectator := SPECTATOR_SCENE.instantiate() as Node3D
 	assert(spectator != null)
-	
+
 	add_child(spectator)
 	spectator.owner = get_tree().edited_scene_root
-	
+
 	spectator.position.x = center + col * spectator_width + spectator_width * .5
 	spectator.position.y = inv_r * spectator_height + spectator_height + inv_r * spectator_height_padding
 	spectator.position.z = 0 - inv_r * spectator_depth + spectator_depth
 	return spectator
+
 
 func _clear():
 	var s := get_children()
@@ -83,19 +87,20 @@ func _clear():
 		spectator.owner = null
 		spectator.queue_free()
 
+
 func _create_audience():
 	spectators = []
 	spectators_rnd = []
 	for row in rows:
 		var col_length := col_lengths[row]
-		
+
 		var total_width := col_length * spectator_width
-		
+
 		for col in col_length:
 			var spectator := spawn_spectator(
 				col,
 				row,
-				total_width * -.5
+				total_width * -.5,
 			)
 			spectators.append(spectator)
 			spectators_rnd.append(.01 + randf() * .025)
@@ -114,4 +119,3 @@ func _relax_audience():
 			offset.position.y = lerpf(offset.position.y, 0., t + rnd)
 	_relax_tween.tween_method(relax, 0., 1., .25)
 	_relax_tween.play()
-	

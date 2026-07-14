@@ -48,14 +48,11 @@ func _process(delta: float) -> void:
 		if grabbed_object.has_method("process_grab"):
 			grabbed_object.process_grab(delta)
 
-		var expected_grab_pos: Vector3 = (
-			grabbed_object.get_grabbed_position()
-			if grabbed_object.has_method("get_grabbed_position")
-			else grabbed_object.global_position
-		)
-		var overdrag_dist := expected_grab_pos.distance_to(grab_point.global_position)
-		if overdrag_dist > MAX_OVERDRAG_BEFORE_DROPPING:
-			ungrab_object()
+		if grabbed_object.has_method("get_grabbed_position"):
+			var expected_grab_pos: Vector3 = grabbed_object.get_grabbed_position()
+			var overdrag_dist := expected_grab_pos.distance_to(grab_point.global_position)
+			if overdrag_dist > MAX_OVERDRAG_BEFORE_DROPPING:
+				ungrab_object()
 
 	else:
 		animated_sprite.position = Vector2.ZERO
