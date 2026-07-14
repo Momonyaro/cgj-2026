@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ActCollection" format=3 uid="uid://dy02n1784ay7o"]
+
+[ext_resource type="Script" uid="uid://5nkn7cxwp168" path="res://src/shared/act_engine/events/act_event.gd" id="1_56n7f"]
+[ext_resource type="Script" uid="uid://bxsl188rk2b50" path="res://src/shared/act_engine/act_collection.gd" id="2_0p13b"]
+[ext_resource type="Script" uid="uid://b13mrlxyyg60r" path="res://src/shared/act_engine/events/wait_event.gd" id="2_5bjvv"]
+
+[sub_resource type="Resource" id="Resource_5bjvv"]
+script = ExtResource("2_5bjvv")
+duration = 0.5
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
+[resource]
+script = ExtResource("2_0p13b")
+events = Array[ExtResource("1_56n7f")]([SubResource("Resource_5bjvv")])
+metadata/_custom_type_script = "uid://bxsl188rk2b50"

@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://ckkohxndm4a8l"]
 
+[ext_resource type="Script" uid="uid://cyvljmchtkt42" path="res://src/shared/act_engine/act_engine.gd" id="1_a1avv"]
+[ext_resource type="Resource" uid="uid://dy02n1784ay7o" path="res://src/acts/act1/act1_collection.tres" id="2_6i72p"]
+[ext_resource type="PackedScene" uid="uid://b8lftmrjj2j6u" path="res://src/shared/magician/magician.tscn" id="2_dr7gf"]
+
 [node name="Act1" type="Node3D" unique_id=248595300]
+
+[node name="ActEngine" type="Node" parent="." unique_id=827167788 node_paths=PackedStringArray("magician")]
+script = ExtResource("1_a1avv")
+act = ExtResource("2_6i72p")
+magician = NodePath("../Magician")
+metadata/_custom_type_script = "uid://cyvljmchtkt42"
+
+[node name="Magician" parent="." unique_id=1219081681 instance=ExtResource("2_dr7gf")]

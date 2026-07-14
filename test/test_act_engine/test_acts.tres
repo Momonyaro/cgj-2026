@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://eeixomoxrvfy" path="res://src/shared/magician/test_img_1.png" id="6_huerw"]
 [ext_resource type="Script" uid="uid://bxsl188rk2b50" path="res://src/shared/act_engine/act_collection.gd" id="7_5lek6"]
 [ext_resource type="Script" uid="uid://4gi3mbocwio5" path="res://src/shared/act_engine/events/spawn_event.gd" id="7_rwcc3"]
-[ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="wait_expression_event.gd" id="8_t4wox"]
+[ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="res://src/shared/act_engine/events/wait_expression_event.gd" id="8_t4wox"]
 
 [sub_resource type="Resource" id="Resource_s7r7y"]
 script = ExtResource("2_rwcc3")
