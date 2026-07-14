@@ -1,6 +1,8 @@
 extends Area3D
 
 signal bunny_entered
+signal non_bunny_entered
+signal anything_entered
 
 const Bunny := preload("res://src/acts/act1/bunny/bunny.gd")
 
@@ -10,15 +12,14 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_body_entered(body: Node3D) -> void:
-	var bunny := body as Bunny
-	if not bunny:
+	var grabbable := body as GrabbableItem
+	if not grabbable:
 		return
-	if not bunny.is_grabbed and not bunny.on_floor:
-		bunny.enter_hat()
-		bunny_entered.emit()
+	if not grabbable.is_grabbed and not grabbable.is_on_floor():
+		grabbable.enter_hat()
+		anything_entered.emit()
+		if grabbable is Bunny:
+			bunny_entered.emit()
+		else:
+			non_bunny_entered.emit()

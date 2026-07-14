@@ -7,6 +7,7 @@ signal released
 @export var grab_point: Node3D
 
 var is_grabbed: bool
+var in_hat := false
 var cursor: Cursor
 
 const MAX_SPEED = 10.0
@@ -32,7 +33,8 @@ func grab(p_cursor: Cursor) -> void:
 	freeze = true
 	cursor = p_cursor
 	grabbed.emit()
-	Stage.audience.excitement += .1
+	if Stage._singleton:
+		Stage.audience.excitement += .1
 
 
 func ungrab(_cursor: Cursor) -> void:
@@ -40,4 +42,16 @@ func ungrab(_cursor: Cursor) -> void:
 	freeze = false
 	linear_velocity = linear_velocity.limit_length(MAX_SPEED)
 	released.emit()
-	Stage.audience.excitement -= .1
+	if Stage._singleton:
+		Stage.audience.excitement -= .1
+
+
+func enter_hat() -> void:
+	if in_hat:
+		return
+	in_hat = true
+	visible = false
+	collision_layer &= ~0x02
+	# var tween := create_tween()
+	# tween.tween_property(self, "scale", Vector3.ONE * 0.5, 0.2)
+	# position.y -= 0.1
