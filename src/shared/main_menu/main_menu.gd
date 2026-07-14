@@ -2,3 +2,4 @@ extends Node
 
 func play():
 	Stage.level_loader.load_next()
+	SFX.play("button_click")

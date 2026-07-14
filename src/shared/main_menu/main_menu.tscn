@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://dl2kkbtgacfc4" path="res://src/shared/main_menu/main_menu.gd" id="1_trwwb"]
 [ext_resource type="Texture2D" uid="uid://c3loy6qpiyuat" path="res://src/shared/main_menu/logo_1.png" id="2_trwwb"]
 [ext_resource type="FontFile" uid="uid://dhdfnm4agkxmd" path="res://src/shared/fonts/Deanna.ttf" id="3_nf76s"]
+[ext_resource type="Texture2D" uid="uid://cfasc037yodvf" path="res://src/shared/main_menu/button_anim_0.png" id="5_25cp6"]
+[ext_resource type="Texture2D" uid="uid://d4ttrfhpth58" path="res://src/shared/main_menu/button_anim_1.png" id="6_8kgk2"]
+[ext_resource type="Texture2D" uid="uid://cms5dkkymts7g" path="res://src/shared/main_menu/button_hover.png" id="7_kq7dq"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_40gng"]
 frames = 2
@@ -15,6 +18,19 @@ frame_1/duration = 1.0
 font = ExtResource("3_nf76s")
 font_size = 42
 outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_a8f4u"]
+frames = 2
+frame_0/texture = ExtResource("5_25cp6")
+frame_1/texture = ExtResource("6_8kgk2")
+frame_1/duration = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_a8f4u"]
+font = ExtResource("3_nf76s")
+font_size = 72
+font_color = Color(1, 0.96862745, 0.31764707, 1)
+outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1030135940]
@@ -46,6 +62,7 @@ label_settings = SubResource("LabelSettings_40gng")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 412.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -53,10 +70,27 @@ grow_vertical = 2
 layout_mode = 2
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=71697865]
-custom_minimum_size = Vector2(250, 0)
+[node name="TextureButton" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=1965899299]
+custom_minimum_size = Vector2(250, 106)
 layout_mode = 2
-text = "PLAY"
+size_flags_vertical = 3
+texture_normal = SubResource("AnimatedTexture_a8f4u")
+texture_hover = ExtResource("7_kq7dq")
+ignore_texture_size = true
+stretch_mode = 5
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="play"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="CenterContainer/VBoxContainer/PlayButton" method="queue_free"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/TextureButton" unique_id=856837149]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY"
+label_settings = SubResource("LabelSettings_a8f4u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/TextureButton" to="." method="play"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/TextureButton" to="CenterContainer/VBoxContainer/TextureButton" method="queue_free"]
