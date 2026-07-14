@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bn5hs0nxot3y6"]
+
+[ext_resource type="Texture2D" uid="uid://bjyrjer0y4g32" path="res://src/stage/stage_floor_pine_tex.jpg" id="1_ivka1"]
+[ext_resource type="Texture2D" uid="uid://cc8sc0bpe1tw6" path="res://src/stage/stage_floor_pine_tex_n.png" id="2_cn3ul"]
+
+[resource]
+albedo_texture = ExtResource("1_ivka1")
+roughness = 0.75
+roughness_texture = ExtResource("2_cn3ul")

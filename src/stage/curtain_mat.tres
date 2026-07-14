@@ -7,3 +7,4 @@ cull_mode = 2
 diffuse_mode = 3
 specular_mode = 1
 albedo_texture = ExtResource("1_yq7x3")
+disable_receive_shadows = true
