@@ -1,5 +1,7 @@
 extends Node
 
+signal finished
+
 const Magician := preload("res://src/shared/magician/magician.gd")
 
 @export var loop := false
@@ -10,24 +12,36 @@ const Magician := preload("res://src/shared/magician/magician.gd")
 
 var act_events: Array[ActEvent] = []
 
-func _ready():
-	assert(act and act.events.size() > 0)
-	act_events = act.events.duplicate()
-	
-	_bind_events()
-	execute_event(act_events.pop_front())
+var _time_started_ms := 0
 
+
+func _ready():
+	finished.connect(print.bind("Act Finished! (%dms)" % (Time.get_ticks_msec() - _time_started_ms)))
+	assert(act and act.events.size() > 0)	
+	_start_act()
 
 func execute_event(event: ActEvent):
 	if act_events.size() > 0:
 		var next = act_events.pop_front()
 		event.finished.connect(func(): execute_event(next), CONNECT_ONE_SHOT)
-	elif loop:
-		act_events = act.events.duplicate()
-		execute_event(event)
-		return
+	else:
+		event.finished.connect(func(): finished.emit(), CONNECT_ONE_SHOT)
+		if loop:
+			_start_act(event)
+			return
+
 	event.execute()
 
+func _start_act(starting_event: ActEvent = null):
+	_time_started_ms = Time.get_ticks_msec()
+	act_events = act.events.duplicate()
+	_bind_events()
+	
+	if starting_event != null:
+		execute_event(starting_event)
+	else:
+		execute_event(act_events.pop_front())
+		
 
 # -- Bindings --
 func _bind_events():
