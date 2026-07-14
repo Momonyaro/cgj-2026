@@ -13,7 +13,6 @@ extends Node3D
 
 
 func update_material() -> void:
-	prints("mesh", mesh_instance)
 	var mat := base_material.duplicate()
 	mat.albedo_texture = note_texture
 	mesh_instance.material_overlay = mat
