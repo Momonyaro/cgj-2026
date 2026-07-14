@@ -32,6 +32,7 @@ func grab(p_cursor: Cursor) -> void:
 	freeze = true
 	cursor = p_cursor
 	grabbed.emit()
+	Stage.audience.excitement += .1
 
 
 func ungrab(_cursor: Cursor) -> void:
@@ -39,3 +40,4 @@ func ungrab(_cursor: Cursor) -> void:
 	freeze = false
 	linear_velocity = linear_velocity.limit_length(MAX_SPEED)
 	released.emit()
+	Stage.audience.excitement -= .1

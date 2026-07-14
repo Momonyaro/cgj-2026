@@ -92,7 +92,7 @@ transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1
 
 [node name="Audience" parent="." unique_id=1273790735 instance=ExtResource("4_43xs6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.832387)
-exitement = 0.044
+excitement = 0.044
 
 [node name="Locale" type="CSGCombiner3D" parent="." unique_id=840872006]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)

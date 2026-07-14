@@ -7,5 +7,5 @@ func get_type() -> int:
 	return CAPTIVATE
 
 func execute():
-	Stage.audience.exitement += captivate
+	Stage.audience.excitement += captivate
 	finished.emit()
