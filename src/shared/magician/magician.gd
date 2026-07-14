@@ -7,11 +7,12 @@ signal finished_spin
 @export var back_material: StandardMaterial3D
 @export var spin_duration: float = 0.2
 @export var default_texture: Texture2D
+
 @export_subgroup("Debug")
 @export var debug_enabled: bool = false
 @export var debug_textures: Array[Texture2D] = []
 
-@onready var face_root: Node3D = $ObjRoot/FaceRoot
+@onready var face_root: Node3D = $BodyPivot/ObjRoot/FaceRoot
 
 var texture: Texture2D: set = swap_texture
 
@@ -23,6 +24,7 @@ var _current_index: int = 0
 
 func _ready() -> void:
 	front_material.set_texture(BaseMaterial3D.TEXTURE_ALBEDO, default_texture)
+	back_material.set_texture(BaseMaterial3D.TEXTURE_ALBEDO, default_texture)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_pressed() and debug_enabled:

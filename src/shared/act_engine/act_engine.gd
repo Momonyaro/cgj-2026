@@ -2,6 +2,7 @@ extends Node
 
 const Magician := preload("res://src/shared/magician/magician.gd")
 
+@export var loop := false
 @export var act: ActCollection
 
 @export_subgroup("Bindings")
@@ -11,7 +12,7 @@ var act_events: Array[ActEvent] = []
 
 func _ready():
 	assert(act and act.events.size() > 0)
-	act_events = act.events
+	act_events = act.events.duplicate()
 	
 	_bind_events()
 	execute_event(act_events.pop_front())
@@ -20,7 +21,11 @@ func _ready():
 func execute_event(event: ActEvent):
 	if act_events.size() > 0:
 		var next = act_events.pop_front()
-		event.finished.connect(func(): execute_event(next))
+		event.finished.connect(func(): execute_event(next), CONNECT_ONE_SHOT)
+	elif loop:
+		act_events = act.events.duplicate()
+		execute_event(event)
+		return
 	event.execute()
 
 

@@ -16,6 +16,9 @@ metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 [sub_resource type="Resource" id="Resource_vydyc"]
 script = ExtResource("3_t4wox")
 pos_x = 3.0
+x_trans = 10
+height = 0.25
+frequency = 4.0
 metadata/_custom_type_script = "uid://bd1mnsfmb01qi"
 
 [sub_resource type="Resource" id="Resource_7doi7"]
@@ -23,9 +26,17 @@ script = ExtResource("5_1hhkv")
 next_sprite = ExtResource("4_y46ol")
 metadata/_custom_type_script = "uid://cshjplosaguh6"
 
+[sub_resource type="Resource" id="Resource_vodn8"]
+script = ExtResource("2_rwcc3")
+duration = 0.5
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
 [sub_resource type="Resource" id="Resource_qen2c"]
 script = ExtResource("3_t4wox")
 pos_x = -3.0
+x_trans = 1
+height = 0.15
+frequency = 4.0
 metadata/_custom_type_script = "uid://bd1mnsfmb01qi"
 
 [sub_resource type="Resource" id="Resource_1kpxg"]
@@ -35,5 +46,5 @@ metadata/_custom_type_script = "uid://cshjplosaguh6"
 
 [resource]
 script = ExtResource("7_5lek6")
-events = Array[ExtResource("1_vodn8")]([SubResource("Resource_s7r7y"), SubResource("Resource_vydyc"), SubResource("Resource_7doi7"), SubResource("Resource_qen2c"), SubResource("Resource_1kpxg")])
+events = Array[ExtResource("1_vodn8")]([SubResource("Resource_s7r7y"), SubResource("Resource_vydyc"), SubResource("Resource_7doi7"), SubResource("Resource_vodn8"), SubResource("Resource_qen2c"), SubResource("Resource_1kpxg")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"
