@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://idhdvq5d4t17" path="res://src/acts/act1/bunny/bunny.tscn" id="4_r5hf4"]
 [ext_resource type="Texture2D" uid="uid://b35dpwamaqcj4" path="res://src/acts/act1/bunny/bunny_sitting.png" id="7_pu1pi"]
 [ext_resource type="Script" uid="uid://ddll3vaiwqhtm" path="res://src/shared/vfx/sprite_bouncer.gd" id="8_c65ag"]
+[ext_resource type="PackedScene" uid="uid://ba51fdvs8604o" path="res://src/acts/act1/hat/hat_for_bunny.tscn" id="9_k2h86"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a1n5f"]
 
@@ -137,7 +138,7 @@ shape = SubResource("WorldBoundaryShape3D_sl7vg")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.4698467, 0, 0)
 
 [node name="BouncyBunny" type="Sprite3D" parent="Node3D" unique_id=1751422872]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1, 6.792057, 4.638481, 0)
 texture = ExtResource("7_pu1pi")
 
 [node name="SpriteBouncer" type="Node" parent="Node3D/BouncyBunny" unique_id=1452381395 node_paths=PackedStringArray("sprite")]
@@ -145,3 +146,6 @@ script = ExtResource("8_c65ag")
 sprite = NodePath("..")
 time = 1.0
 amount = 2.0
+
+[node name="HatForBunny" parent="." unique_id=883983318 instance=ExtResource("9_k2h86")]
+transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 8.441951, 0.6861434, 0)

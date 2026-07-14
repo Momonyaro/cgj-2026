@@ -7,9 +7,9 @@ signal landed
 @export var held_texture: Texture2D
 
 var on_floor := true
+var in_hat := false
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	super(delta)
 	if is_on_floor():
@@ -21,5 +21,16 @@ func _process(delta: float) -> void:
 
 	if is_grabbed:
 		sprite.texture = held_texture
-	elif on_floor:
+	elif on_floor and not in_hat:
 		sprite.texture = sitting_texture
+
+
+func enter_hat() -> void:
+	if in_hat:
+		return
+	in_hat = true
+	visible = false
+	collision_layer &= ~0x02
+	# var tween := create_tween()
+	# tween.tween_property(self, "scale", Vector3.ONE * 0.5, 0.2)
+	# position.y -= 0.1
