@@ -50,7 +50,11 @@ func _load_next_act():
 	current_level = Levels.get_level_by_index(current_index).instantiate()
 
 func _load_end_screen():
-	current_level = Levels.get_end_screen().instantiate()
+	if Levels.get_end_screen():
+		current_level = Levels.get_end_screen().instantiate()
+	else:
+		current_level = Levels.get_main_menu().instantiate()
+	current_index = -1
 
 
 # -- Transition Handling --

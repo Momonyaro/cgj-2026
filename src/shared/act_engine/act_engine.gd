@@ -26,6 +26,8 @@ func _enter_tree() -> void:
 
 func _ready():
 	finished.connect(print.bind("Act Finished! (%dms)" % (Time.get_ticks_msec() - _time_started_ms)))
+	finished.connect(Stage.level_loader.load_next)
+	
 	assert(act and act.events.size() > 0)	
 	_start_act()
 

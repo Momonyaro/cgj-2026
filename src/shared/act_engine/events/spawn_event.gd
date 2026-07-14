@@ -24,7 +24,7 @@ func execute():
 	if parent:
 		spawner.add_child(node)
 	else:
-		spawner.get_tree().current_scene.add_child(node)
+		Stage.level_loader.current_level.add_child(node)
 		
 	if "position" in node:
 		if local and parent:
