@@ -44,6 +44,15 @@ albedo_color = Color(0.29219002, 0.29219005, 0.29219002, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_a1n5f"]
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_puyty"]
+plane = Plane(0, -1, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_itwdx"]
+plane = Plane(1, 0, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_paren"]
+plane = Plane(-1, 0, 0, 0)
+
 [node name="Stage" type="Node3D" unique_id=1423160689]
 script = ExtResource("1_puyty")
 
@@ -92,7 +101,6 @@ transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1
 
 [node name="Audience" parent="." unique_id=1273790735 instance=ExtResource("4_43xs6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.832387)
-excitement = 0.044
 
 [node name="Locale" type="CSGCombiner3D" parent="." unique_id=840872006]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
@@ -217,11 +225,34 @@ material = SubResource("StandardMaterial3D_y8ixn")
 [node name="stage" parent="." unique_id=453809629 instance=ExtResource("5_j58fr")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1)
 
-[node name="StageFloor" type="StaticBody3D" parent="." unique_id=1697756891]
+[node name="StageBoundaries" type="Node3D" parent="." unique_id=1188043674]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StageFloor" unique_id=1133586769]
+[node name="Floor" type="StaticBody3D" parent="StageBoundaries" unique_id=1697756891]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StageBoundaries/Floor" unique_id=1133586769]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.997733, 0)
 shape = SubResource("WorldBoundaryShape3D_a1n5f")
+
+[node name="Ceiling" type="StaticBody3D" parent="StageBoundaries" unique_id=687439174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7316904, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StageBoundaries/Ceiling" unique_id=1380267157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.997733, 0)
+shape = SubResource("WorldBoundaryShape3D_puyty")
+
+[node name="WallLeft" type="StaticBody3D" parent="StageBoundaries" unique_id=454922132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.436491, 6.7316904, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StageBoundaries/WallLeft" unique_id=2043601504]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.997733, 0)
+shape = SubResource("WorldBoundaryShape3D_itwdx")
+
+[node name="WallRight" type="StaticBody3D" parent="StageBoundaries" unique_id=1357294683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.436, 6.732, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StageBoundaries/WallRight" unique_id=517201991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.997733, 0)
+shape = SubResource("WorldBoundaryShape3D_paren")
 
 [node name="Bunny" parent="." unique_id=2104088067 instance=ExtResource("7_804oe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.010597, 0.98654866, 0)
