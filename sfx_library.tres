@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://di40q14bljfrj" path="res://src/shared/sfx/audience/applause_stinger_3.mp3" id="5_338p1"]
 [ext_resource type="AudioStream" uid="uid://b4c6om47lftka" path="res://src/shared/sfx/audience/shock_stinger_0.mp3" id="6_hjad4"]
 [ext_resource type="AudioStream" uid="uid://phdudgno371t" path="res://src/shared/sfx/button_click.mp3" id="7_reg48"]
+[ext_resource type="AudioStream" uid="uid://cwg5i21b30ehy" path="res://src/shared/sfx/curtain_pull.mp3" id="8_niaxf"]
 
 [resource]
 script = ExtResource("1_r2xrk")
@@ -17,6 +18,7 @@ _items = Dictionary[String, AudioStream]({
 "applause_2": ExtResource("5_338p1"),
 "boo_0": ExtResource("1_v02ji"),
 "button_click": ExtResource("7_reg48"),
+"curtain_pull": ExtResource("8_niaxf"),
 "murmur_looping": ExtResource("2_reg48"),
 "shock_0": ExtResource("6_hjad4")
 })
