@@ -9,7 +9,7 @@ signal loaded_next
 @export var curtain_controller: CurtainController = null
 @export var curtain_trans_close_durr := 1.
 @export var curtain_rest_durr := 1.
-@export var curtain_close_durr := 1.
+@export var curtain_close_durr := 2.
 
 var curtain_tween: Tween
 

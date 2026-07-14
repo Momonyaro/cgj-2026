@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://eeixomoxrvfy" path="res://src/shared/magician/test_img_1.png" id="5_wk2ln"]
 [ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="res://src/shared/act_engine/events/wait_expression_event.gd" id="6_lrs6a"]
 [ext_resource type="Script" uid="uid://dlxwxd3ua60y4" path="res://src/shared/act_engine/events/captivate_event.gd" id="7_wk2ln"]
+[ext_resource type="Script" uid="uid://4gi3mbocwio5" path="res://src/shared/act_engine/events/spawn_event.gd" id="8_11xvn"]
 
 [sub_resource type="Resource" id="Resource_wk2ln"]
 script = ExtResource("6_lrs6a")
@@ -49,7 +50,15 @@ script = ExtResource("2_5bjvv")
 duration = 0.5
 metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
+[sub_resource type="Resource" id="Resource_25cp6"]
+script = ExtResource("8_11xvn")
+scene = "uid://ba51fdvs8604o"
+local = false
+spawn_from = NodePath("../Magician")
+spawn_position = Vector3(1.5, 1.25, 0)
+metadata/_custom_type_script = "uid://4gi3mbocwio5"
+
 [resource]
 script = ExtResource("2_0p13b")
-events = Array[ExtResource("1_56n7f")]([SubResource("Resource_wk2ln"), SubResource("Resource_5bjvv"), SubResource("Resource_6i72p"), SubResource("Resource_lrs6a"), SubResource("Resource_11xvn"), SubResource("Resource_8qkce"), SubResource("Resource_1l6yu"), SubResource("Resource_vne4c")])
+events = Array[ExtResource("1_56n7f")]([SubResource("Resource_wk2ln"), SubResource("Resource_5bjvv"), SubResource("Resource_6i72p"), SubResource("Resource_lrs6a"), SubResource("Resource_11xvn"), SubResource("Resource_8qkce"), SubResource("Resource_1l6yu"), SubResource("Resource_vne4c"), SubResource("Resource_25cp6")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"

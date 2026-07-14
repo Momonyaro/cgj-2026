@@ -14,7 +14,7 @@ const Magician := preload("res://src/shared/magician/magician.gd")
 var act_events: Array[ActEvent] = []
 
 var _time_started_ms := 0
-
+var _current_event: ActEvent
 
 func _ready():
 	finished.connect(print.bind("Act Finished! (%dms)" % (Time.get_ticks_msec() - _time_started_ms)))
@@ -26,27 +26,38 @@ func execute_event(event: ActEvent):
 		var next = act_events.pop_front()
 		event.finished.connect(func(): execute_event(next), CONNECT_ONE_SHOT)
 	else:
-		event.finished.connect(func(): finished.emit(), CONNECT_ONE_SHOT)
+		event.finished.connect(_finish, CONNECT_ONE_SHOT)
 		if loop:
 			_start_act(event)
 			return
 
+	_current_event = event
 	event.execute()
+
+func append_events(events: Array[ActEvent]):
+	act_events.append_array(events)
+	if _current_event.finished.is_connected(_finish):
+		_current_event.finished.disconnect(_finish)
+	_current_event.finished.connect(func(): execute_event(events[0]), CONNECT_ONE_SHOT)
+
 
 func _start_act(starting_event: ActEvent = null):
 	_time_started_ms = Time.get_ticks_msec()
 	act_events = act.events.duplicate()
-	_bind_events()
+	_bind_events(act_events)
 	
 	if starting_event != null:
 		execute_event(starting_event)
 	else:
 		execute_event(act_events.pop_front())
-		
+
+
+func _finish():
+	finished.emit()
 
 # -- Bindings --
-func _bind_events():
-	for event in act_events:
+func _bind_events(events):
+	for event in events:
 		match event.get_type():
 			ActEvent.WALK:
 				_bind_walk_event(event)

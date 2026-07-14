@@ -5,5 +5,6 @@ func _enter_tree():
 
 func play():
 	Stage.level_loader.load_next()
+	$LogoTransitionOut.play("trans_out")
 	SFX.play("button_click")
 	SFX.fade_out("murmur_looping") # Fade out audience talking
