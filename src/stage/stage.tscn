@@ -16,7 +16,6 @@ ambient_light_color = Color(0.38848484, 0.26115263, 0.26058978, 1)
 ambient_light_energy = 2.1
 tonemap_mode = 2
 tonemap_exposure = 0.62
-ssao_enabled = true
 ssao_radius = 2.5
 ssao_intensity = 4.4
 fog_light_color = Color(0.2549238, 0.27963123, 0.3180747, 1)

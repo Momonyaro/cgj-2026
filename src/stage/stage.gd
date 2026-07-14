@@ -1,12 +1,17 @@
 extends Node
 class_name Stage
 
+const Audience = preload("res://src/shared/audience/audience.gd")
+
 static var _singleton: Stage
 
 static var level_loader: LevelLoader:
 	get(): return _singleton._level_loader
+static var audience: Audience:
+	get(): return _singleton._audience
 
 var _level_loader: LevelLoader = null
+var _audience: Audience = null
 
 
 func _enter_tree():
@@ -17,3 +22,4 @@ func _enter_tree():
 
 func _ready():
 	_level_loader = $LevelLoader
+	_audience = $"Audience"

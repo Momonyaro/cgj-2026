@@ -58,6 +58,8 @@ func _bind_events():
 				_bind_spawn_event(event)
 			ActEvent.WAIT_EXPRESSION:
 				_bind_condition_event(event)
+			ActEvent.CAPTIVATE:
+				_bind_captivate_event(event)
 
 func _bind_walk_event(event: WalkEvent):
 	event.magician = magician
@@ -76,3 +78,6 @@ func _bind_condition_event(event: WaitExpressionEvent):
 	event.context = self
 	event.input_names = ["Stage"]
 	event.inputs = [Stage]
+
+func _bind_captivate_event(_event: CaptivateEvent):
+	pass
