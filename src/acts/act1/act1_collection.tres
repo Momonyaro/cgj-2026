@@ -56,14 +56,26 @@ scene = "uid://ba51fdvs8604o"
 local = false
 spawn_from = NodePath("../Magician")
 spawn_position = Vector3(1.5, 1.25, 0)
+metadata = Dictionary[StringName, Variant]({
+&"hat": true
+})
 metadata/_custom_type_script = "uid://4gi3mbocwio5"
 
 [sub_resource type="Resource" id="Resource_7g122"]
 script = ExtResource("6_lrs6a")
-expression = "!act_events.is_empty()"
+expression = "find_hat().is_full"
 metadata/_custom_type_script = "uid://1qnl6sg2gebf"
+
+[sub_resource type="Resource" id="Resource_0v2vy"]
+script = ExtResource("4_lrs6a")
+next_sprite = ExtResource("5_wk2ln")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
+
+[sub_resource type="Resource" id="Resource_p1c7k"]
+script = ExtResource("2_5bjvv")
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
 [resource]
 script = ExtResource("2_0p13b")
-events = Array[ExtResource("1_56n7f")]([SubResource("Resource_wk2ln"), SubResource("Resource_5bjvv"), SubResource("Resource_6i72p"), SubResource("Resource_lrs6a"), SubResource("Resource_11xvn"), SubResource("Resource_8qkce"), SubResource("Resource_1l6yu"), SubResource("Resource_vne4c"), SubResource("Resource_25cp6"), SubResource("Resource_7g122")])
+events = Array[ExtResource("1_56n7f")]([SubResource("Resource_wk2ln"), SubResource("Resource_5bjvv"), SubResource("Resource_6i72p"), SubResource("Resource_lrs6a"), SubResource("Resource_11xvn"), SubResource("Resource_8qkce"), SubResource("Resource_1l6yu"), SubResource("Resource_vne4c"), SubResource("Resource_25cp6"), SubResource("Resource_7g122"), SubResource("Resource_0v2vy"), SubResource("Resource_p1c7k")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"

@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cshjplosaguh6" path="res://src/shared/act_engine/events/swap_event.gd" id="3_8ymad"]
 [ext_resource type="Script" uid="uid://dlxwxd3ua60y4" path="res://src/shared/act_engine/events/captivate_event.gd" id="4_i5uj8"]
 [ext_resource type="Script" uid="uid://bxsl188rk2b50" path="res://src/shared/act_engine/act_collection.gd" id="5_3xtr7"]
+[ext_resource type="Script" uid="uid://b13mrlxyyg60r" path="res://src/shared/act_engine/events/wait_event.gd" id="5_jude4"]
 
 [sub_resource type="Resource" id="Resource_6i72p"]
 script = ExtResource("3_8ymad")
@@ -16,7 +17,12 @@ script = ExtResource("4_i5uj8")
 captivate = 1.0
 metadata/_custom_type_script = "uid://dlxwxd3ua60y4"
 
+[sub_resource type="Resource" id="Resource_25fxb"]
+script = ExtResource("5_jude4")
+duration = 2.0
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
 [resource]
 script = ExtResource("5_3xtr7")
-events = Array[ExtResource("1_qewne")]([SubResource("Resource_6i72p"), SubResource("Resource_lrs6a")])
+events = Array[ExtResource("1_qewne")]([SubResource("Resource_6i72p"), SubResource("Resource_lrs6a"), SubResource("Resource_25fxb")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"

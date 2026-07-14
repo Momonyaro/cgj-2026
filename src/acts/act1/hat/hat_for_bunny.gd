@@ -6,6 +6,7 @@ const Bunny := preload("res://src/acts/act1/bunny/bunny.gd")
 const BunnyInHat = preload("res://src/acts/act1/act1_bunny_in_hat.tres")
 const BunnyNotInHat = preload("res://src/acts/act1/act1_bunny_not_in_hat.tres")
 
+var is_full := false
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is not GrabbableItem:
@@ -21,3 +22,4 @@ func _on_body_entered(body: Node3D) -> void:
 		else:
 			if ActEngine.singleton:
 				ActEngine.singleton.append_events(BunnyNotInHat.events)
+		is_full = true

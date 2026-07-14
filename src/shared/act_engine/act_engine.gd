@@ -14,6 +14,7 @@ static var singleton: ActEngine = null
 @export var magician: Magician = null
 
 var act_events: Array[ActEvent] = []
+var spawned := []
 
 var _time_started_ms := 0
 var _current_event: ActEvent
@@ -35,8 +36,7 @@ func _ready():
 # -- API --
 func execute_event(event: ActEvent):
 	if act_events.size() > 0:
-		var next = act_events.pop_front()
-		event.finished.connect(func(): execute_event(next), CONNECT_ONE_SHOT)
+		event.finished.connect(func(): execute_event(act_events.pop_front()), CONNECT_ONE_SHOT)
 	else:
 		event.finished.connect(_finish, CONNECT_ONE_SHOT)
 		if loop:
@@ -47,12 +47,10 @@ func execute_event(event: ActEvent):
 	event.execute()
 
 func append_events(new_events: Array[ActEvent]):
-	var target_index := act_events.find(_current_event) if !act_events.is_empty() else 0
-	act_events = act_events.slice(0, target_index) + new_events.duplicate() + act_events.slice(target_index)
+	act_events = new_events.duplicate() + act_events
 	_bind_events(act_events)
 	
-	if _current_event.finished.is_connected(_finish):
-		_current_event.finished.disconnect(_finish)
+	disconnect_all_from_signal(_current_event.finished)
 	
 	var next = act_events.pop_front()
 	_current_event.finished.connect(func(): execute_event(next), CONNECT_ONE_SHOT)
@@ -101,7 +99,7 @@ func _bind_wait_event(event: WaitEvent):
 	event.timer_spawner = self
 
 func _bind_spawn_event(event: SpawnEvent):
-	event.root = self
+	event.engine = self
 
 func _bind_condition_event(event: WaitExpressionEvent):
 	event.context = self
@@ -110,3 +108,17 @@ func _bind_condition_event(event: WaitExpressionEvent):
 
 func _bind_captivate_event(_event: CaptivateEvent):
 	pass
+
+# -- Helpers
+func disconnect_all_from_signal(sig: Signal):
+	for connection in sig.get_connections():
+		sig.disconnect(connection.callable)
+
+func find_first(arr: Array, condition: Callable) -> Variant:
+	for item in arr:
+		if condition.call(item):
+			return item
+	return null
+
+func find_hat() -> Variant:
+	return find_first(spawned, func(o): return o.has_meta("hat"))
