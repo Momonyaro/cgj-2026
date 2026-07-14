@@ -220,4 +220,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.997733, 0)
 shape = SubResource("WorldBoundaryShape3D_a1n5f")
 
 [node name="Bunny" parent="." unique_id=2104088067 instance=ExtResource("7_804oe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.971464, 1.7394109, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.010597, 0.98654866, 0)
+
+[editable path="Bunny"]
