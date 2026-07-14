@@ -5,6 +5,7 @@ extends Node
 var _sfx_library: AudioLibraryResource
 var _initialized: bool
 var _stream_lookup: Dictionary
+var _fadeout_streams: Dictionary
 
 # ---- Godot Events ---
 
@@ -25,6 +26,22 @@ func _enter_tree() -> void:
 		printerr("Could not find sound library resource, please add a sfx_library.tres to project root or in project settings.")
 		return
 
+func _process(delta: float):
+	var stream = _get_active_stream()
+	if stream == null:
+		return
+	
+	for key in _fadeout_streams.keys():
+		if stream.is_stream_playing(key):
+			_fadeout_streams[key] = maxf(_fadeout_streams[key] - delta * 0.75, 0)
+			var volume_db = lerpf(-12, 0, _fadeout_streams[key])
+			stream.set_stream_volume(key, volume_db)
+			if _fadeout_streams[key] == 0:
+				_fadeout_streams.erase(key)
+				stream.stop_stream(key)
+		else:
+			_fadeout_streams.erase(key)
+
 # ---- Public Functions ----
 	
 func play(key: String) -> void:
@@ -40,6 +57,11 @@ func stop(key: String) -> void:
 	var stream := _get_active_stream()
 	if _stream_lookup.has(key):
 		stream.stop_stream(_stream_lookup[key])
+		_stream_lookup.erase(key)
+
+func fade_out(key: String) -> void:
+	if _stream_lookup.has(key):
+		_fadeout_streams[_stream_lookup[key]] = 1.0
 		_stream_lookup.erase(key)
 
 # NOTE: Figure out where in the scenetree to place the resulting nodes.
