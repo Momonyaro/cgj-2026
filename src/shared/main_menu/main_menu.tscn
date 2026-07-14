@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cc4i3boaqjvos"]
+
+[ext_resource type="Texture2D" uid="uid://1ethcmosca3e" path="res://src/shared/main_menu/logo_0.png" id="1_s1dq0"]
+[ext_resource type="Texture2D" uid="uid://c3loy6qpiyuat" path="res://src/shared/main_menu/logo_1.png" id="2_trwwb"]
+[ext_resource type="FontFile" uid="uid://dhdfnm4agkxmd" path="res://src/shared/fonts/Deanna.ttf" id="3_nf76s"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_40gng"]
+frames = 2
+frame_0/texture = ExtResource("1_s1dq0")
+frame_1/texture = ExtResource("2_trwwb")
+frame_1/duration = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_40gng"]
+font = ExtResource("3_nf76s")
+font_size = 42
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="CanvasLayer" unique_id=1030135940]
+layer = 20
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1731572609]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -440.0
+offset_top = 32.0
+offset_right = 450.9082
+offset_bottom = 378.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0)
+texture = SubResource("AnimatedTexture_40gng")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1002431046]
+layout_mode = 0
+offset_left = 494.5459
+offset_top = 272.0
+offset_right = 745.5459
+offset_bottom = 320.0
+text = "A Blindtree game"
+label_settings = SubResource("LabelSettings_40gng")
