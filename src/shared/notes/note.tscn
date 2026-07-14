@@ -1,11 +1,23 @@
 [gd_scene format=3 uid="uid://b776vcixoys55"]
 
-[ext_resource type="Texture2D" uid="uid://ctcvxl7t0tiyh" path="res://src/shared/notes/note_background.png" id="2_g4qow"]
+[ext_resource type="Script" uid="uid://cu18s556dnf3a" path="res://src/shared/notes/note.gd" id="1_g4qow"]
+[ext_resource type="Material" uid="uid://dn0wpxpvf5h7t" path="res://src/shared/notes/note_material.tres" id="2_rsgwc"]
+[ext_resource type="ArrayMesh" uid="uid://cik2hkx44txr2" path="res://src/shared/notes/paper.obj" id="2_tn3yp"]
 
-[node name="Note" type="Sprite3D" unique_id=103506030]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.82, 0, 0, 0)
-sorting_offset = 0.1
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0spl"]
+cull_mode = 2
 
-[node name="NoteBackground" type="Sprite3D" parent="." unique_id=1222959225]
-transparent = false
-texture = ExtResource("2_g4qow")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rsgwc"]
+transparency = 1
+
+[node name="Note" type="Node3D" unique_id=312576623 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+script = ExtResource("1_g4qow")
+mesh_instance = NodePath("Paper")
+base_material = ExtResource("2_rsgwc")
+
+[node name="Paper" type="MeshInstance3D" parent="." unique_id=1093741953]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.11626096, 0, 0.86173177)
+material_override = SubResource("StandardMaterial3D_y0spl")
+material_overlay = SubResource("StandardMaterial3D_rsgwc")
+mesh = ExtResource("2_tn3yp")

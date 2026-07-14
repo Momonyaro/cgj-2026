@@ -124,7 +124,7 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -
 shape = SubResource("SphereShape3D_sl7vg")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=595624532]
-transform = Transform3D(1, 0, 0, 0, 0.93295354, 0.3599968, 0, -0.3599968, 0.93295354, 0, 5.225, 11.252)
+transform = Transform3D(1, 0, 0, 0, 0.99425566, 0.10703081, 0, -0.10703081, 0.99425566, 0, 3.0684555, 6.1364584)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1034324891]
 environment = ExtResource("2_qji5j")
@@ -148,7 +148,7 @@ time = 1.0
 amount = 2.0
 
 [node name="HatForBunny" parent="." unique_id=883983318 instance=ExtResource("9_k2h86")]
-transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 8.441951, 0.6861434, 0)
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 4.1778646, 0.30847198, 0)
 
 [node name="Note" parent="." unique_id=103506030 instance=ExtResource("10_sonte")]
 transform = Transform3D(0.24351037, 0, 0, 0, 0.24351037, 0, 0, 0, 1, -1.9072133, 0.1355995, -9.536743e-07)
