@@ -4,6 +4,7 @@ extends Node
 
 var _sfx_library: AudioLibraryResource
 var _initialized: bool
+var _stream_lookup: Dictionary
 
 # ---- Godot Events ---
 
@@ -28,8 +29,18 @@ func _enter_tree() -> void:
 	
 func play(key: String) -> void:
 	var stream := _get_active_stream()
-	stream.play_stream(_sfx_library.get_item(key), 0, 0, randf_range(0.99, 1.01))
-	pass
+	var play_index = stream.play_stream(_sfx_library.get_item(key), 0, 0, randf_range(0.99, 1.01))
+	
+	for existing in _stream_lookup.keys():
+		if _stream_lookup[existing] == play_index:
+			_stream_lookup.erase(existing) # Duplicate entry, this stream will be dead
+	_stream_lookup[key] = play_index
+
+func stop(key: String) -> void:
+	var stream := _get_active_stream()
+	if _stream_lookup.has(key):
+		stream.stop_stream(_stream_lookup[key])
+		_stream_lookup.erase(key)
 
 # NOTE: Figure out where in the scenetree to place the resulting nodes.
 func play_positional_2d(key: String, position: Vector2) -> void:
