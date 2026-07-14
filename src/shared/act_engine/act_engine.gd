@@ -29,7 +29,7 @@ func execute_event(event: ActEvent):
 	event.execute()
 
 
-# -- Set Bindings --
+# -- Bindings --
 func _bind_events():
 	for event in act_events:
 		match event.get_type():
@@ -39,6 +39,8 @@ func _bind_events():
 				_bind_swap_event(event)
 			ActEvent.WAIT:
 				_bind_wait_event(event)
+			ActEvent.SPAWN:
+				_bind_spawn_event(event)
 
 func _bind_walk_event(event: WalkEvent):
 	event.magician = magician
@@ -49,3 +51,6 @@ func _bind_swap_event(event: SwapEvent):
 
 func _bind_wait_event(event: WaitEvent):
 	event.timer_spawner = self
+
+func _bind_spawn_event(event: SpawnEvent):
+	event.root = self
