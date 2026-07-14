@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://bdikod1okhnrq" path="res://src/shared/interactables/grabbable_item.gd" id="3_sl7vg"]
 [ext_resource type="Script" uid="uid://bexljowsux72e" path="res://src/shared/interactables/windable_item.gd" id="4_iybb1"]
 [ext_resource type="PackedScene" uid="uid://idhdvq5d4t17" path="res://src/acts/act1/bunny/bunny.tscn" id="4_r5hf4"]
+[ext_resource type="Texture2D" uid="uid://b35dpwamaqcj4" path="res://src/acts/act1/bunny/bunny_sitting.png" id="7_pu1pi"]
+[ext_resource type="Script" uid="uid://ddll3vaiwqhtm" path="res://src/shared/vfx/sprite_bouncer.gd" id="8_c65ag"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a1n5f"]
 
@@ -130,3 +132,16 @@ environment = ExtResource("2_qji5j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1081231145]
 shape = SubResource("WorldBoundaryShape3D_sl7vg")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1433137858]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.4698467, 0, 0)
+
+[node name="BouncyBunny" type="Sprite3D" parent="Node3D" unique_id=1751422872]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1, 0, 0, 0)
+texture = ExtResource("7_pu1pi")
+
+[node name="SpriteBouncer" type="Node" parent="Node3D/BouncyBunny" unique_id=1452381395 node_paths=PackedStringArray("sprite")]
+script = ExtResource("8_c65ag")
+sprite = NodePath("..")
+time = 1.0
+amount = 2.0

@@ -1,6 +1,9 @@
 class_name GrabbableItem
 extends RigidBody3D
 
+signal grabbed
+signal released
+
 @export var grab_point: Node3D
 
 var is_grabbed: bool
@@ -28,9 +31,11 @@ func grab(p_cursor: Cursor) -> void:
 	is_grabbed = true
 	freeze = true
 	cursor = p_cursor
+	grabbed.emit()
 
 
 func ungrab(_cursor: Cursor) -> void:
 	is_grabbed = false
 	freeze = false
 	linear_velocity = linear_velocity.limit_length(MAX_SPEED)
+	released.emit()
