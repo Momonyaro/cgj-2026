@@ -35,7 +35,7 @@ func grab(p_cursor: Cursor) -> void:
 	cursor = p_cursor
 	grabbed.emit()
 	if Stage._singleton:
-		Stage.audience.excitement += .1
+		Stage.audience.excite(.1, false)
 
 
 func ungrab(_cursor: Cursor) -> void:
@@ -44,7 +44,7 @@ func ungrab(_cursor: Cursor) -> void:
 	linear_velocity = linear_velocity.limit_length(MAX_THROW_SPEED)
 	released.emit()
 	if Stage._singleton:
-		Stage.audience.excitement -= .1
+		Stage.audience.bore(.1, false)
 
 
 func enter_hat() -> void:

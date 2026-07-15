@@ -7,5 +7,8 @@ func get_type() -> int:
 	return CAPTIVATE
 
 func execute():
-	Stage.audience.excitement += captivate
+	if captivate < 0:
+		Stage.audience.bore(abs(captivate))
+	else:
+		Stage.audience.excite(captivate)
 	finished.emit()
