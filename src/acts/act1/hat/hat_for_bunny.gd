@@ -17,11 +17,11 @@ func _on_body_entered(body: Node3D) -> void:
 		anything_entered.emit()
 		SFX.play("eat_up")
 		if grabbable is Bunny:
-			ScoreManager.add_score(100)
+			ScoreManager.add_score(92)
 			if ActEngine.singleton:
 				ActEngine.singleton.append_events(BunnyInHat.events)
 		else:
-			ScoreManager.add_score(20)
+			ScoreManager.add_score(16)
 			if ActEngine.singleton:
 				ActEngine.singleton.append_events(BunnyNotInHat.events)
 		is_full = true
