@@ -1,16 +1,25 @@
 [gd_resource type="Resource" script_class="ActCollection" format=3 uid="uid://cam3kywsxc2ic"]
 
 [ext_resource type="Script" uid="uid://5nkn7cxwp168" path="res://src/shared/act_engine/events/act_event.gd" id="1_qewne"]
+[ext_resource type="Texture2D" uid="uid://c8mgkijd44tr1" path="res://src/shared/magician/art/wizard_hold_contents_alt.png" id="2_8ymad"]
 [ext_resource type="Texture2D" uid="uid://chyem2ekhb75v" path="res://src/shared/magician/art/wizard_hold_contents.png" id="2_jude4"]
 [ext_resource type="Script" uid="uid://cshjplosaguh6" path="res://src/shared/act_engine/events/swap_event.gd" id="3_8ymad"]
+[ext_resource type="Script" uid="uid://4gi3mbocwio5" path="res://src/shared/act_engine/events/spawn_event.gd" id="4_8ymad"]
 [ext_resource type="Script" uid="uid://dlxwxd3ua60y4" path="res://src/shared/act_engine/events/captivate_event.gd" id="4_i5uj8"]
 [ext_resource type="Script" uid="uid://bxsl188rk2b50" path="res://src/shared/act_engine/act_collection.gd" id="5_3xtr7"]
 [ext_resource type="Script" uid="uid://b13mrlxyyg60r" path="res://src/shared/act_engine/events/wait_event.gd" id="5_jude4"]
 
 [sub_resource type="Resource" id="Resource_8ymad"]
 script = ExtResource("3_8ymad")
-next_sprite = ExtResource("2_jude4")
+next_sprite = ExtResource("2_8ymad")
 metadata/_custom_type_script = "uid://cshjplosaguh6"
+
+[sub_resource type="Resource" id="Resource_0v2vy"]
+script = ExtResource("4_8ymad")
+scene = "uid://dmb1onn7ve5k6"
+spawn_from = NodePath("Magician")
+spawn_position = Vector3(1, 5.25, 0)
+metadata/_custom_type_script = "uid://4gi3mbocwio5"
 
 [sub_resource type="Resource" id="Resource_lrs6a"]
 script = ExtResource("4_i5uj8")
@@ -22,7 +31,24 @@ script = ExtResource("5_jude4")
 duration = 2.0
 metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
+[sub_resource type="Resource" id="Resource_i5uj8"]
+script = ExtResource("3_8ymad")
+next_sprite = ExtResource("2_jude4")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
+
+[sub_resource type="Resource" id="Resource_3xtr7"]
+script = ExtResource("4_8ymad")
+scene = "uid://dmb1onn7ve5k6"
+spawn_from = NodePath("Magician")
+spawn_position = Vector3(-0.95, 5.5, 0)
+metadata/_custom_type_script = "uid://4gi3mbocwio5"
+
+[sub_resource type="Resource" id="Resource_2pgwp"]
+script = ExtResource("5_jude4")
+duration = 2.0
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
 [resource]
 script = ExtResource("5_3xtr7")
-events = Array[ExtResource("1_qewne")]([SubResource("Resource_8ymad"), SubResource("Resource_lrs6a"), SubResource("Resource_25fxb")])
+events = Array[ExtResource("1_qewne")]([SubResource("Resource_8ymad"), SubResource("Resource_0v2vy"), SubResource("Resource_lrs6a"), SubResource("Resource_25fxb"), SubResource("Resource_i5uj8"), SubResource("Resource_3xtr7"), SubResource("Resource_2pgwp")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"

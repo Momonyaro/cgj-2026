@@ -8,6 +8,7 @@ class_name SpawnEvent
 @export_node_path var spawn_from: NodePath = ""
 
 @export var spawn_position := Vector3.ZERO
+@export var track_spawned_node := true
 @export var metadata: Dictionary[StringName, Variant] = {}
 
 # -- Binds --
@@ -17,15 +18,17 @@ func get_type() -> int:
 	return SPAWN
 
 func execute():
+	var scene_root := Stage.level_loader.current_level
 	var node := (load(scene) as PackedScene).instantiate()
-	var spawner := engine.get_node(spawn_from)
+	
+	var spawner := scene_root.get_node(spawn_from)
 	
 	assert(spawner, str(spawn_from.get_concatenated_names()))
 
 	if parent:
 		spawner.add_child(node)
 	else:
-		Stage.level_loader.current_level.add_child(node)
+		scene_root.add_child(node)
 		
 	if "position" in node:
 		if local and parent:
@@ -38,6 +41,7 @@ func execute():
 	for m in metadata:
 		node.set_meta(m, metadata[m])
 
-	engine.spawned.append(node)
+	if track_spawned_node:
+		engine.spawned.append(node)
 	
 	finished.emit()

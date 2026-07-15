@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dmb1onn7ve5k6"]
+
+[ext_resource type="Texture2D" uid="uid://ohfoyyhib6xx" path="res://src/acts/act1/bunny/bunny_held.png" id="1_0yrey"]
+
+[node name="FakeBunny" type="Node3D" unique_id=250825159]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=988823006]
+transform = Transform3D(0.05048913, 0, 0, 0, 0.05048913, 0, 0, 0, 0.050000004, 0, 0.29283693, 0)
+layers = 3
+cast_shadow = 2
+modulate = Color(0, 0, 0, 1)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("1_0yrey")
