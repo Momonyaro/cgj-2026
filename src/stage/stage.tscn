@@ -71,6 +71,15 @@ shadow_enabled = true
 shadow_caster_mask = 4294967265
 omni_range = 30.903
 
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=870507918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.174325, 2.5865843)
+layers = 32
+light_color = Color(0.95678145, 0.7792791, 0.47930777, 1)
+light_energy = 1.5
+light_cull_mask = 4294967293
+shadow_caster_mask = 4294967265
+omni_range = 30.903
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1922488885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5)
 keep_aspect = 0
@@ -260,7 +269,7 @@ script = ExtResource("8_pvnpy")
 curtain_controller = NodePath("../VerletCurtains")
 
 [node name="NotesBoard" parent="." unique_id=322694326 instance=ExtResource("10_itwdx")]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -3.047891, 3.133942, 1.0292127)
+transform = Transform3D(0.955596, 0, 0.2946802, 0, 1, 0, -0.2946802, 0, 0.955596, -1.7335982, 2.831692, 1.4808797)
 
 [node name="SharedProps" parent="." unique_id=1525609911 instance_placeholder="res://src/shared/interactables/shared_props.tscn"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.227703, 1.1640415, 0)

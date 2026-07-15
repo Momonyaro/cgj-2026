@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cu18s556dnf3a" path="res://src/shared/notes/note.gd" id="1_g4qow"]
 [ext_resource type="Material" uid="uid://dn0wpxpvf5h7t" path="res://src/shared/notes/note_material.tres" id="2_rsgwc"]
 [ext_resource type="ArrayMesh" uid="uid://cik2hkx44txr2" path="res://src/shared/notes/paper.obj" id="2_tn3yp"]
+[ext_resource type="Material" uid="uid://c8ijlchef3fpy" path="res://src/shared/notes/push_pin_material.tres" id="4_b830y"]
+[ext_resource type="ArrayMesh" uid="uid://bjh8wfputwhng" path="res://src/shared/notes/push_pin.obj" id="4_rsgwc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0spl"]
 cull_mode = 2
@@ -18,6 +20,13 @@ base_material = ExtResource("2_rsgwc")
 
 [node name="Paper" type="MeshInstance3D" parent="." unique_id=1093741953]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.116, 0, 0)
+layers = 5
 material_override = SubResource("StandardMaterial3D_y0spl")
 material_overlay = SubResource("StandardMaterial3D_rsgwc")
 mesh = ExtResource("2_tn3yp")
+
+[node name="PushPin" type="MeshInstance3D" parent="." unique_id=2086036189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2660522, 0)
+layers = 5
+material_override = ExtResource("4_b830y")
+mesh = ExtResource("4_rsgwc")

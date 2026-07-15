@@ -45,6 +45,7 @@ click={
 [layer_names]
 
 3d_render/layer_2="Spotlittable"
+3d_render/layer_3="NotesBoard"
 3d_physics/layer_2="Interactable"
 
 [physics]
