@@ -22,6 +22,7 @@ func reveal(notes_scene: PackedScene) -> void:
 	spawn_root.add_child(instantiated_notes)
 	animation.play("enter")
 	animation.animation_finished.connect(ui_root.show.unbind(1), CONNECT_ONE_SHOT)
+	SFX.play("swoosh_1")
 
 
 func dismiss() -> void:
@@ -34,3 +35,4 @@ func dismiss() -> void:
 			currently_shown = false,
 		CONNECT_ONE_SHOT,
 	)
+	SFX.play("swoosh_2")
