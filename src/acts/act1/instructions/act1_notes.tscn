@@ -4,23 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cda86ae053jgc" path="res://src/acts/act1/instructions/act1_1.png" id="2_ceiml"]
 [ext_resource type="Texture2D" uid="uid://d0codwww02qxg" path="res://src/acts/act1/instructions/act1_2.png" id="3_y6hiq"]
 [ext_resource type="Texture2D" uid="uid://dkk4d30ye35gr" path="res://src/acts/act1/instructions/act1_3.png" id="4_y6hiq"]
-[ext_resource type="Texture2D" uid="uid://cfasc037yodvf" path="res://src/shared/main_menu/button_anim_0.png" id="5_kro1j"]
-[ext_resource type="Texture2D" uid="uid://d4ttrfhpth58" path="res://src/shared/main_menu/button_anim_1.png" id="6_75xuq"]
-[ext_resource type="Texture2D" uid="uid://cms5dkkymts7g" path="res://src/shared/main_menu/button_hover.png" id="7_nne5x"]
-[ext_resource type="FontFile" uid="uid://dhdfnm4agkxmd" path="res://src/shared/fonts/Deanna.ttf" id="8_0rdl7"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_74top"]
-frames = 2
-frame_0/texture = ExtResource("5_kro1j")
-frame_1/texture = ExtResource("6_75xuq")
-frame_1/duration = 1.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_em4y7"]
-font = ExtResource("8_0rdl7")
-font_size = 72
-font_color = Color(1, 0.96862745, 0.31764707, 1)
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
 
 [node name="Act1Notes" type="Node3D" unique_id=1216771042]
 
@@ -35,43 +18,3 @@ note_texture = ExtResource("3_y6hiq")
 [node name="Note3" parent="." unique_id=1972680525 instance=ExtResource("1_yh01j")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.72737324, -0.55912656, 0)
 note_texture = ExtResource("4_y6hiq")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798899854]
-layer = -1
-
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1013928145]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 705.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=375715411]
-layout_mode = 2
-alignment = 2
-
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=741352544]
-custom_minimum_size = Vector2(250, 106)
-layout_mode = 2
-size_flags_vertical = 3
-texture_normal = SubResource("AnimatedTexture_74top")
-texture_hover = ExtResource("7_nne5x")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/TextureButton" unique_id=25262829]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -12.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Continue"
-label_settings = SubResource("LabelSettings_em4y7")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/TextureButton" to="." method="hide"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/TextureButton" to="CanvasLayer" method="hide"]

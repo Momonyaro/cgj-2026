@@ -16,11 +16,9 @@
 [node name="ActEngine" type="Node" parent="." unique_id=827167788 node_paths=PackedStringArray("magician")]
 script = ExtResource("1_a1avv")
 act = ExtResource("2_6i72p")
+notes = ExtResource("5_dwhyu")
 magician = NodePath("../Magician")
 metadata/_custom_type_script = "uid://cyvljmchtkt42"
-
-[node name="Notes" parent="." unique_id=1216771042 instance=ExtResource("5_dwhyu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.058, 1)
 
 [node name="Magician" parent="." unique_id=1219081681 instance=ExtResource("2_dr7gf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)

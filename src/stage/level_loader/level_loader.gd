@@ -1,4 +1,5 @@
 extends Node
+
 class_name LevelLoader
 
 const CurtainController := preload("res://src/stage/moving_curtains/curtain_controller.gd")
@@ -17,6 +18,7 @@ var is_loading := false
 var current_level: Node = null
 var current_index := -1
 
+
 func _ready():
 	if get_child_count() > 0:
 		push_error("Error Initializing")
@@ -28,20 +30,20 @@ func _ready():
 func load_next():
 	is_loading = true
 	await _transition_in()
-	
+
 	current_level.queue_free()
 	current_level = null
-	
+
 	if current_index < Levels.get_level_count() - 1:
 		_load_next_act()
 	else:
 		_load_end_screen()
 
 	add_child(current_level)
-	
+
 	await await_notes()
 	await _transition_out()
-	
+
 	is_loading = false
 	loaded_next.emit()
 
@@ -50,6 +52,7 @@ func load_next():
 func _load_next_act():
 	current_index += 1
 	current_level = Levels.get_level_by_index(current_index).instantiate()
+
 
 func _load_end_screen():
 	if Levels.get_end_screen():
@@ -61,7 +64,8 @@ func _load_end_screen():
 
 # -- Transition Handling --
 func _transition_in():
-	if curtain_tween && curtain_tween.is_valid(): curtain_tween.kill()
+	if curtain_tween && curtain_tween.is_valid():
+		curtain_tween.kill()
 	curtain_tween = create_tween()
 	curtain_tween.tween_property(curtain_controller, "move_amount", 1., curtain_trans_close_durr)
 	await await_curtains()
@@ -69,18 +73,17 @@ func _transition_in():
 
 
 func _transition_out():
-	if curtain_tween && curtain_tween.is_valid(): curtain_tween.kill()
+	if curtain_tween && curtain_tween.is_valid():
+		curtain_tween.kill()
 	curtain_tween = create_tween()
 	curtain_tween.tween_property(curtain_controller, "move_amount", 0., curtain_trans_close_durr)
 	await await_curtains()
 
+
 func await_notes():
-	#Todo: Don't look for the notes node this explicitly
-	if !current_level.has_node("Notes"):
-		return
-	var notes := current_level.get_node("Notes")
-	while notes.visible:
+	while Stage.notes_board.currently_shown:
 		await get_tree().process_frame
+
 
 func await_curtains():
 	await curtain_tween.finished

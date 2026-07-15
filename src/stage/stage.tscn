@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c60vnt8wabn5e" path="res://src/stage/stage.glb" id="5_j58fr"]
 [ext_resource type="PackedScene" uid="uid://c1qdgxslk1mls" path="res://src/shared/cursor/cursor.tscn" id="6_y8ixn"]
 [ext_resource type="Script" uid="uid://dmlhvbxquam8y" path="res://src/stage/level_loader/level_loader.gd" id="8_pvnpy"]
+[ext_resource type="PackedScene" uid="uid://cni3xupdf6ci8" path="res://src/shared/notes/notes_board.tscn" id="10_itwdx"]
 
 [sub_resource type="Environment" id="Environment_40gng"]
 ambient_light_source = 2
@@ -256,3 +257,6 @@ shape = SubResource("WorldBoundaryShape3D_paren")
 [node name="LevelLoader" type="Node" parent="." unique_id=132284752 node_paths=PackedStringArray("curtain_controller")]
 script = ExtResource("8_pvnpy")
 curtain_controller = NodePath("../VerletCurtains")
+
+[node name="NotesBoard" parent="." unique_id=322694326 instance=ExtResource("10_itwdx")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -3.047891, 3.133942, 0.7261529)
