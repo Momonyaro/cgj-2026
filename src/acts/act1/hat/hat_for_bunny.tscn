@@ -5,7 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cw6olnqgvqxoq" path="res://src/shared/hat.obj" id="4_q56t5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a1n5f"]
-size = Vector3(0.5099182, 0.27921104, 1)
+size = Vector3(1.0412598, 0.51389456, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0g1lo"]
 albedo_color = Color(0.02286447, 0.01694487, 0.10264983, 1)
@@ -15,7 +15,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_pxdsb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1857678218]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0067596436, 0.37706995, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0067596436, 0.7553766, 0)
 shape = SubResource("BoxShape3D_a1n5f")
 
 [node name="SpriteBouncer" type="Node" parent="." unique_id=1412350755 node_paths=PackedStringArray("sprite")]

@@ -43,9 +43,12 @@ func load_next():
 	else:
 		_load_end_screen()
 
+	print("gonna add child")
 	add_child(current_level)
+	print("child added")
 	_reset_shared_props()
 
+	print("Let's await them notes")
 	await await_notes()
 	await _transition_out()
 

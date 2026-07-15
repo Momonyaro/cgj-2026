@@ -73,7 +73,7 @@ script = ExtResource("8_11xvn")
 scene = "uid://ba51fdvs8604o"
 local = false
 spawn_from = NodePath("../Magician")
-spawn_position = Vector3(1.5, 1.25, 0)
+spawn_position = Vector3(1.5, 1, 0)
 metadata = Dictionary[StringName, Variant]({
 &"hat": true
 })

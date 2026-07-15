@@ -16,6 +16,7 @@ func _ready() -> void:
 
 
 func reveal(notes_scene: PackedScene) -> void:
+	print("revealing notes")
 	currently_shown = true
 	instantiated_notes = notes_scene.instantiate()
 	spawn_root.add_child(instantiated_notes)
