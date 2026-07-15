@@ -70,7 +70,7 @@ func stop(key: String) -> void:
 
 func stop_from_collection_and_play(key: String, collection: Array[StringName] = []):
 	for k in collection:
-		if k != key and is_playing(k):
+		if is_playing(k):
 			stop(k)
 	if !is_playing(key):
 		play(key)

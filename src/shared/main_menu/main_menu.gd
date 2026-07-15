@@ -12,6 +12,7 @@ func _unhandled_input(event):
 				print("Save Forgorgen... Whomstd've could've done this")
 
 func play():
+	ScoreManager.clear_score()
 	Stage.level_loader.load_next()
 	$LogoTransitionOut.play("trans_out")
 	SFX.play("button_click")

@@ -31,6 +31,10 @@ func add_score(points: int) -> void:
 	_score += points
 	score_changed.emit()
 
+func clear_score() -> void:
+	_score = 0
+	score_changed.emit()
+
 func set_ticker(key: String, enabled: bool) -> void:
 	var children = get_children()
 	for child in children: 
