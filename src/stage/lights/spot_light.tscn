@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmafyhpgrpmv6"]
 
-[ext_resource type="Script" uid="uid://bexljowsux72e" path="res://src/shared/interactables/windable_item.gd" id="1_c0xnc"]
+[ext_resource type="Script" uid="uid://e5yhmmajfnww" path="res://src/stage/lights/spot_light.gd" id="1_fd74t"]
 [ext_resource type="Material" uid="uid://dp2qebys78ptk" path="res://src/stage/lights/spotlight_material.tres" id="2_fd74t"]
 [ext_resource type="ArrayMesh" uid="uid://ccprhhv1x21yi" path="res://src/stage/lights/spotlight.obj" id="2_ouxt2"]
 
@@ -10,7 +10,7 @@ radius = 0.4
 
 [node name="SpotLight" type="Area3D" unique_id=1692074200]
 collision_layer = 3
-script = ExtResource("1_c0xnc")
+script = ExtResource("1_fd74t")
 min_rotation = -0.7853981633974483
 max_rotation = 0.7853981633974483
 crank_sound = "crank_light"

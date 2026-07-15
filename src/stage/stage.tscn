@@ -274,8 +274,8 @@ transform = Transform3D(0.955596, 0, 0.2946802, 0, 1, 0, -0.2946802, 0, 0.955596
 
 [node name="SharedProps" parent="." unique_id=1525609911 instance_placeholder="res://src/shared/interactables/shared_props.tscn"]
 
-[node name="SpotLight3D" parent="." unique_id=473035173 instance=ExtResource("10_paren")]
+[node name="SpotLightLeft" parent="." unique_id=473035173 instance=ExtResource("10_paren")]
 transform = Transform3D(0.965926, -0.25881907, -1.5163991e-08, 0.22414389, 0.83651626, -0.49999994, 0.12940954, 0.48296297, 0.8660254, -2.5, 5.564, 1.2627871)
 
-[node name="SpotLight3D2" parent="." unique_id=1692074200 instance=ExtResource("10_paren")]
+[node name="SpotLightRight" parent="." unique_id=1692074200 instance=ExtResource("10_paren")]
 transform = Transform3D(0.9659258, 0.258819, 0, -0.22414386, 0.8365162, -0.4999999, -0.12940952, 0.48296288, 0.8660252, 2.5, 5.564, 1.262324)
