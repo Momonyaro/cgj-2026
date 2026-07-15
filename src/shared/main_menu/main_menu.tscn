@@ -157,5 +157,38 @@ label_settings = SubResource("LabelSettings_a8f4u")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureButton" type="TextureButton" parent="." unique_id=2113260613]
+custom_minimum_size = Vector2(250, 106)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -290.0
+offset_top = -146.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 3
+texture_normal = SubResource("AnimatedTexture_a8f4u")
+texture_hover = ExtResource("7_kq7dq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=151373094]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "leave"
+label_settings = SubResource("LabelSettings_a8f4u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/TextureButton" to="." method="play"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/TextureButton" to="CenterContainer/VBoxContainer/TextureButton" method="queue_free"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_exit_game"]

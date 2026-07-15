@@ -8,3 +8,6 @@ func play():
 	$LogoTransitionOut.play("trans_out")
 	SFX.play("button_click")
 	SFX.fade_out("murmur_looping") # Fade out audience talking
+
+func _on_exit_game():
+	get_tree().quit()
