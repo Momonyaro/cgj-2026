@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dnogdjxjjjh55"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_m5462"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b66g3"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 0.29
+metallic_specular = 0.61
+roughness = 0.63
+
+[node name="FakeBomb" type="Node3D" unique_id=534958226]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=946726955]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+layers = 3
+mesh = SubResource("SphereMesh_m5462")
+surface_material_override/0 = SubResource("StandardMaterial3D_b66g3")

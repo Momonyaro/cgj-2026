@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://b3qbdihf1uret"]
+
+[ext_resource type="Script" uid="uid://cxlf11ds4vulc" path="res://src/shared/interactables/smoke_bomb/box_of_bombs/box_of_bombs.gd" id="1_7mfhn"]
+[ext_resource type="PackedScene" uid="uid://dnogdjxjjjh55" path="res://src/shared/interactables/smoke_bomb/box_of_bombs/fake_bomb.tscn" id="1_h8jic"]
+[ext_resource type="Material" uid="uid://ctt4n8k7uenw5" path="res://src/shared/interactables/smoke_bomb/box_of_bombs/Planks019_1K-JPG.tres" id="1_le07n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8jic"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_le07n"]
+material = SubResource("StandardMaterial3D_h8jic")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25acc"]
+albedo_color = Color(0.029506557, 0.029506557, 0.029506557, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_25acc"]
+material = SubResource("StandardMaterial3D_25acc")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0dtji"]
+size = Vector3(0.9000244, 0.838356, 1)
+
+[node name="BoxOBombs" type="RigidBody3D" unique_id=774316903]
+disable_mode = 1
+collision_layer = 2
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+freeze = true
+script = ExtResource("1_7mfhn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1781264686]
+transform = Transform3D(0.9, 0, 0, 0, 0.6, 0, 0, 0, 0.9, 0, 0.10655093, 0)
+layers = 3
+material_override = ExtResource("1_le07n")
+mesh = SubResource("BoxMesh_le07n")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=959202072]
+transform = Transform3D(0.75, 0, 0, 0, 0.6, 0, 0, 0, 0.75, 0, 0.109134436, 0)
+layers = 3
+mesh = SubResource("BoxMesh_25acc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1536725197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0045776367, 0.23152542, 0)
+shape = SubResource("BoxShape3D_0dtji")
+
+[node name="FakeBombs" type="Node3D" parent="." unique_id=852193876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00950861, 0.04959792, -0.006788343)
+
+[node name="FakeBomb" parent="FakeBombs" unique_id=534958226 instance=ExtResource("1_h8jic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4013021, 0)
+
+[node name="FakeBomb2" parent="FakeBombs" unique_id=167897680 instance=ExtResource("1_h8jic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12061024, 0.40933967, 0.086150244)
+
+[node name="FakeBomb3" parent="FakeBombs" unique_id=180186237 instance=ExtResource("1_h8jic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16799283, 0.39211237, -0.09261139)
+
+[node name="FakeBomb4" parent="FakeBombs" unique_id=492421766 instance=ExtResource("1_h8jic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056410804, 0.38188052, -0.2143589)
+
+[node name="FakeBomb5" parent="FakeBombs" unique_id=360311054 instance=ExtResource("1_h8jic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20638877, 0.36249673, -0.16534264)
+
+[node name="FakeBomb6" parent="FakeBombs" unique_id=79976420 instance=ExtResource("1_h8jic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20029926, 0.35603547, 0.08399643)
+
+[node name="FakeBomb7" parent="FakeBombs" unique_id=253879951 instance=ExtResource("1_h8jic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062458873, 0.35172796, 0.24122073)
+
+[node name="FakeBomb8" parent="FakeBombs" unique_id=1470878272 instance=ExtResource("1_h8jic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17230046, 0.37111175, 0.23691308)
+
+[node name="FakeBomb9" parent="FakeBombs" unique_id=1133200031 instance=ExtResource("1_h8jic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24337435, 0.35818923, 0.05599764)
+
+[node name="FakeBomb10" parent="FakeBombs" unique_id=882098697 instance=ExtResource("1_h8jic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19168425, 0.35388172, 0.21968305)
+
+[node name="FakeBomb11" parent="FakeBombs" unique_id=1661750179 instance=ExtResource("1_h8jic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17876172, 0.36895794, -0.19814542)
+
+[node name="FakeBomb12" parent="FakeBombs" unique_id=1779308377 instance=ExtResource("1_h8jic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.069086686, 0.4469061, -0.05049008)

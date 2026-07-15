@@ -29,14 +29,14 @@ func get_grabbed_position() -> Vector3:
 	return grab_point.global_position if grab_point else global_position
 
 
-func grab(p_cursor: Cursor) -> void:
+func grab(p_cursor: Cursor) -> CollisionObject3D:
 	is_grabbed = true
 	freeze = true
 	cursor = p_cursor
 	grabbed.emit()
 	if Stage._singleton:
 		Stage.audience.excite(.1, false)
-
+	return self
 
 func ungrab(_cursor: Cursor) -> void:
 	is_grabbed = false

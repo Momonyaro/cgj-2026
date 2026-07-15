@@ -37,10 +37,11 @@ func get_angle_to_hand() -> float:
 	return atan2(look_direction.y, look_direction.x)
 
 
-func grab(p_cursor: Cursor) -> void:
+func grab(p_cursor: Cursor) -> CollisionObject3D:
 	is_grabbed = true
 	cursor = p_cursor
 	prev_angle = get_angle_to_hand()
+	return self
 
 
 func ungrab(_cursor: Cursor) -> void:

@@ -5,8 +5,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-func grab(cursor: Cursor) -> void:
+func grab(cursor: Cursor) -> CollisionObject3D:
 	print("Grabbed by ", cursor)
+	return self
 
 
 func ungrab(cursor: Cursor) -> void:

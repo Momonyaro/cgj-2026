@@ -33,10 +33,9 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("click"):
 		SFX.play("grab")
 		if hovered_object and hovered_object.has_method("grab"):
-			grabbed_object = hovered_object
+			grabbed_object = hovered_object.grab(self)
 			interact_plane = Plane(Vector3.BACK, grabbed_object.global_position)
 			grab_point.position = interact_plane.intersects_ray(pos3d, normal)
-			hovered_object.grab(self)
 
 	if Input.is_action_just_released("click"):
 		SFX.play("drop")

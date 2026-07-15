@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ctt4n8k7uenw5"]
+
+[ext_resource type="Texture2D" uid="uid://d16q15opts1n2" path="res://src/shared/interactables/smoke_bomb/box_of_bombs/Planks019_1K-JPG_NormalDX.jpg" id="2_827ar"]
+[ext_resource type="Texture2D" uid="uid://cy4037172dkgd" path="res://src/shared/interactables/smoke_bomb/box_of_bombs/Planks019_1K-JPG_Color.jpg" id="Color"]
+
+[resource]
+albedo_texture = ExtResource("Color")
+normal_enabled = true
+normal_texture = ExtResource("2_827ar")

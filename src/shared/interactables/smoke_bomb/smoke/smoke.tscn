@@ -1,25 +1,52 @@
 [gd_scene format=3 uid="uid://c1quq2cyanctx"]
 
 [ext_resource type="Material" uid="uid://cbgonx1xdmnhx" path="res://src/shared/interactables/smoke_bomb/smoke/smoke2/smoke2_particle_process_material.tres" id="1_vq4xt"]
+[ext_resource type="Script" uid="uid://b1s5wea334v4l" path="res://src/shared/interactables/smoke_bomb/smoke/particle_life_time.gd" id="1_x1rvb"]
 [ext_resource type="QuadMesh" uid="uid://kpeu0oxrydj2" path="res://src/shared/interactables/smoke_bomb/smoke/smoke2/smoke2_quad_mesh.tres" id="2_vq4xt"]
 [ext_resource type="QuadMesh" uid="uid://ckjywl64h3dlg" path="res://src/shared/interactables/smoke_bomb/smoke/smoke1/smoke1_quad_mesh.tres" id="3_rsljy"]
 [ext_resource type="Material" uid="uid://ds2yaculkn6k8" path="res://src/shared/interactables/smoke_bomb/smoke/smoke1/smoke1_particle_process_material.tres" id="3_tghjs"]
 [ext_resource type="Material" uid="uid://c07uo24ph1hwy" path="res://src/shared/interactables/smoke_bomb/smoke/smoke0/smoke0_particle_process_material.tres" id="4_rsljy"]
 [ext_resource type="QuadMesh" uid="uid://coxnxjoeh5spx" path="res://src/shared/interactables/smoke_bomb/smoke/smoke0/smoke0_quad_mesh.tres" id="4_tghjs"]
 
-[node name="Smoke" type="Node3D" unique_id=573597002]
+[node name="Smoke" type="Node3D" unique_id=573597002 node_paths=PackedStringArray("particles")]
+script = ExtResource("1_x1rvb")
+particles = [NodePath("Smoke2"), NodePath("Smoke1"), NodePath("Smoke0")]
 
 [node name="Smoke2" type="GPUParticles3D" parent="." unique_id=1799910467]
+emitting = false
+one_shot = true
 explosiveness = 1.0
+use_fixed_seed = true
+seed = 1653005792
 process_material = ExtResource("1_vq4xt")
+draw_passes = 4
 draw_pass_1 = ExtResource("2_vq4xt")
+draw_pass_2 = null
+draw_pass_3 = null
+draw_pass_4 = null
 
 [node name="Smoke1" type="GPUParticles3D" parent="." unique_id=897153145]
+emitting = false
+one_shot = true
 explosiveness = 1.0
+use_fixed_seed = true
+seed = 2055945407
 process_material = ExtResource("3_tghjs")
+draw_passes = 4
 draw_pass_1 = ExtResource("3_rsljy")
+draw_pass_2 = null
+draw_pass_3 = null
+draw_pass_4 = null
 
 [node name="Smoke0" type="GPUParticles3D" parent="." unique_id=6611428]
+emitting = false
+one_shot = true
 explosiveness = 1.0
+use_fixed_seed = true
+seed = 902048599
 process_material = ExtResource("4_rsljy")
+draw_passes = 4
 draw_pass_1 = ExtResource("4_tghjs")
+draw_pass_2 = null
+draw_pass_3 = null
+draw_pass_4 = null

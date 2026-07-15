@@ -273,7 +273,6 @@ curtain_controller = NodePath("../VerletCurtains")
 transform = Transform3D(0.955596, 0, 0.2946802, 0, 1, 0, -0.2946802, 0, 0.955596, -1.7335982, 2.831692, 1.4808797)
 
 [node name="SharedProps" parent="." unique_id=1525609911 instance_placeholder="res://src/shared/interactables/shared_props.tscn"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.227703, 1.1640415, 0)
 
 [node name="SpotLight3D" parent="." unique_id=473035173 instance=ExtResource("10_paren")]
 transform = Transform3D(0.965926, -0.25881907, -1.5163991e-08, 0.22414389, 0.83651626, -0.49999994, 0.12940954, 0.48296297, 0.8660254, -2.5, 5.564, 1.2627871)
