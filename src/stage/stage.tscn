@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bsci4jei4qa8y" path="res://src/shared/audience/audience.tscn" id="4_43xs6"]
 [ext_resource type="PackedScene" uid="uid://c60vnt8wabn5e" path="res://src/stage/stage.glb" id="5_j58fr"]
 [ext_resource type="PackedScene" uid="uid://c1qdgxslk1mls" path="res://src/shared/cursor/cursor.tscn" id="6_y8ixn"]
-[ext_resource type="PackedScene" uid="uid://idhdvq5d4t17" path="res://src/acts/act1/bunny/bunny.tscn" id="7_804oe"]
 [ext_resource type="Script" uid="uid://dmlhvbxquam8y" path="res://src/stage/level_loader/level_loader.gd" id="8_pvnpy"]
 
 [sub_resource type="Environment" id="Environment_40gng"]
@@ -253,9 +252,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.436, 6.732, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StageBoundaries/WallRight" unique_id=517201991]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.997733, 0)
 shape = SubResource("WorldBoundaryShape3D_paren")
-
-[node name="Bunny" parent="." unique_id=2104088067 instance=ExtResource("7_804oe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.010597, 0.98654866, 0)
 
 [node name="LevelLoader" type="Node" parent="." unique_id=132284752 node_paths=PackedStringArray("curtain_controller")]
 script = ExtResource("8_pvnpy")

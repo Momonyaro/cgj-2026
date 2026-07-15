@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cfasc037yodvf" path="res://src/shared/main_menu/button_anim_0.png" id="5_25cp6"]
 [ext_resource type="Texture2D" uid="uid://d4ttrfhpth58" path="res://src/shared/main_menu/button_anim_1.png" id="6_8kgk2"]
 [ext_resource type="Texture2D" uid="uid://cms5dkkymts7g" path="res://src/shared/main_menu/button_hover.png" id="7_kq7dq"]
+[ext_resource type="PackedScene" uid="uid://idhdvq5d4t17" path="res://src/acts/act1/bunny/bunny.tscn" id="8_8kgk2"]
 
 [sub_resource type="Animation" id="Animation_8kgk2"]
 length = 0.001
@@ -156,6 +157,9 @@ text = "PLAY"
 label_settings = SubResource("LabelSettings_a8f4u")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Bunny" parent="." unique_id=2104088067 instance=ExtResource("8_8kgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.010597, 0.98654866, 0)
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/TextureButton" to="." method="play"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/TextureButton" to="CenterContainer/VBoxContainer/TextureButton" method="queue_free"]
