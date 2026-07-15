@@ -50,6 +50,9 @@ func write(key: String, value: Variant) -> void:
 func read(key: String, default: Variant) -> Variant:
 	return _save_data.get(key, default)
 
+func clear() -> void:
+	_save_data.clear()
+
 func save_slot(slot: int = 0, now: bool = false) -> int:
 	var path: String = _get_save_slot_path(slot)
 	if contains_data() == false:
@@ -95,6 +98,7 @@ func _write_to_disk(path: String, data: Dictionary) -> void:
 	
 	var file := FileAccess.open(path, FileAccess.WRITE)
 	
+	data = data.duplicate()
 	data["f_print"] = FINGERPRINT
 	var json_str := JSON.stringify(data, "\t")
 	
