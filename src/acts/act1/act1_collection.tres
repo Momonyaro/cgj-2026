@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://4gi3mbocwio5" path="res://src/shared/act_engine/events/spawn_event.gd" id="8_11xvn"]
 [ext_resource type="Texture2D" uid="uid://0faansyjwojo" path="res://src/shared/magician/art/wizard_tip_hat.png" id="8_p1c7k"]
 [ext_resource type="Texture2D" uid="uid://y2ciumuok7q6" path="res://src/shared/magician/art/wizard_place_hat.png" id="9_cwrer"]
+[ext_resource type="Texture2D" uid="uid://be4mheobgerqy" path="res://src/shared/magician/art/wizard_placed_hat.png" id="11_0v2vy"]
 [ext_resource type="Texture2D" uid="uid://chyem2ekhb75v" path="res://src/shared/magician/art/wizard_hold_contents.png" id="11_7g122"]
 
 [sub_resource type="Resource" id="Resource_cwrer"]
@@ -68,6 +69,11 @@ script = ExtResource("4_lrs6a")
 next_sprite = ExtResource("9_cwrer")
 metadata/_custom_type_script = "uid://cshjplosaguh6"
 
+[sub_resource type="Resource" id="Resource_rlkh1"]
+script = ExtResource("2_5bjvv")
+duration = 0.1
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
 [sub_resource type="Resource" id="Resource_25cp6"]
 script = ExtResource("8_11xvn")
 scene = "uid://ba51fdvs8604o"
@@ -78,6 +84,11 @@ metadata = Dictionary[StringName, Variant]({
 &"hat": true
 })
 metadata/_custom_type_script = "uid://4gi3mbocwio5"
+
+[sub_resource type="Resource" id="Resource_d18h6"]
+script = ExtResource("4_lrs6a")
+next_sprite = ExtResource("11_0v2vy")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
 
 [sub_resource type="Resource" id="Resource_7g122"]
 script = ExtResource("6_lrs6a")
@@ -95,5 +106,5 @@ metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
 [resource]
 script = ExtResource("2_0p13b")
-events = Array[ExtResource("1_56n7f")]([SubResource("Resource_cwrer"), SubResource("Resource_5f5wt"), SubResource("Resource_wk2ln"), SubResource("Resource_5bjvv"), SubResource("Resource_6i72p"), SubResource("Resource_lrs6a"), SubResource("Resource_11xvn"), SubResource("Resource_8qkce"), SubResource("Resource_1l6yu"), SubResource("Resource_vne4c"), SubResource("Resource_khprr"), SubResource("Resource_25cp6"), SubResource("Resource_7g122"), SubResource("Resource_0v2vy"), SubResource("Resource_p1c7k")])
+events = Array[ExtResource("1_56n7f")]([SubResource("Resource_cwrer"), SubResource("Resource_5f5wt"), SubResource("Resource_wk2ln"), SubResource("Resource_5bjvv"), SubResource("Resource_6i72p"), SubResource("Resource_lrs6a"), SubResource("Resource_11xvn"), SubResource("Resource_8qkce"), SubResource("Resource_1l6yu"), SubResource("Resource_vne4c"), SubResource("Resource_khprr"), SubResource("Resource_rlkh1"), SubResource("Resource_25cp6"), SubResource("Resource_d18h6"), SubResource("Resource_7g122"), SubResource("Resource_0v2vy"), SubResource("Resource_p1c7k")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"
