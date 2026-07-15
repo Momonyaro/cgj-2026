@@ -18,5 +18,6 @@ func _ready():
 	
 
 func _on_exit_to_menu():
+	SFX.play("button_click")
 	Stage.level_loader.load_main_menu()
 	pass
