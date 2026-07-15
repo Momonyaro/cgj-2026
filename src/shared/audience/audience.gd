@@ -70,6 +70,8 @@ func bore(val := .1, sfx_on := true):
 	if sfx_on:
 		_handle_bore_sfx()
 
+func reset_excitement():
+	_excitement = start_excitement
 
 # -- Create Audience --
 func spawn_audience():

@@ -38,6 +38,7 @@ func load_next():
 	current_level.queue_free()
 	current_level = null
 
+	Stage.audience.reset_excitement()
 	if current_index < Levels.get_level_count() - 1:
 		_load_next_act()
 	else:
