@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://ddll3vaiwqhtm" path="res://src/shared/vfx/sprite_bouncer.gd" id="8_c65ag"]
 [ext_resource type="PackedScene" uid="uid://ba51fdvs8604o" path="res://src/acts/act1/hat/hat_for_bunny.tscn" id="9_k2h86"]
 [ext_resource type="PackedScene" uid="uid://b776vcixoys55" path="res://src/shared/notes/note.tscn" id="10_sonte"]
+[ext_resource type="PackedScene" uid="uid://bmafyhpgrpmv6" path="res://src/stage/lights/spot_light.tscn" id="11_feo1p"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a1n5f"]
 
@@ -152,3 +153,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.178, 0, 0)
 
 [node name="Note" parent="." unique_id=103506030 instance=ExtResource("10_sonte")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.9072133, 0.1355995, -9.536743e-07)
+
+[node name="SpotLight" parent="." unique_id=1692074200 instance=ExtResource("11_feo1p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.0509386, 0)
+
+[node name="SpotLight2" parent="." unique_id=1163796045 instance=ExtResource("11_feo1p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7491264, 5.0509386, 0)

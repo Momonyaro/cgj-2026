@@ -46,6 +46,11 @@ _subresources={
 "use_external/fallback_path": "res://src/stage/stage_wood_mat.tres",
 "use_external/path": "uid://bn5hs0nxot3y6"
 }
+},
+"nodes": {
+"PATH:Cube_001": {
+"mesh_instance/layers": 3
+}
 }
 }
 gltf/naming_version=2

@@ -28,6 +28,7 @@ metadata/_custom_type_script = "uid://ddll3vaiwqhtm"
 
 [node name="Hat" type="MeshInstance3D" parent="." unique_id=1088026276]
 transform = Transform3D(1.0346154, 0, 0, 0, 1.0346154, 0, 0, 0, 1, 0, 0, 0)
+layers = 3
 material_override = SubResource("StandardMaterial3D_0g1lo")
 mesh = ExtResource("4_q56t5")
 

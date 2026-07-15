@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c1qdgxslk1mls" path="res://src/shared/cursor/cursor.tscn" id="6_y8ixn"]
 [ext_resource type="Script" uid="uid://dmlhvbxquam8y" path="res://src/stage/level_loader/level_loader.gd" id="8_pvnpy"]
 [ext_resource type="PackedScene" uid="uid://cni3xupdf6ci8" path="res://src/shared/notes/notes_board.tscn" id="10_itwdx"]
+[ext_resource type="PackedScene" uid="uid://bmafyhpgrpmv6" path="res://src/stage/lights/spot_light.tscn" id="10_paren"]
 
 [sub_resource type="Environment" id="Environment_40gng"]
 ambient_light_source = 2
@@ -263,3 +264,9 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -3.047891, 3.
 
 [node name="SharedProps" parent="." unique_id=1525609911 instance_placeholder="res://src/shared/interactables/shared_props.tscn"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.227703, 1.1640415, 0)
+
+[node name="SpotLight3D" parent="." unique_id=473035173 instance=ExtResource("10_paren")]
+transform = Transform3D(0.965926, -0.25881907, -1.5163991e-08, 0.22414389, 0.83651626, -0.49999994, 0.12940954, 0.48296297, 0.8660254, -2.5, 5.564, 1.2627871)
+
+[node name="SpotLight3D2" parent="." unique_id=1692074200 instance=ExtResource("10_paren")]
+transform = Transform3D(0.9659258, 0.258819, 0, -0.22414386, 0.8365162, -0.4999999, -0.12940952, 0.48296288, 0.8660252, 2.5, 5.564, 1.262324)

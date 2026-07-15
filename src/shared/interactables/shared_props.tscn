@@ -25,6 +25,7 @@ grab_point = NodePath("GrabPoint")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5537808, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="GrabbableCube2" unique_id=1860639979]
+layers = 3
 mesh = SubResource("BoxMesh_x12vv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GrabbableCube2" unique_id=873245793]
