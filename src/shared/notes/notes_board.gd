@@ -27,6 +27,7 @@ func reveal(notes_scene: PackedScene) -> void:
 
 func dismiss() -> void:
 	animation.play("exit")
+	SFX.play("button_click")
 	ui_root.hide()
 	animation.animation_finished.connect(
 		func(__):

@@ -48,13 +48,23 @@ func load_next():
 	print("child added")
 	_reset_shared_props()
 
-	print("Let's await them notes")
-	await await_notes()
-	await _transition_out()
+	if current_index > -1:
+		print("Let's await them notes")
+		await await_notes()
+		await _transition_out()
 
 	is_loading = false
 	loaded_next.emit()
 
+func load_main_menu():
+	is_loading = true
+	if current_level != null:
+		current_level.queue_free()
+	current_level = Levels.get_main_menu().instantiate()
+	add_child(current_level)
+	await _transition_out()
+	is_loading = false
+	loaded_next.emit()
 
 # -- Loads --
 func _load_next_act():

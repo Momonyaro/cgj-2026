@@ -12,7 +12,7 @@ const SAVE_FILE_EXT: String = ".dat"
 const FINGERPRINT: String = "davey_jones"
 
 ## If true, slot0.dat will attempt to load as the autoload is started
-const AUTOLOAD_ON_INIT: bool = false
+const AUTOLOAD_ON_INIT: bool = true
 ## How long (in seconds) before snapshot is written to disk after it is taken
 const SNAPSHOT_INTERVAL: float = 2.5
 
