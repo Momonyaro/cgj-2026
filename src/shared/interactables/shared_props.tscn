@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c3b2r8ljducgi"]
+
+[ext_resource type="PackedScene" uid="uid://idhdvq5d4t17" path="res://src/acts/act1/bunny/bunny.tscn" id="1_m1phi"]
+[ext_resource type="Script" uid="uid://bdikod1okhnrq" path="res://src/shared/interactables/grabbable_item.gd" id="2_02raa"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x12vv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_et5mx"]
+
+[node name="SharedProps" type="Node3D" unique_id=1525609911]
+
+[node name="Bunny" parent="." unique_id=2104088067 instance=ExtResource("1_m1phi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5407475, 0, 0)
+
+[node name="GrabbableCube2" type="RigidBody3D" parent="." unique_id=189799562 node_paths=PackedStringArray("grab_point")]
+transform = Transform3D(0.78765625, 0.5135116, 0.34044603, -0.47136557, 0.85808265, -0.20373677, -0.39675203, 0, 0.91792583, -1.506614, 2.4618309, -0.5565994)
+collision_layer = 3
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+freeze_mode = 1
+script = ExtResource("2_02raa")
+grab_point = NodePath("GrabPoint")
+
+[node name="GrabPoint" type="Marker3D" parent="GrabbableCube2" unique_id=1781792371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5537808, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GrabbableCube2" unique_id=1860639979]
+mesh = SubResource("BoxMesh_x12vv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrabbableCube2" unique_id=873245793]
+shape = SubResource("BoxShape3D_et5mx")

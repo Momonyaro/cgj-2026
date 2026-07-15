@@ -18,12 +18,16 @@ var is_loading := false
 var current_level: Node = null
 var current_index := -1
 
+@onready var shared_props_placeholder := $"../SharedProps" as InstancePlaceholder
+var shared_props_instance: Node
+
 
 func _ready():
 	if get_child_count() > 0:
 		push_error("Error Initializing")
 	current_level = Levels.get_main_menu().instantiate()
 	add_child(current_level)
+	_reset_shared_props.call_deferred()
 
 
 # -- API --
@@ -40,6 +44,7 @@ func load_next():
 		_load_end_screen()
 
 	add_child(current_level)
+	_reset_shared_props()
 
 	await await_notes()
 	await _transition_out()
@@ -78,6 +83,12 @@ func _transition_out():
 	curtain_tween = create_tween()
 	curtain_tween.tween_property(curtain_controller, "move_amount", 0., curtain_trans_close_durr)
 	await await_curtains()
+
+
+func _reset_shared_props():
+	if shared_props_instance:
+		shared_props_instance.queue_free()
+	shared_props_instance = shared_props_placeholder.create_instance()
 
 
 func await_notes():

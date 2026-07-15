@@ -3,13 +3,7 @@
 [ext_resource type="Script" uid="uid://cyvljmchtkt42" path="res://src/shared/act_engine/act_engine.gd" id="1_a1avv"]
 [ext_resource type="Resource" uid="uid://dy02n1784ay7o" path="res://src/acts/act1/act1_collection.tres" id="2_6i72p"]
 [ext_resource type="PackedScene" uid="uid://b8lftmrjj2j6u" path="res://src/shared/magician/magician.tscn" id="2_dr7gf"]
-[ext_resource type="Script" uid="uid://bdikod1okhnrq" path="res://src/shared/interactables/grabbable_item.gd" id="4_sc0kd"]
 [ext_resource type="PackedScene" uid="uid://cpn03j74nonps" path="res://src/acts/act1/instructions/act1_notes.tscn" id="5_dwhyu"]
-[ext_resource type="PackedScene" uid="uid://idhdvq5d4t17" path="res://src/acts/act1/bunny/bunny.tscn" id="6_6oiti"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_dwhyu"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6oiti"]
 
 [node name="Act1" type="Node3D" unique_id=248595300]
 
@@ -22,26 +16,3 @@ metadata/_custom_type_script = "uid://cyvljmchtkt42"
 
 [node name="Magician" parent="." unique_id=1219081681 instance=ExtResource("2_dr7gf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
-
-[node name="GrabbableCube" type="RigidBody3D" parent="." unique_id=1208654002 node_paths=PackedStringArray("grab_point")]
-transform = Transform3D(0.78765625, 0.5135116, 0.34044603, -0.47136557, 0.85808265, -0.20373677, -0.396752, 0, 0.91792583, -4.6710687, 2.3841555, 0)
-collision_layer = 3
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-freeze_mode = 1
-script = ExtResource("4_sc0kd")
-grab_point = NodePath("GrabPoint")
-
-[node name="GrabPoint" type="Marker3D" parent="GrabbableCube" unique_id=187333033]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5537808, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="GrabbableCube" unique_id=1736867613]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-mesh = SubResource("BoxMesh_dwhyu")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GrabbableCube" unique_id=954854723]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-shape = SubResource("BoxShape3D_6oiti")
-
-[node name="Bunny" parent="." unique_id=2104088067 instance=ExtResource("6_6oiti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.010597, 0.98654866, 0)
