@@ -3,12 +3,25 @@
 [ext_resource type="Script" uid="uid://5nkn7cxwp168" path="res://src/shared/act_engine/events/act_event.gd" id="1_56n7f"]
 [ext_resource type="Script" uid="uid://bxsl188rk2b50" path="res://src/shared/act_engine/act_collection.gd" id="2_0p13b"]
 [ext_resource type="Script" uid="uid://b13mrlxyyg60r" path="res://src/shared/act_engine/events/wait_event.gd" id="2_5bjvv"]
-[ext_resource type="Texture2D" uid="uid://cndepsblf1eo" path="res://src/shared/magician/test_img_2.png" id="3_vne4c"]
+[ext_resource type="Texture2D" uid="uid://btse5kwcdcd0q" path="res://src/shared/magician/art/wizard_praise.png" id="2_7g122"]
 [ext_resource type="Script" uid="uid://cshjplosaguh6" path="res://src/shared/act_engine/events/swap_event.gd" id="4_lrs6a"]
-[ext_resource type="Texture2D" uid="uid://eeixomoxrvfy" path="res://src/shared/magician/test_img_1.png" id="5_wk2ln"]
+[ext_resource type="Texture2D" uid="uid://c3bxey0y3qx1j" path="res://src/shared/magician/art/wizard_bow.png" id="6_0v2vy"]
 [ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="res://src/shared/act_engine/events/wait_expression_event.gd" id="6_lrs6a"]
 [ext_resource type="Script" uid="uid://dlxwxd3ua60y4" path="res://src/shared/act_engine/events/captivate_event.gd" id="7_wk2ln"]
 [ext_resource type="Script" uid="uid://4gi3mbocwio5" path="res://src/shared/act_engine/events/spawn_event.gd" id="8_11xvn"]
+[ext_resource type="Texture2D" uid="uid://0faansyjwojo" path="res://src/shared/magician/art/wizard_tip_hat.png" id="8_p1c7k"]
+[ext_resource type="Texture2D" uid="uid://y2ciumuok7q6" path="res://src/shared/magician/art/wizard_place_hat.png" id="9_cwrer"]
+[ext_resource type="Texture2D" uid="uid://chyem2ekhb75v" path="res://src/shared/magician/art/wizard_hold_contents.png" id="11_7g122"]
+
+[sub_resource type="Resource" id="Resource_cwrer"]
+script = ExtResource("2_5bjvv")
+duration = 0.1
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
+[sub_resource type="Resource" id="Resource_5f5wt"]
+script = ExtResource("4_lrs6a")
+next_sprite = ExtResource("2_7g122")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
 
 [sub_resource type="Resource" id="Resource_wk2ln"]
 script = ExtResource("6_lrs6a")
@@ -22,7 +35,7 @@ metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
 [sub_resource type="Resource" id="Resource_6i72p"]
 script = ExtResource("4_lrs6a")
-next_sprite = ExtResource("3_vne4c")
+next_sprite = ExtResource("6_0v2vy")
 metadata/_custom_type_script = "uid://cshjplosaguh6"
 
 [sub_resource type="Resource" id="Resource_lrs6a"]
@@ -37,7 +50,7 @@ metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
 [sub_resource type="Resource" id="Resource_8qkce"]
 script = ExtResource("4_lrs6a")
-next_sprite = ExtResource("5_wk2ln")
+next_sprite = ExtResource("8_p1c7k")
 metadata/_custom_type_script = "uid://cshjplosaguh6"
 
 [sub_resource type="Resource" id="Resource_1l6yu"]
@@ -49,6 +62,11 @@ metadata/_custom_type_script = "uid://dlxwxd3ua60y4"
 script = ExtResource("2_5bjvv")
 duration = 0.5
 metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
+[sub_resource type="Resource" id="Resource_khprr"]
+script = ExtResource("4_lrs6a")
+next_sprite = ExtResource("9_cwrer")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
 
 [sub_resource type="Resource" id="Resource_25cp6"]
 script = ExtResource("8_11xvn")
@@ -68,7 +86,7 @@ metadata/_custom_type_script = "uid://1qnl6sg2gebf"
 
 [sub_resource type="Resource" id="Resource_0v2vy"]
 script = ExtResource("4_lrs6a")
-next_sprite = ExtResource("5_wk2ln")
+next_sprite = ExtResource("11_7g122")
 metadata/_custom_type_script = "uid://cshjplosaguh6"
 
 [sub_resource type="Resource" id="Resource_p1c7k"]
@@ -77,5 +95,5 @@ metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
 [resource]
 script = ExtResource("2_0p13b")
-events = Array[ExtResource("1_56n7f")]([SubResource("Resource_wk2ln"), SubResource("Resource_5bjvv"), SubResource("Resource_6i72p"), SubResource("Resource_lrs6a"), SubResource("Resource_11xvn"), SubResource("Resource_8qkce"), SubResource("Resource_1l6yu"), SubResource("Resource_vne4c"), SubResource("Resource_25cp6"), SubResource("Resource_7g122"), SubResource("Resource_0v2vy"), SubResource("Resource_p1c7k")])
+events = Array[ExtResource("1_56n7f")]([SubResource("Resource_cwrer"), SubResource("Resource_5f5wt"), SubResource("Resource_wk2ln"), SubResource("Resource_5bjvv"), SubResource("Resource_6i72p"), SubResource("Resource_lrs6a"), SubResource("Resource_11xvn"), SubResource("Resource_8qkce"), SubResource("Resource_1l6yu"), SubResource("Resource_vne4c"), SubResource("Resource_khprr"), SubResource("Resource_25cp6"), SubResource("Resource_7g122"), SubResource("Resource_0v2vy"), SubResource("Resource_p1c7k")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"
