@@ -1,0 +1,7 @@
+[gd_resource type="QuadMesh" format=3 uid="uid://coxnxjoeh5spx"]
+
+[ext_resource type="Material" uid="uid://b7xfx4ngsht78" path="res://src/shared/interactables/smoke_bomb/smoke/smoke0/smoke0_standard_material_3d.tres" id="1_yhl21"]
+
+[resource]
+material = ExtResource("1_yhl21")
+size = Vector2(1.5, 1.5)

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://pxkpsto4ufhd"]
+
+[ext_resource type="Texture2D" uid="uid://bscwt3d2mlwj3" path="res://src/shared/interactables/smoke_bomb/smoke/smoke2/smoke2.png" id="1_w75ug"]
+
+[resource]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0.8111275, 0.8111274, 0.8111274, 1)
+albedo_texture = ExtResource("1_w75ug")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
