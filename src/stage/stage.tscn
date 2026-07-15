@@ -259,7 +259,7 @@ script = ExtResource("8_pvnpy")
 curtain_controller = NodePath("../VerletCurtains")
 
 [node name="NotesBoard" parent="." unique_id=322694326 instance=ExtResource("10_itwdx")]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -3.047891, 3.133942, 0.7261529)
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -3.047891, 3.133942, 1.0292127)
 
 [node name="SharedProps" parent="." unique_id=1525609911 instance_placeholder="res://src/shared/interactables/shared_props.tscn"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.227703, 1.1640415, 0)

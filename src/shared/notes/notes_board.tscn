@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cni3xupdf6ci8"]
 
 [ext_resource type="Script" uid="uid://ctkb30a3i57cn" path="res://src/shared/notes/notes_board.gd" id="1_02lh6"]
+[ext_resource type="Material" uid="uid://h2lbdpeod1ui" path="res://src/shared/notes/board_material.tres" id="2_jhwa3"]
 [ext_resource type="Texture2D" uid="uid://cfasc037yodvf" path="res://src/shared/main_menu/button_anim_0.png" id="2_n2kim"]
 [ext_resource type="Texture2D" uid="uid://d4ttrfhpth58" path="res://src/shared/main_menu/button_anim_1.png" id="3_jhwa3"]
 [ext_resource type="Texture2D" uid="uid://cms5dkkymts7g" path="res://src/shared/main_menu/button_hover.png" id="4_iaqpj"]
@@ -49,7 +50,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.45000002, 0.6),
 "transitions": PackedFloat32Array(0.46651644, 0.4506253, 0.4506253),
 "update": 0,
-"values": [Vector3(0, -5.491781, 0), Vector3(0, 0.35923862, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, -5.491781, 0), Vector3(0, 1.319, 0), Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -66,27 +67,27 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_y11vb"]
 resource_name = "exit"
-length = 0.4
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4),
+"times": PackedFloat32Array(0, 0.15, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.43373883, 0), Vector3(0, -5.883793, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 1.354, 0), Vector3(0, -5.883793, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.19999999, 0.4),
+"times": PackedFloat32Array(0, 0.15, 0.29999998, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.2521612, -0.071515076, 0.27960458), Vector3(0.38058636, -0.36878046, -0.805181), Vector3(1.5707964, 0, 0)]
@@ -124,6 +125,7 @@ ui_root = NodePath("CanvasLayer/CenterContainer")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AnimationRoot" unique_id=1900150558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.03)
 mesh = SubResource("BoxMesh_a1n5f")
+surface_material_override/0 = ExtResource("2_jhwa3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=864029043]
 root_node = NodePath("../AnimationRoot")

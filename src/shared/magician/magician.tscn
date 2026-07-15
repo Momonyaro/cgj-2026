@@ -33,9 +33,9 @@ up = Vector3(0, 0, 1)
 transform = Transform3D(1, -8.742278e-08, -8.7422784e-08, -8.742279e-08, -4.371138e-08, -1, 8.742277e-08, 1, -4.371139e-08, -0.011159897, -0.04742098, 4.0686083)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="BodyPivot/ObjRoot" unique_id=480698261]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3359761, 0)
-radius = 0.1
-height = 5.5
+transform = Transform3D(1, -6.2117624e-22, 0, -6.6814984e-22, 1, 0, 0, 0, 1, -1.8626451e-09, -1.6564107, 0)
+radius = 0.05
+height = 4.859131
 
 [node name="FaceRoot" type="Node3D" parent="BodyPivot/ObjRoot" unique_id=1318095629]
 
