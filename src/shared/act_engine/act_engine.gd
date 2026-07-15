@@ -103,6 +103,7 @@ func _bind_walk_event(event: WalkEvent):
 
 func _bind_swap_event(event: SwapEvent):
 	event.magician = magician
+	event.engine = self
 
 
 func _bind_wait_event(event: WaitEvent):
@@ -124,17 +125,20 @@ func _bind_captivate_event(_event: CaptivateEvent):
 
 
 # -- Helpers
+func clear_spawned():
+	for s in spawned:
+		s.queue_free()
+	spawned.clear()
+
 func disconnect_all_from_signal(sig: Signal):
 	for connection in sig.get_connections():
 		sig.disconnect(connection.callable)
-
 
 func find_first(arr: Array, condition: Callable) -> Variant:
 	for item in arr:
 		if condition.call(item):
 			return item
 	return null
-
 
 func find_hat() -> Variant:
 	return find_first(spawned, func(o): return o.has_meta("hat"))
