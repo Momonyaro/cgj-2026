@@ -5,6 +5,7 @@ signal wind(delta_radians: float, progress: float)
 
 @export_custom(PROPERTY_HINT_NONE, "radians_as_degrees") var min_rotation := 0.0
 @export_custom(PROPERTY_HINT_NONE, "radians_as_degrees") var max_rotation := TAU
+@export var crank_sound: String
 # @export_custom(PROPERTY_HINT_NONE, "radians_as_degrees") var rotation_offset := 0.0
 
 var is_grabbed: bool
@@ -21,6 +22,10 @@ func process_grab(_delta: float) -> void:
 	rotation.z = clampf(rotation.z, min_rotation, max_rotation)
 	var progress := clampf(rotation.z / max_rotation, 0, 1)
 	wind.emit(angle_diff, progress)
+
+	if angle_diff and crank_sound:
+		if not SFX.is_playing(crank_sound):
+			SFX.play(crank_sound)
 
 	prev_angle = new_angle
 

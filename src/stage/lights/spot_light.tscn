@@ -13,6 +13,7 @@ collision_layer = 3
 script = ExtResource("1_c0xnc")
 min_rotation = -0.7853981633974483
 max_rotation = 0.7853981633974483
+crank_sound = "crank_light"
 metadata/_custom_type_script = "uid://bexljowsux72e"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=473035173]

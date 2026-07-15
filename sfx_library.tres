@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://n4lihjfb24qu" path="res://src/shared/notes/swoosh_1.wav" id="15_hgnj4"]
 [ext_resource type="AudioStream" uid="uid://bv7y4pae5uinc" path="res://src/shared/notes/swoosh_2.wav" id="16_opt8u"]
 [ext_resource type="AudioStream" uid="uid://mvxmax51fvko" path="res://src/shared/sfx/money.mp3" id="17_opt8u"]
+[ext_resource type="AudioStream" uid="uid://d27yu7m67c7sq" path="res://src/stage/lights/crank_light.wav" id="18_r0xvq"]
 
 [resource]
 script = ExtResource("1_r2xrk")
@@ -27,6 +28,7 @@ _items = Dictionary[String, AudioStream]({
 "applause_2": ExtResource("5_338p1"),
 "boo_0": ExtResource("1_v02ji"),
 "button_click": ExtResource("7_reg48"),
+"crank_light": ExtResource("18_r0xvq"),
 "curtain_pull": ExtResource("8_niaxf"),
 "drop": ExtResource("11_pv0ap"),
 "drum_roll_looping": ExtResource("9_4lv6k"),
