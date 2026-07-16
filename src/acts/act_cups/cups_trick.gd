@@ -73,13 +73,14 @@ func reveal(cup_idx: int) -> void:
 		cup = cup.get_node("CupMesh")
 
 	var tween := create_tween()
-	tween.tween_property(cup, "position:y", 0.2, REVEAL_DURATION)
+	tween.tween_property(cup, "position:y", 0.4, REVEAL_DURATION)
 	tween.parallel().tween_property(cup, "position:z", -0.1, REVEAL_DURATION)
-	tween.parallel().tween_property(cup, "rotation_degrees:x", -45, REVEAL_DURATION)
+	tween.parallel().tween_property(cup, "rotation_degrees:z", 45, REVEAL_DURATION)
 	tween.tween_interval(1.0)
 	tween.tween_property(cup, "position:y", 0.0, REVEAL_DURATION)
 	tween.parallel().tween_property(cup, "position:z", 0.0, REVEAL_DURATION)
-	tween.parallel().tween_property(cup, "rotation_degrees:x", 0.0, REVEAL_DURATION)
+	tween.parallel().tween_property(cup, "rotation_degrees:z", 0.0, REVEAL_DURATION)
+	tween.tween_interval(0.3)
 
 	await tween.finished
 
