@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://phdudgno371t" path="res://src/shared/sfx/button_click.mp3" id="7_reg48"]
 [ext_resource type="AudioStream" uid="uid://cwg5i21b30ehy" path="res://src/shared/sfx/curtain_pull.mp3" id="8_niaxf"]
 [ext_resource type="AudioStream" uid="uid://d4m5lakssaj3g" path="res://src/shared/sfx/drum_roll.mp3" id="9_4lv6k"]
+[ext_resource type="AudioStream" uid="uid://d4f1r5aeo28yj" path="res://src/shared/sfx/drum_roll_end.mp3" id="10_338p1"]
 [ext_resource type="AudioStream" uid="uid://be17rpi67t5xs" path="res://src/shared/sfx/grab.mp3" id="10_hjad4"]
 [ext_resource type="AudioStream" uid="uid://buka2i05layu6" path="res://src/shared/sfx/drop.mp3" id="11_pv0ap"]
 [ext_resource type="AudioStream" uid="uid://ydyu6fr3c1rt" path="res://src/shared/sfx/squeak.mp3" id="12_pv0ap"]
@@ -34,6 +35,7 @@ _items = Dictionary[String, AudioStream]({
 "crank_light": ExtResource("18_r0xvq"),
 "curtain_pull": ExtResource("8_niaxf"),
 "drop": ExtResource("11_pv0ap"),
+"drum_roll_finish": ExtResource("10_338p1"),
 "drum_roll_looping": ExtResource("9_4lv6k"),
 "eat_up": ExtResource("13_syuep"),
 "grab": ExtResource("10_hjad4"),
