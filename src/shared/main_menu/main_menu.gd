@@ -3,6 +3,10 @@ extends Node
 func _enter_tree():
 	SFX.play("murmur_looping") # Audience sounds
 
+func _ready():
+	if OS.has_feature("web"):
+		$TextureButton.queue_free()
+
 func _unhandled_input(event):
 	if event.is_pressed() and event is InputEventKey:
 		if event.keycode == KEY_L:

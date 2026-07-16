@@ -18,10 +18,10 @@ offset_bottom = 39.0
 script = ExtResource("2_4l1ng")
 key = &"SpotLightLeft"
 score_per_tick = 1
-tick_delay = 0.4
+tick_delay = 2.0
 
 [node name="SpotlightTickerRight" type="Node" parent="." unique_id=2114838964]
 script = ExtResource("2_4l1ng")
 key = &"SpotLightRight"
 score_per_tick = 1
-tick_delay = 0.4
+tick_delay = 2.0
