@@ -84,6 +84,7 @@ func _transition_in():
 		curtain_tween.kill()
 	curtain_tween = create_tween()
 	curtain_tween.tween_property(curtain_controller, "move_amount", 1., curtain_trans_close_durr)
+	SFX.play("curtain_pull")
 	await await_curtains()
 	await get_tree().create_timer(curtain_close_durr).timeout
 
@@ -93,6 +94,7 @@ func _transition_out():
 		curtain_tween.kill()
 	curtain_tween = create_tween()
 	curtain_tween.tween_property(curtain_controller, "move_amount", 0., curtain_trans_close_durr)
+	SFX.play("curtain_pull")
 	await await_curtains()
 
 
