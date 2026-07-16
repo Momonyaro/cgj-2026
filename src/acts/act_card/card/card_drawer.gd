@@ -2,9 +2,15 @@ extends Node3D
 
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 
+var last_uv := Vector2(-1, -1)
+var is_drawing := false
+
 func _physics_process(_delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		shoot_ray_from_mouse()
+	else:
+		is_drawing = false
+		last_uv = Vector2(-1, -1)
 
 func shoot_ray_from_mouse() -> void:
 	var mouse_pos := get_viewport().get_mouse_position()
@@ -26,7 +32,9 @@ func shoot_ray_from_mouse() -> void:
 		
 		if target_mesh:
 			_handle_target_mesh(result.get("position"), result.get("uv"), target_mesh)
-
+	else:
+		is_drawing = false
+		last_uv = Vector2(-1, -1)
 
 func _handle_target_mesh(hit_position, uv, target_mesh: DrawableCard):
 	var local_hit_pos: Vector3 = target_mesh.global_transform.inverse() * hit_position
@@ -42,4 +50,10 @@ func _handle_target_mesh(hit_position, uv, target_mesh: DrawableCard):
 	uv.x = clamp(uv.x, 0.0, 1.0)
 	uv.y = clamp(uv.y, 0.0, 1.0)
 	
-	target_mesh.paint_at_uv(uv)
+	if not is_drawing:
+		target_mesh.paint_line(uv, uv)
+		is_drawing = true
+	else:
+		target_mesh.paint_line(last_uv, uv)
+		
+	last_uv = uv

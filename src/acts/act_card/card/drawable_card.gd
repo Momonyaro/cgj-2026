@@ -25,19 +25,27 @@ func _ready() -> void:
 	assert(mat, "No ShaderMaterial found on this mesh node!")
 	mat.set_shader_parameter("front_texture", drawable_texture)
 
-func paint_at_uv(uv: Vector2) -> void:
+func paint_line(from_uv: Vector2, to_uv: Vector2) -> void:
 	if not drawable_texture or not brush_texture:
 		return
 
-	var pixel_pos := Vector2i(
-		int(uv.x * texture_size.x),
-		int(uv.y * texture_size.y)
-	)
-	var brush_size := Vector2i(brush_texture.get_size())
-	var rect_position := pixel_pos - Vector2i(brush_size * .5)	
-	var rect := Rect2i(rect_position, brush_size)
+	var start_pos := Vector2(from_uv.x * texture_size.x, from_uv.y * texture_size.y)
+	var end_pos := Vector2(to_uv.x * texture_size.x, to_uv.y * texture_size.y)
 	
-	drawable_texture.blit_rect(rect, brush_texture, Color.RED)
+	var distance := start_pos.distance_to(end_pos)
+	var brush_size := Vector2i(brush_texture.get_size())
+	
+	var step_distance := maxf(1.0, min(brush_size.x, brush_size.y) * 0.25)
+	var steps := maxf(1, int(distance / step_distance))
+	
+	var brush_offset := Vector2i(brush_size * 0.5)
+	
+	for i in range(steps + 1):
+		var t := float(i) / float(steps)
+		var current_pixel_pos := Vector2i(start_pos.lerp(end_pos, t))
+		
+		var rect := Rect2i(current_pixel_pos - brush_offset, brush_size)
+		drawable_texture.blit_rect(rect, brush_texture, Color.RED)
 
 func _get_mat() -> ShaderMaterial:
 	if material_override is ShaderMaterial:
