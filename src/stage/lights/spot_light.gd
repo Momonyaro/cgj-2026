@@ -2,10 +2,16 @@ extends WindableItem
 
 const PERFECT_ANGLE_THRESHOLD = cos(deg_to_rad(5))
 
+@onready var original_rotation := basis
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	ScoreManager.set_ticker(name, magician_is_lit())
+
+
+func reset() -> void:
+	basis = original_rotation
 
 
 func magician_is_lit() -> bool:

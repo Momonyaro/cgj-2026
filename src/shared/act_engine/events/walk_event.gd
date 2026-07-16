@@ -1,6 +1,6 @@
 extends ActEvent
-class_name WalkEvent
 
+class_name WalkEvent
 
 @export var duration := 1.
 @export var pos_x := 0.
@@ -15,12 +15,14 @@ var _start_pos: Vector3
 var tween_spawner: Node
 var magician: Magician
 
+
 func get_type() -> int:
 	return WALK
 
+
 func execute():
 	_start_pos = magician.position
-	
+	SFX.play("walk_woosh")
 	var tween := tween_spawner.create_tween() as Tween
 	tween.finished.connect(func(): finished.emit(), CONNECT_ONE_SHOT)
 	tween.set_parallel()
@@ -28,13 +30,12 @@ func execute():
 		magician,
 		"position:x",
 		pos_x,
-		duration
+		duration,
 	).set_trans(x_trans)
 	tween.tween_method(
 		func(t: float):
 			magician.position.y = _start_pos.y + sin(t * frequency * PI) * height,
 		0.,
 		1.,
-		duration
+		duration,
 	)
-	

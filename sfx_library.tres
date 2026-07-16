@@ -25,6 +25,8 @@
 [ext_resource type="AudioStream" uid="uid://b35popguyjsaa" path="res://src/acts/act_cups/reveal.ogg" id="22_oey02"]
 [ext_resource type="AudioStream" uid="uid://jwu0j6ppleag" path="res://src/acts/act_cups/unreveal.ogg" id="23_bp172"]
 [ext_resource type="AudioStream" uid="uid://c42rhxdb0apma" path="res://src/acts/act_cups/cup_woosh.ogg" id="24_a22rn"]
+[ext_resource type="AudioStream" uid="uid://d3k7ad7kph0aa" path="res://src/shared/magician/flip_woosh.wav" id="25_bp172"]
+[ext_resource type="AudioStream" uid="uid://ddm7hu42v128c" path="res://src/shared/magician/walk_woosh.wav" id="26_a22rn"]
 
 [resource]
 script = ExtResource("1_r2xrk")
@@ -44,6 +46,7 @@ _items = Dictionary[String, AudioStream]({
 "drum_roll_finish": ExtResource("10_338p1"),
 "drum_roll_looping": ExtResource("9_4lv6k"),
 "eat_up": ExtResource("13_syuep"),
+"flip_woosh": ExtResource("25_bp172"),
 "grab": ExtResource("10_hjad4"),
 "land": ExtResource("14_47jo6"),
 "money": ExtResource("17_opt8u"),
@@ -52,6 +55,7 @@ _items = Dictionary[String, AudioStream]({
 "smoke_bomb": ExtResource("19_qgq53"),
 "squeak": ExtResource("12_pv0ap"),
 "swoosh_1": ExtResource("15_hgnj4"),
-"swoosh_2": ExtResource("16_opt8u")
+"swoosh_2": ExtResource("16_opt8u"),
+"walk_woosh": ExtResource("26_a22rn")
 })
 metadata/_custom_type_script = "uid://duantw5linsmv"

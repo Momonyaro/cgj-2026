@@ -51,6 +51,7 @@ func swap_texture(_texture: Texture2D) -> void:
 	# Set front to new texture and prepare for the flip anim
 	front_material.set_texture(BaseMaterial3D.TEXTURE_ALBEDO, _texture)
 	_do_spin()
+	SFX.play("flip_woosh")
 
 # ---- Private Functions ---
 
