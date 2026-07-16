@@ -16,9 +16,17 @@ static var notes_board: NotesBoard:
 	get():
 		return _singleton._notes_board
 
+static var left_spot_light: WindableItem:
+	get(): return _singleton._left_spot_light
+
+static var right_spot_light: WindableItem:
+	get(): return _singleton._right_spot_light
+
 var _level_loader: LevelLoader = null
 var _audience: Audience = null
 var _notes_board: NotesBoard = null
+var _left_spot_light: WindableItem = null
+var _right_spot_light: WindableItem = null
 
 
 func _enter_tree():
@@ -32,3 +40,5 @@ func _ready():
 	_level_loader = $LevelLoader
 	_audience = $"Audience"
 	_notes_board = $NotesBoard
+	_left_spot_light = $SpotLightLeft
+	_right_spot_light = $SpotLightRight

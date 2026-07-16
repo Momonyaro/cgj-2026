@@ -15,11 +15,14 @@ var prev_angle: float
 
 
 func process_grab(_delta: float) -> void:
-	var new_angle := get_angle_to_hand()
-	var angle_diff := angle_difference(prev_angle, new_angle)
+	angle(get_angle_to_hand())
+
+
+func angle(new_angle):
+	var angle_diff := angle_difference(rotation.z, new_angle)
 	angle_diff = clampf(angle_diff, -TAU * .25, TAU * .25)
-	rotation.z += angle_diff
-	rotation.z = clampf(rotation.z, min_rotation, max_rotation)
+	var target_rotation := rotation.z + angle_diff
+	rotation.z = clampf(target_rotation, min_rotation, max_rotation)
 	var progress := clampf(rotation.z / max_rotation, 0, 1)
 	wind.emit(angle_diff, progress)
 
@@ -34,7 +37,9 @@ func get_angle_to_hand() -> float:
 	var look_direction := (cursor.get_grab_position() - global_position)
 	look_direction.z = 0
 	look_direction = look_direction.normalized()
-	return atan2(look_direction.y, look_direction.x)
+	var target_angle := atan2(look_direction.y, look_direction.x)
+	target_angle += PI / 2.0
+	return target_angle
 
 
 func grab(p_cursor: Cursor) -> CollisionObject3D:

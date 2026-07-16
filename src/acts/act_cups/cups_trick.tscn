@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c65rj57k1yphf"]
+
+[ext_resource type="Script" uid="uid://djvutc8ogvnyd" path="res://src/acts/act_cups/cups_trick.gd" id="1_1rrtd"]
+[ext_resource type="Material" uid="uid://b6d3byxj2v5nr" path="res://src/acts/act_cups/cup_material.tres" id="2_t02ob"]
+[ext_resource type="ArrayMesh" uid="uid://dj28dhn45jxkm" path="res://src/acts/act_cups/cup.obj" id="2_v84mr"]
+[ext_resource type="Material" uid="uid://c8ijlchef3fpy" path="res://src/shared/notes/push_pin_material.tres" id="4_xnh22"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q034m"]
+size = Vector3(2.5, 2, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_v84mr"]
+radius = 0.1
+height = 0.2
+
+[node name="CupsTrick" type="Node3D" unique_id=1985509343 node_paths=PackedStringArray("cups")]
+script = ExtResource("1_1rrtd")
+cups = [NodePath("CupsPlane/CupA"), NodePath("CupsPlane/CupB"), NodePath("CupsPlane/CupC")]
+
+[node name="Table" type="MeshInstance3D" parent="." unique_id=648689397]
+layers = 3
+mesh = SubResource("BoxMesh_q034m")
+
+[node name="CupsPlane" type="Node3D" parent="." unique_id=584209169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CupA" type="MeshInstance3D" parent="CupsPlane" unique_id=1026221058]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -0.67, 0, 0)
+layers = 3
+material_override = ExtResource("2_t02ob")
+mesh = ExtResource("2_v84mr")
+
+[node name="CupB" type="Node3D" parent="CupsPlane" unique_id=363747991]
+
+[node name="CupMesh" type="MeshInstance3D" parent="CupsPlane/CupB" unique_id=1825398175]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+layers = 3
+material_override = ExtResource("2_t02ob")
+mesh = ExtResource("2_v84mr")
+
+[node name="Ball" type="MeshInstance3D" parent="CupsPlane/CupB" unique_id=925764470]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.100000024, 0)
+mesh = SubResource("SphereMesh_v84mr")
+surface_material_override/0 = ExtResource("4_xnh22")
+
+[node name="CupC" type="MeshInstance3D" parent="CupsPlane" unique_id=723416494]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.67, 0, 0)
+layers = 3
+material_override = ExtResource("2_t02ob")
+mesh = ExtResource("2_v84mr")
