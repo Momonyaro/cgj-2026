@@ -3,17 +3,20 @@ class_name WaitExpressionEvent
 
 const CONDITION_WAIT_LIMIT := 100000
 
+## Context path should be relative to the ActEngine
 @export_node_path var context: NodePath = ""
 @export_multiline var expression: String = ""
 
 var _time_started := 0
 
+
 func get_type() -> int:
 	return WAIT_EXPRESSION
 
+## Wait's until the expression is true!
 func execute() -> void:
 	_time_started = Time.get_ticks_msec()
-	var context_node := Stage.level_loader.current_level.get_node(context)
+	var context_node := engine.get_node(context)
 	
 	if expression.strip_edges() == "":
 		finished.emit()

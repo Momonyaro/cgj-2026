@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c1quq2cyanctx"]
 
+[ext_resource type="Script" uid="uid://dtdoqkllt31fj" path="res://src/shared/interactables/smoke_bomb/smoke/smoke.gd" id="1_s1skr"]
 [ext_resource type="Material" uid="uid://cbgonx1xdmnhx" path="res://src/shared/interactables/smoke_bomb/smoke/smoke2/smoke2_particle_process_material.tres" id="1_vq4xt"]
 [ext_resource type="Script" uid="uid://b1s5wea334v4l" path="res://src/shared/interactables/smoke_bomb/smoke/particle_life_time.gd" id="1_x1rvb"]
 [ext_resource type="QuadMesh" uid="uid://kpeu0oxrydj2" path="res://src/shared/interactables/smoke_bomb/smoke/smoke2/smoke2_quad_mesh.tres" id="2_vq4xt"]
@@ -8,9 +9,20 @@
 [ext_resource type="Material" uid="uid://c07uo24ph1hwy" path="res://src/shared/interactables/smoke_bomb/smoke/smoke0/smoke0_particle_process_material.tres" id="4_rsljy"]
 [ext_resource type="QuadMesh" uid="uid://coxnxjoeh5spx" path="res://src/shared/interactables/smoke_bomb/smoke/smoke0/smoke0_quad_mesh.tres" id="4_tghjs"]
 
-[node name="Smoke" type="Node3D" unique_id=573597002 node_paths=PackedStringArray("particles")]
+[sub_resource type="SphereShape3D" id="SphereShape3D_25acc"]
+radius = 5.0
+
+[node name="Smoke" type="Area3D" unique_id=2131045404]
+script = ExtResource("1_s1skr")
+
+[node name="ParticleLifeTime" type="Node" parent="." unique_id=716210896 node_paths=PackedStringArray("remove_target", "particles")]
 script = ExtResource("1_x1rvb")
-particles = [NodePath("Smoke2"), NodePath("Smoke1"), NodePath("Smoke0")]
+life_time = 10.0
+remove_target = NodePath("..")
+particles = [NodePath("../Smoke2"), NodePath("../Smoke1"), NodePath("../Smoke0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=56273672]
+shape = SubResource("SphereShape3D_25acc")
 
 [node name="Smoke2" type="GPUParticles3D" parent="." unique_id=1799910467]
 emitting = false

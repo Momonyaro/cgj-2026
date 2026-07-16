@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b6d4sg8g3en50"]
+
+[ext_resource type="Script" uid="uid://bsim8g73xve5k" path="res://src/acts/act1/smoke_detector/smoke_detector.gd" id="1_dthcf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_25acc"]
+
+[node name="SmokeDetector" type="Area3D" unique_id=1981530034]
+script = ExtResource("1_dthcf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=640147170]
+shape = SubResource("BoxShape3D_25acc")

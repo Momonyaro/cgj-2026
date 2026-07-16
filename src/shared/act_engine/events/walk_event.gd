@@ -1,7 +1,6 @@
 extends ActEvent
 class_name WalkEvent
 
-const Magician := preload("res://src/shared/magician/magician.gd")
 
 @export var duration := 1.
 @export var pos_x := 0.

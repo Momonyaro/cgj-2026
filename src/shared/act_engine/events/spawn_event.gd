@@ -11,8 +11,6 @@ class_name SpawnEvent
 @export var track_spawned_node := true
 @export var metadata: Dictionary[StringName, Variant] = {}
 
-# -- Binds --
-var engine: ActEngine
 
 func get_type() -> int:
 	return SPAWN

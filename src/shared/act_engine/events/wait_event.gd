@@ -1,7 +1,6 @@
 extends ActEvent
 class_name WaitEvent
 
-const Magician := preload("res://src/shared/magician/magician.gd")
 
 @export var duration := 1.
 
