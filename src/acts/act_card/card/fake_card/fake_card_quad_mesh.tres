@@ -1,0 +1,9 @@
+[gd_resource type="QuadMesh" format=3 uid="uid://c5t1bv0xmq746"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1p8pn"]
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+
+[resource]
+material = SubResource("StandardMaterial3D_1p8pn")
+size = Vector2(2.52, 3.52)

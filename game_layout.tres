@@ -7,10 +7,11 @@
 [ext_resource type="Resource" uid="uid://banu2qw5hj7vv" path="res://src/acts/act_levitate/act_levitate_level.tres" id="3_m3yia"]
 [ext_resource type="PackedScene" uid="uid://cc4i3boaqjvos" path="res://src/shared/main_menu/main_menu.tscn" id="3_wmsdu"]
 [ext_resource type="Resource" uid="uid://doarl5k5re8ou" path="res://src/acts/act_cups/act_cups_level.tres" id="4_m3yia"]
+[ext_resource type="Resource" uid="uid://djojraiixm7cu" path="res://src/acts/act_card/act_card_level.tres" id="6_stxrg"]
 
 [resource]
 script = ExtResource("2_n44qs")
 _main_menu = ExtResource("3_wmsdu")
-_levels = Array[ExtResource("1_1lyii")]([ExtResource("2_g6j2r"), ExtResource("4_m3yia"), ExtResource("3_m3yia")])
+_levels = Array[ExtResource("1_1lyii")]([ExtResource("2_g6j2r"), ExtResource("4_m3yia"), ExtResource("3_m3yia"), ExtResource("6_stxrg")])
 _end_screen = ExtResource("1_g6j2r")
 metadata/_custom_type_script = "uid://05wudtwgmqgu"

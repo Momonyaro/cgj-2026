@@ -4,8 +4,8 @@ extends MeshInstance3D
 const CARD_X_ASPECT := .63
 const CARD_Y_ASPECT := .88
 
-const SIZE_X := CARD_X_ASPECT * 4
-const SIZE_Y := CARD_Y_ASPECT * 4
+const SIZE_X := CARD_X_ASPECT * 3
+const SIZE_Y := CARD_Y_ASPECT * 3
 
 var drawable_texture: DrawableTexture2D
 var texture_size: Vector2i = Vector2i(int(CARD_X_ASPECT * 1000), int(CARD_Y_ASPECT * 1000))

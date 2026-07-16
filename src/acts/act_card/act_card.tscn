@@ -1,10 +1,182 @@
 [gd_scene format=3 uid="uid://d17dumtq2g8on"]
 
 [ext_resource type="Script" uid="uid://cyvljmchtkt42" path="res://src/shared/act_engine/act_engine.gd" id="1_qeao1"]
-[ext_resource type="PackedScene" uid="uid://cpn03j74nonps" path="res://src/acts/act1/instructions/act1_notes.tscn" id="2_ky1ji"]
+[ext_resource type="PackedScene" uid="uid://cpn03j74nonps" path="res://src/acts/act_levitate/instructions/act_levitate_notes.tscn" id="2_ky1ji"]
 [ext_resource type="Resource" uid="uid://b62iqq7hrtg66" path="res://src/acts/act_card/act_card_collection.tres" id="2_q7ia6"]
 [ext_resource type="PackedScene" uid="uid://b8lftmrjj2j6u" path="res://src/shared/magician/magician.tscn" id="3_q7ia6"]
 [ext_resource type="PackedScene" uid="uid://dhadgulf5erdl" path="res://src/acts/act_card/card/card.tscn" id="4_ky1ji"]
+[ext_resource type="PackedScene" uid="uid://b52fqr482cl42" path="res://src/acts/act_card/card/fake_card/fake_cards.tscn" id="6_sd7fi"]
+
+[sub_resource type="Animation" id="Animation_mfldd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.939, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Card:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Card")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hide"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_8qtk3"]
+resource_name = "to_hat"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2.939, 0.5), Vector3(1.0295486, 3.0383866, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6.2831855, 6.2831855, 0), Vector3(4.712389, 6.2831855, 0), Vector3(1.5707964, 3.1415927, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Card:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.1, 0.1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Card")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"show"
+}, {
+"args": [],
+"method": &"hide"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_sd7fi"]
+resource_name = "to_player"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.0295486, 3.0383866, 1), Vector3(0, 2.939, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.37500003, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.5707964, 3.1415927, 0), Vector3(4.712389, 6.2831855, 0), Vector3(6.2831855, 6.2831855, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Card:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1), Vector3(1, 1, 1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Card")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mfldd"]
+_data = {
+&"RESET": SubResource("Animation_mfldd"),
+&"to_hat": SubResource("Animation_8qtk3"),
+&"to_player": SubResource("Animation_sd7fi")
+}
 
 [node name="ActCard" type="Node3D" unique_id=517127807]
 
@@ -19,4 +191,45 @@ metadata/_custom_type_script = "uid://cyvljmchtkt42"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
 [node name="Card" parent="." unique_id=115822046 instance=ExtResource("4_ky1ji")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.939, 0.5)
+visible = false
+
+[node name="FakeCards1" parent="." unique_id=1840453685 instance=ExtResource("6_sd7fi")]
+transform = Transform3D(0.054, 0, 0, 0, 0.072000004, 0, 0, 0, 0.99999994, -0.9803667, 4.258425, 0)
+visible = false
+
+[node name="FakeCards2" parent="." unique_id=505230861 instance=ExtResource("6_sd7fi")]
+transform = Transform3D(0.038183767, 0.05091169, 0, -0.038183767, 0.050911687, 0, 0, 0, 0.99999994, 1.0842924, 3.9899263, 0)
+visible = false
+
+[node name="FakeCards3" parent="." unique_id=1840557460 instance=ExtResource("6_sd7fi")]
+transform = Transform3D(0.038183767, 0.05091169, 0, -0.038183767, 0.050911687, 0, 0, 0, 0.99999994, 1.0842924, 3.9899263, 0)
+visible = false
+
+[node name="FakeCard" parent="FakeCards3" index="0" unique_id=1716618612]
+visible = false
+
+[node name="FakeCard3" parent="FakeCards3" index="2" unique_id=1594958278]
+visible = false
+
+[node name="FakeCard4" parent="FakeCards3" index="3" unique_id=1751062632]
+visible = false
+
+[node name="FakeCards4" parent="." unique_id=1326804452 instance=ExtResource("6_sd7fi")]
+transform = Transform3D(0.054, 0, 0, 0, 0.072000004, 0, 0, 0, 0.99999994, -0.9540982, 4.263679, 0)
+visible = false
+
+[node name="FakeCard2" parent="FakeCards4" index="1" unique_id=1897003970]
+visible = false
+
+[node name="FakeCard3" parent="FakeCards4" index="2" unique_id=1594958278]
+visible = false
+
+[node name="FakeCard4" parent="FakeCards4" index="3" unique_id=1751062632]
+visible = false
+
+[node name="CardAnimationPlayer" type="AnimationPlayer" parent="." unique_id=130151265]
+libraries/ = SubResource("AnimationLibrary_mfldd")
+
+[editable path="FakeCards3"]
+[editable path="FakeCards4"]

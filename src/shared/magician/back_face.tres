@@ -1,6 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://bdqrh3o8060kn"]
 
+[ext_resource type="Texture2D" uid="uid://chyem2ekhb75v" path="res://src/shared/magician/art/wizard_hold_contents.png" id="1_bb5h5"]
+
 [resource]
 transparency = 4
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_bb5h5")

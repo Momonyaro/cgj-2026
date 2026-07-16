@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bvugg1bo83yy6" path="res://src/acts/act_card/card/card_drawer.gd" id="2_jqape"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_jqape"]
-size = Vector2(2.52, 3.52)
+size = Vector2(1.89, 2.64)
 
 [sub_resource type="Gradient" id="Gradient_jqape"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
@@ -16,7 +16,7 @@ width = 10
 height = 10
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v5nc3"]
-data = PackedVector3Array(1.26, -1.76, 0, -1.26, -1.76, 0, 1.26, 1.76, 0, -1.26, -1.76, 0, -1.26, 1.76, 0, 1.26, 1.76, 0)
+data = PackedVector3Array(0.945, -1.3199999, 0, -0.945, -1.3199999, 0, 0.945, 1.3199999, 0, -0.945, -1.3199999, 0, -0.945, 1.3199999, 0, 0.945, 1.3199999, 0)
 
 [node name="Card" type="Node3D" unique_id=115822046]
 
@@ -26,9 +26,9 @@ surface_material_override/0 = ExtResource("1_v5nc3")
 script = ExtResource("1_jqape")
 brush_texture = SubResource("GradientTexture2D_q7ia6")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CardMesh" unique_id=1377018990]
+[node name="StaticBody3D" type="StaticBody3D" parent="CardMesh" unique_id=591115380]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CardMesh/StaticBody3D" unique_id=1580339550]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CardMesh/StaticBody3D" unique_id=272972534]
 shape = SubResource("ConcavePolygonShape3D_v5nc3")
 
 [node name="CardDrawer" type="Node3D" parent="." unique_id=203424269]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbio155q810bt"]
+
+[ext_resource type="QuadMesh" uid="uid://c5t1bv0xmq746" path="res://src/acts/act_card/card/fake_card/fake_card_quad_mesh.tres" id="1_0u5v1"]
+
+[node name="FakeCard" type="MeshInstance3D" unique_id=1987638316]
+mesh = ExtResource("1_0u5v1")

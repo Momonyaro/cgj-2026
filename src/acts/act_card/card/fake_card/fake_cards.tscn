@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b52fqr482cl42"]
+
+[ext_resource type="PackedScene" uid="uid://bbio155q810bt" path="res://src/acts/act_card/card/fake_card/fake_card.tscn" id="2_xqe4c"]
+
+[node name="FakeCards" type="Node3D" unique_id=115822046]
+
+[node name="FakeCard" parent="." unique_id=1716618612 instance=ExtResource("2_xqe4c")]
+transform = Transform3D(0.96592575, -0.25881904, 0, 0.25881904, 0.96592575, 0, 0, 0, 1, -1, 0, 0.009)
+
+[node name="FakeCard2" parent="." unique_id=1897003970 instance=ExtResource("2_xqe4c")]
+transform = Transform3D(0.96592593, 0.25881907, 0, -0.25881907, 0.96592593, 0, 0, 0, 1, 1, 0, 0.008)
+
+[node name="FakeCard3" parent="." unique_id=1594958278 instance=ExtResource("2_xqe4c")]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 2.603, -0.991, 0.007)
+
+[node name="FakeCard4" parent="." unique_id=1751062632 instance=ExtResource("2_xqe4c")]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, -2.645, -0.984, 0.01)
