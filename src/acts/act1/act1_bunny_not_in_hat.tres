@@ -8,6 +8,11 @@
 [ext_resource type="Script" uid="uid://dlxwxd3ua60y4" path="res://src/shared/act_engine/events/captivate_event.gd" id="6_dcx5r"]
 [ext_resource type="Script" uid="uid://bxsl188rk2b50" path="res://src/shared/act_engine/act_collection.gd" id="9_dpn03"]
 
+[sub_resource type="Resource" id="Resource_sc0kd"]
+script = ExtResource("3_g87ft")
+duration = 0.1
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
 [sub_resource type="Resource" id="Resource_8qkce"]
 script = ExtResource("5_1qj5p")
 next_sprite = ExtResource("2_v8ivs")
@@ -33,5 +38,5 @@ metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
 [resource]
 script = ExtResource("9_dpn03")
-events = Array[ExtResource("1_0abtn")]([SubResource("Resource_8qkce"), SubResource("Resource_0v2vy"), SubResource("Resource_1l6yu"), SubResource("Resource_6oiti")])
+events = Array[ExtResource("1_0abtn")]([SubResource("Resource_sc0kd"), SubResource("Resource_8qkce"), SubResource("Resource_0v2vy"), SubResource("Resource_1l6yu"), SubResource("Resource_6oiti")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"

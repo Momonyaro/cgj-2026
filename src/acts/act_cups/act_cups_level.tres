@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://doarl5k5re8ou"]
+
+[ext_resource type="Script" uid="uid://0kgyevokhecf" path="res://starter_kit/level_utils/level_resource.gd" id="1_k5d80"]
+[ext_resource type="PackedScene" uid="uid://dpomtw0b3wr8p" path="res://src/acts/act_cups/act_cups.tscn" id="1_ubp1i"]
+
+[resource]
+script = ExtResource("1_k5d80")
+_name = &"ActCups"
+_scene = ExtResource("1_ubp1i")
+metadata/_custom_type_script = "uid://0kgyevokhecf"

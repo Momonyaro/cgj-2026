@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dpomtw0b3wr8p"]
+
+[ext_resource type="Script" uid="uid://cyvljmchtkt42" path="res://src/shared/act_engine/act_engine.gd" id="1_ctivg"]
+[ext_resource type="Resource" uid="uid://ct42ajujcbj5w" path="res://src/acts/act_cups/act_cups_collection.tres" id="2_0jr7x"]
+[ext_resource type="PackedScene" uid="uid://cpn03j74nonps" path="res://src/acts/act1/instructions/act1_notes.tscn" id="3_w3yvf"]
+[ext_resource type="PackedScene" uid="uid://b8lftmrjj2j6u" path="res://src/shared/magician/magician.tscn" id="4_ikoqd"]
+
+[node name="ActCups" type="Node3D" unique_id=248595300]
+
+[node name="ActEngine" type="Node" parent="." unique_id=827167788 node_paths=PackedStringArray("magician")]
+script = ExtResource("1_ctivg")
+act = ExtResource("2_0jr7x")
+notes = ExtResource("3_w3yvf")
+magician = NodePath("../Magician")
+metadata/_custom_type_script = "uid://cyvljmchtkt42"
+
+[node name="Magician" parent="." unique_id=1219081681 instance=ExtResource("4_ikoqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
