@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://djojraiixm7cu"]
+
+[ext_resource type="PackedScene" uid="uid://d17dumtq2g8on" path="res://src/acts/act_card/act_card.tscn" id="1_3c81x"]
+[ext_resource type="Script" uid="uid://0kgyevokhecf" path="res://starter_kit/level_utils/level_resource.gd" id="1_v1pib"]
+
+[resource]
+script = ExtResource("1_v1pib")
+_name = &"ActCards"
+_scene = ExtResource("1_3c81x")
+metadata/_custom_type_script = "uid://0kgyevokhecf"

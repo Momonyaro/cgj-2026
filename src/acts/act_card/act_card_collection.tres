@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="ActCollection" format=3 uid="uid://b62iqq7hrtg66"]
+
+[ext_resource type="Script" uid="uid://5nkn7cxwp168" path="res://src/shared/act_engine/events/act_event.gd" id="1_gy17v"]
+[ext_resource type="Script" uid="uid://byrxo5l2e6swj" path="res://src/shared/act_engine/events/wait_scene_ready_event.gd" id="2_12om2"]
+[ext_resource type="Script" uid="uid://bxsl188rk2b50" path="res://src/shared/act_engine/act_collection.gd" id="2_yuumm"]
+[ext_resource type="Texture2D" uid="uid://btse5kwcdcd0q" path="res://src/shared/magician/art/wizard_praise.png" id="3_w5y1o"]
+[ext_resource type="Script" uid="uid://cshjplosaguh6" path="res://src/shared/act_engine/events/swap_event.gd" id="4_kqv5n"]
+[ext_resource type="Script" uid="uid://b13mrlxyyg60r" path="res://src/shared/act_engine/events/wait_event.gd" id="5_ktbh5"]
+[ext_resource type="Texture2D" uid="uid://c3bxey0y3qx1j" path="res://src/shared/magician/art/wizard_bow.png" id="6_6rbtg"]
+
+[sub_resource type="Resource" id="Resource_12om2"]
+script = ExtResource("2_12om2")
+metadata/_custom_type_script = "uid://byrxo5l2e6swj"
+
+[sub_resource type="Resource" id="Resource_j6mao"]
+script = ExtResource("4_kqv5n")
+next_sprite = ExtResource("3_w5y1o")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
+
+[sub_resource type="Resource" id="Resource_1rr34"]
+script = ExtResource("5_ktbh5")
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
+[sub_resource type="Resource" id="Resource_w5y1o"]
+script = ExtResource("4_kqv5n")
+next_sprite = ExtResource("6_6rbtg")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
+
+[sub_resource type="Resource" id="Resource_sd7fi"]
+script = ExtResource("5_ktbh5")
+duration = 600.0
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
+[resource]
+script = ExtResource("2_yuumm")
+events = Array[ExtResource("1_gy17v")]([SubResource("Resource_12om2"), SubResource("Resource_j6mao"), SubResource("Resource_1rr34"), SubResource("Resource_w5y1o"), SubResource("Resource_sd7fi")])
+metadata/_custom_type_script = "uid://bxsl188rk2b50"

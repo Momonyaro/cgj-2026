@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dei3yxv2xjbfu"]
+
+[ext_resource type="Shader" uid="uid://cxq1bd6trajmk" path="res://src/acts/act_card/card.gdshader" id="1_4re78"]
+[ext_resource type="Texture2D" uid="uid://8xvoivu73i6a" path="res://src/acts/act_card/card/card_back_red.png" id="2_83e5w"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_4re78")
+shader_parameter/back_texture = ExtResource("2_83e5w")

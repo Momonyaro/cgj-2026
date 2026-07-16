@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d17dumtq2g8on"]
+
+[ext_resource type="Script" uid="uid://cyvljmchtkt42" path="res://src/shared/act_engine/act_engine.gd" id="1_qeao1"]
+[ext_resource type="PackedScene" uid="uid://cpn03j74nonps" path="res://src/acts/act1/instructions/act1_notes.tscn" id="2_ky1ji"]
+[ext_resource type="Resource" uid="uid://b62iqq7hrtg66" path="res://src/acts/act_card/act_card_collection.tres" id="2_q7ia6"]
+[ext_resource type="PackedScene" uid="uid://b8lftmrjj2j6u" path="res://src/shared/magician/magician.tscn" id="3_q7ia6"]
+[ext_resource type="PackedScene" uid="uid://dhadgulf5erdl" path="res://src/acts/act_card/card/card.tscn" id="4_ky1ji"]
+
+[node name="ActCard" type="Node3D" unique_id=517127807]
+
+[node name="ActEngine" type="Node" parent="." unique_id=350658162 node_paths=PackedStringArray("magician")]
+script = ExtResource("1_qeao1")
+act = ExtResource("2_q7ia6")
+notes = ExtResource("2_ky1ji")
+magician = NodePath("../Magician")
+metadata/_custom_type_script = "uid://cyvljmchtkt42"
+
+[node name="Magician" parent="." unique_id=1219081681 instance=ExtResource("3_q7ia6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+
+[node name="Card" parent="." unique_id=115822046 instance=ExtResource("4_ky1ji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 1)
