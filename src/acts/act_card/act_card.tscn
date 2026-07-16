@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://d17dumtq2g8on"]
 
 [ext_resource type="Script" uid="uid://cyvljmchtkt42" path="res://src/shared/act_engine/act_engine.gd" id="1_qeao1"]
-[ext_resource type="PackedScene" uid="uid://cpn03j74nonps" path="res://src/acts/act_levitate/instructions/act_levitate_notes.tscn" id="2_ky1ji"]
 [ext_resource type="Resource" uid="uid://b62iqq7hrtg66" path="res://src/acts/act_card/act_card_collection.tres" id="2_q7ia6"]
 [ext_resource type="PackedScene" uid="uid://b8lftmrjj2j6u" path="res://src/shared/magician/magician.tscn" id="3_q7ia6"]
+[ext_resource type="PackedScene" uid="uid://dh6ytobo7me2p" path="res://src/acts/act_card/instructions/act_card_notes.tscn" id="3_sd7fi"]
 [ext_resource type="PackedScene" uid="uid://dhadgulf5erdl" path="res://src/acts/act_card/card/card.tscn" id="4_ky1ji"]
 [ext_resource type="PackedScene" uid="uid://b52fqr482cl42" path="res://src/acts/act_card/card/fake_card/fake_cards.tscn" id="6_sd7fi"]
 
@@ -183,7 +183,7 @@ _data = {
 [node name="ActEngine" type="Node" parent="." unique_id=350658162 node_paths=PackedStringArray("magician")]
 script = ExtResource("1_qeao1")
 act = ExtResource("2_q7ia6")
-notes = ExtResource("2_ky1ji")
+notes = ExtResource("3_sd7fi")
 magician = NodePath("../Magician")
 metadata/_custom_type_script = "uid://cyvljmchtkt42"
 

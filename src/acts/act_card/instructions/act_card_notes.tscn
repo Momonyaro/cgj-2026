@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dh6ytobo7me2p"]
+
+[ext_resource type="PackedScene" uid="uid://b776vcixoys55" path="res://src/shared/notes/note.tscn" id="1_vitbp"]
+[ext_resource type="Texture2D" uid="uid://b2qavwkwwknee" path="res://src/acts/act_card/instructions/act_card_1.png" id="2_u8esm"]
+[ext_resource type="Texture2D" uid="uid://ddw4nv6btlihf" path="res://src/acts/act_card/instructions/act_card_2.png" id="3_u8esm"]
+[ext_resource type="Texture2D" uid="uid://c6xg345i607n6" path="res://src/acts/act_card/instructions/act_card_3.png" id="4_u8esm"]
+
+[node name="ActCardNotes" type="Node3D" unique_id=1216771042]
+
+[node name="Note1" parent="." unique_id=312576623 instance=ExtResource("1_vitbp")]
+transform = Transform3D(0.12544283, 0, 0, 0, 0.12544283, 0, 0, 0, 0.1, -0.1445718, 0.579302, 0)
+note_texture = ExtResource("2_u8esm")
+
+[node name="Note2" parent="." unique_id=251052563 instance=ExtResource("1_vitbp")]
+transform = Transform3D(0.12544283, 0, 0, 0, 0.12544283, 0, 0, 0, 0.1, -0.81709266, -0.5988959, 0)
+note_texture = ExtResource("3_u8esm")
+
+[node name="Note3" parent="." unique_id=1946720845 instance=ExtResource("1_vitbp")]
+transform = Transform3D(0.12544283, 0, 0, 0, 0.12544283, 0, 0, 0, 0.1, 0.71065986, -0.6202973, 0)
+note_texture = ExtResource("4_u8esm")
