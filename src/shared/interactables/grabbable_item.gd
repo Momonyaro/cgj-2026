@@ -38,11 +38,14 @@ func grab(p_cursor: Cursor) -> CollisionObject3D:
 		Stage.audience.excite(.1, false)
 	return self
 
+
 func ungrab(_cursor: Cursor) -> void:
 	is_grabbed = false
 	freeze = false
 	linear_velocity = linear_velocity.limit_length(MAX_THROW_SPEED)
 	released.emit()
+	if linear_velocity.length() >= MAX_THROW_SPEED * .5:
+		SFX.play("bomb_throw")
 	if Stage._singleton:
 		Stage.audience.bore(.1, false)
 
