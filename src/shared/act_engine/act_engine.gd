@@ -94,6 +94,8 @@ func _bind_events(events):
 				_bind_condition_event(event)
 			ActEvent.CAPTIVATE:
 				_bind_captivate_event(event)
+			ActEvent.WAIT_SCENE_READY:
+				_bind_wait_scene_ready_event(event)
 
 
 func _bind_walk_event(event: WalkEvent):
@@ -115,12 +117,13 @@ func _bind_spawn_event(event: SpawnEvent):
 
 
 func _bind_condition_event(event: WaitExpressionEvent):
-	event.context = self
-	event.input_names = ["Stage"]
-	event.inputs = [Stage]
+	pass
 
 
 func _bind_captivate_event(_event: CaptivateEvent):
+	pass
+
+func _bind_wait_scene_ready_event(_event: WaitSceneReadyEvent):
 	pass
 
 
