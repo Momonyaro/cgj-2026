@@ -17,8 +17,7 @@ speed = 0.05
 excite_sfx_tracks = Dictionary[StringName, float]({
 &"applause_0": 0.2,
 &"applause_1": 0.5,
-&"applause_2": 0.8,
-&"boo_0": 0.0
+&"applause_2": 0.8
 })
 
 [node name="Spectator" parent="." unique_id=1181972335 instance=ExtResource("2_yaek1")]

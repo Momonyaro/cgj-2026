@@ -142,8 +142,9 @@ func _handle_excite_sfx():
 		var value := excite_sfx_tracks[track]
 		if excite_track.is_empty() or (value > excite_sfx_tracks[excite_track] and value <= _excitement):
 			excite_track = track
-	SFX.stop_from_collection_and_play(excite_track, excite_sfx_tracks.keys())
+	SFX.stop("audience")
+	SFX.play(excite_track, "audience")
 
 func _handle_bore_sfx():
 	if _excitement < min_excitement_before_boos:
-		SFX.stop_from_collection_and_play(BOO_SFX_KEY, excite_sfx_tracks.keys())
+		SFX.play(BOO_SFX_KEY, "audience")

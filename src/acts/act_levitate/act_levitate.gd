@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 	if _running and not _paused:
 		var in_bounds = detection_area._target_in_bounds
 		if in_bounds:
-			Stage.audience.excite(_delta * 0.12)
+			Stage.audience.excite(_delta * 0.12, false)
 
 func try_start() -> bool:
 	_started = true
