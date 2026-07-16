@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://byrxo5l2e6swj" path="res://src/shared/act_engine/events/wait_scene_ready_event.gd" id="5_d8jrv"]
 [ext_resource type="Script" uid="uid://bd1mnsfmb01qi" path="res://src/shared/act_engine/events/walk_event.gd" id="6_a2m06"]
 [ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="res://src/shared/act_engine/events/wait_expression_event.gd" id="6_yaev6"]
+[ext_resource type="Script" uid="uid://d22hs771jan4i" path="res://src/shared/act_engine/events/angle_spotlight_event.gd" id="9_gff1y"]
 
 [sub_resource type="Resource" id="Resource_7i6ql"]
 script = ExtResource("2_idsvq")
@@ -31,6 +32,12 @@ pos_x = -1.2
 x_trans = 4
 frequency = 1.2
 metadata/_custom_type_script = "uid://bd1mnsfmb01qi"
+
+[sub_resource type="Resource" id="Resource_i5uj8"]
+script = ExtResource("9_gff1y")
+look_at = NodePath("../CupsTrick")
+duration = 0.3
+metadata/_custom_type_script = "uid://d22hs771jan4i"
 
 [sub_resource type="Resource" id="Resource_gff1y"]
 script = ExtResource("3_idsvq")
@@ -86,5 +93,5 @@ metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
 [resource]
 script = ExtResource("2_fqo81")
-events = Array[ExtResource("1_dm4fi")]([SubResource("Resource_7i6ql"), SubResource("Resource_egeec"), SubResource("Resource_m3yia"), SubResource("Resource_2ubrw"), SubResource("Resource_gff1y"), SubResource("Resource_j4qen"), SubResource("Resource_xnh22"), SubResource("Resource_leplx"), SubResource("Resource_iqqxp"), SubResource("Resource_srama"), SubResource("Resource_bh11v"), SubResource("Resource_0ddox"), SubResource("Resource_mqgd1"), SubResource("Resource_q8rll")])
+events = Array[ExtResource("1_dm4fi")]([SubResource("Resource_7i6ql"), SubResource("Resource_egeec"), SubResource("Resource_m3yia"), SubResource("Resource_2ubrw"), SubResource("Resource_i5uj8"), SubResource("Resource_gff1y"), SubResource("Resource_j4qen"), SubResource("Resource_xnh22"), SubResource("Resource_leplx"), SubResource("Resource_iqqxp"), SubResource("Resource_srama"), SubResource("Resource_bh11v"), SubResource("Resource_0ddox"), SubResource("Resource_mqgd1"), SubResource("Resource_q8rll")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"

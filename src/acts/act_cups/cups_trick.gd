@@ -54,7 +54,6 @@ func play_trick() -> void:
 func play_reveal() -> void:
 	is_playing = true
 	await reveal(1)
-	await reveal(0)
 	await reveal(2)
 	is_playing = false
 
