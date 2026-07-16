@@ -18,9 +18,6 @@ metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 [sub_resource type="Resource" id="Resource_vydyc"]
 script = ExtResource("3_t4wox")
 pos_x = 3.0
-x_trans = 10
-height = 0.25
-frequency = 4.0
 metadata/_custom_type_script = "uid://bd1mnsfmb01qi"
 
 [sub_resource type="Resource" id="Resource_7doi7"]
@@ -45,7 +42,6 @@ script = ExtResource("3_t4wox")
 pos_x = -3.0
 x_trans = 1
 height = 0.15
-frequency = 4.0
 metadata/_custom_type_script = "uid://bd1mnsfmb01qi"
 
 [sub_resource type="Resource" id="Resource_1kpxg"]

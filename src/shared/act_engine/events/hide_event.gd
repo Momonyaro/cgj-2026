@@ -12,3 +12,4 @@ func get_type() -> int:
 func execute() -> void:
 	var target_node := engine.get_node(target)
 	target_node.hide()
+	finished.emit()

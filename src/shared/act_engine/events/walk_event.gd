@@ -5,9 +5,9 @@ class_name WalkEvent
 @export var duration := 1.
 @export var pos_x := 0.
 
-@export var x_trans := Tween.TRANS_BOUNCE
-@export var height := 0.5
-@export var frequency := 8.
+@export var x_trans := Tween.TRANS_BACK
+@export var height := 0.25
+@export var frequency := 4.
 
 var _start_pos: Vector3
 

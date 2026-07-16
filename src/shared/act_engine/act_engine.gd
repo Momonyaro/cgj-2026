@@ -112,11 +112,11 @@ func _bind_wait_event(event: WaitEvent):
 	event.timer_spawner = self
 
 
-func _bind_spawn_event(event: SpawnEvent):
+func _bind_spawn_event(_event: SpawnEvent):
 	pass
 
 
-func _bind_wait_expression_event(event: WaitExpressionEvent):
+func _bind_wait_expression_event(_event: WaitExpressionEvent):
 	pass
 
 
@@ -126,7 +126,7 @@ func _bind_captivate_event(_event: CaptivateEvent):
 func _bind_wait_scene_ready_event(_event: WaitSceneReadyEvent):
 	pass
 
-func _bind_visibility_events(event):
+func _bind_visibility_events(_event):
 	pass
 
 # -- Helpers

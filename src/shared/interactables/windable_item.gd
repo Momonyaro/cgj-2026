@@ -15,7 +15,10 @@ var prev_angle: float
 
 
 func process_grab(_delta: float) -> void:
-	var new_angle := get_angle_to_hand()
+	angle(get_angle_to_hand())
+
+
+func angle(new_angle):
 	var angle_diff := angle_difference(prev_angle, new_angle)
 	angle_diff = clampf(angle_diff, -TAU * .25, TAU * .25)
 	rotation.z += angle_diff
