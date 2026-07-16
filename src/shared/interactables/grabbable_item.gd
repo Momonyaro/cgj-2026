@@ -50,11 +50,12 @@ func ungrab(_cursor: Cursor) -> void:
 		Stage.audience.bore(.1, false)
 
 
-func enter_hat() -> void:
+func enter_hat(die := true) -> void:
 	if in_hat:
 		return
 	in_hat = true
-	get_parent().remove_child(self)
+	if die:
+		get_parent().remove_child(self)
 	# var tween := create_tween()
 	# tween.tween_property(self, "scale", Vector3.ONE * 0.5, 0.2)
 	# position.y -= 0.1
