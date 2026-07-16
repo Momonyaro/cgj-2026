@@ -55,6 +55,7 @@ metadata/_custom_type_script = "uid://cshjplosaguh6"
 [sub_resource type="Resource" id="Resource_1l6yu"]
 script = ExtResource("7_wk2ln")
 captivate = -1.0
+fire_sfx = false
 metadata/_custom_type_script = "uid://dlxwxd3ua60y4"
 
 [sub_resource type="Resource" id="Resource_vne4c"]

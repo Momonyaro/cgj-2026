@@ -34,3 +34,4 @@ mesh = ExtResource("4_q56t5")
 
 [connection signal="anything_entered" from="." to="SpriteBouncer" method="bounce"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="ready" from="." to="SpriteBouncer" method="bounce"]
