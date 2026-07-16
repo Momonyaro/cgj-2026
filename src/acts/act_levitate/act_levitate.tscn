@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cyvljmchtkt42" path="res://src/shared/act_engine/act_engine.gd" id="1_fisqf"]
 [ext_resource type="Script" uid="uid://bunue1buvymrk" path="res://src/acts/act_levitate/act_levitate.gd" id="1_jgmku"]
 [ext_resource type="Resource" uid="uid://bnckrvenrakkk" path="res://src/acts/act_levitate/act_levitate_collection.tres" id="2_fisqf"]
-[ext_resource type="PackedScene" uid="uid://cpn03j74nonps" path="res://src/acts/act1/instructions/act1_notes.tscn" id="3_uddtq"]
+[ext_resource type="PackedScene" uid="uid://cpn03j74nonps" path="res://src/acts/act_levitate/instructions/act_levitate_notes.tscn" id="3_uddtq"]
 [ext_resource type="PackedScene" uid="uid://b8lftmrjj2j6u" path="res://src/shared/magician/magician.tscn" id="4_25tfw"]
 [ext_resource type="PackedScene" uid="uid://cdwskxhoytde1" path="res://src/acts/act_levitate/detection_area.tscn" id="4_eos0c"]
 [ext_resource type="Texture2D" uid="uid://eeixomoxrvfy" path="res://src/shared/magician/test_img_1.png" id="7_uddtq"]

@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cyvljmchtkt42" path="res://src/shared/act_engine/act_engine.gd" id="1_a1avv"]
 [ext_resource type="Resource" uid="uid://dy02n1784ay7o" path="res://src/acts/act1/act1_collection.tres" id="2_6i72p"]
 [ext_resource type="PackedScene" uid="uid://b8lftmrjj2j6u" path="res://src/shared/magician/magician.tscn" id="2_dr7gf"]
+[ext_resource type="PackedScene" uid="uid://vhq46a2kpoir" path="res://src/acts/act1/instructions/act1_notes.tscn" id="3_6oiti"]
 [ext_resource type="Script" uid="uid://bsim8g73xve5k" path="res://src/acts/act1/smoke_detector/smoke_detector.gd" id="5_6oiti"]
-[ext_resource type="PackedScene" uid="uid://cpn03j74nonps" path="res://src/acts/act1/instructions/act1_notes.tscn" id="5_dwhyu"]
 [ext_resource type="Texture2D" uid="uid://cndepsblf1eo" path="res://src/shared/magician/test_img_2.png" id="6_6oiti"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_25acc"]
@@ -22,7 +22,7 @@ material = SubResource("StandardMaterial3D_rqq6o")
 [node name="ActEngine" type="Node" parent="." unique_id=827167788 node_paths=PackedStringArray("magician")]
 script = ExtResource("1_a1avv")
 act = ExtResource("2_6i72p")
-notes = ExtResource("5_dwhyu")
+notes = ExtResource("3_6oiti")
 magician = NodePath("../Magician")
 metadata/_custom_type_script = "uid://cyvljmchtkt42"
 
