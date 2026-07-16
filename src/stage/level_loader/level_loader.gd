@@ -99,7 +99,11 @@ func _transition_out():
 func _reset_shared_props():
 	if shared_props_instance:
 		shared_props_instance.queue_free()
+	_create_props.call_deferred()
+
+func _create_props():
 	shared_props_instance = shared_props_placeholder.create_instance()
+	shared_props_instance.name = "SharedPropsInstance"
 
 
 func await_notes():

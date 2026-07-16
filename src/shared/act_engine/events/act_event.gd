@@ -4,7 +4,7 @@ class_name ActEvent
 
 signal finished()
 
-enum { WALK, SWAP, WAIT, WAIT_EXPRESSION, WAIT_SCENE_READY, SPAWN, CAPTIVATE, CALL, VISIBILITY }
+enum { WALK, SWAP, WAIT, WAIT_EXPRESSION, WAIT_SCENE_READY, SPAWN, CAPTIVATE, CALL, VISIBILITY, ANGLE_SPOTLIGHT }
 
 # -- Bindings --
 var engine: ActEngine = null

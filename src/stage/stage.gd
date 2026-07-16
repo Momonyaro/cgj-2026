@@ -16,6 +16,12 @@ static var notes_board: NotesBoard:
 	get():
 		return _singleton._notes_board
 
+static var left_spot_light: WindableItem:
+	get(): return _singleton._left_spot_light
+
+static var right_spot_light: WindableItem:
+	get(): return _singleton._right_spot_light
+
 var _level_loader: LevelLoader = null
 var _audience: Audience = null
 var _notes_board: NotesBoard = null

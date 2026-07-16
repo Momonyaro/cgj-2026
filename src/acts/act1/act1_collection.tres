@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://byrxo5l2e6swj" path="res://src/shared/act_engine/events/wait_scene_ready_event.gd" id="5_7g122"]
 [ext_resource type="Texture2D" uid="uid://c3bxey0y3qx1j" path="res://src/shared/magician/art/wizard_bow.png" id="6_0v2vy"]
 [ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="res://src/shared/act_engine/events/wait_expression_event.gd" id="6_lrs6a"]
+[ext_resource type="Script" uid="uid://d22hs771jan4i" path="res://src/shared/act_engine/events/angle_spotlight_event.gd" id="7_e4vjn"]
 [ext_resource type="Script" uid="uid://dlxwxd3ua60y4" path="res://src/shared/act_engine/events/captivate_event.gd" id="7_wk2ln"]
 [ext_resource type="Script" uid="uid://4gi3mbocwio5" path="res://src/shared/act_engine/events/spawn_event.gd" id="8_11xvn"]
 [ext_resource type="Script" uid="uid://baao3s0qntpbv" path="res://src/shared/act_engine/events/show_event.gd" id="8_cwrer"]
@@ -35,11 +36,33 @@ metadata/_custom_type_script = "uid://d2sknlfasl7rg"
 script = ExtResource("5_7g122")
 metadata/_custom_type_script = "uid://byrxo5l2e6swj"
 
+[sub_resource type="Resource" id="Resource_eki60"]
+script = ExtResource("7_e4vjn")
+spotlight = 0
+look_at = NodePath("../../../SharedPropsInstance/BoxOfBombs")
+duration = 0.5
+is_async = true
+metadata/_custom_type_script = "uid://d22hs771jan4i"
+
+[sub_resource type="Resource" id="Resource_t4wox"]
+script = ExtResource("7_e4vjn")
+spotlight = 1
+look_at = NodePath("../../../SharedPropsInstance/Bunny")
+duration = 0.5
+metadata/_custom_type_script = "uid://d22hs771jan4i"
+
 [sub_resource type="Resource" id="Resource_p1c7k"]
 script = ExtResource("6_lrs6a")
 context = NodePath("../SmokeDetector")
 expression = "caught_smoke == true"
 metadata/_custom_type_script = "uid://1qnl6sg2gebf"
+
+[sub_resource type="Resource" id="Resource_sustq"]
+script = ExtResource("7_e4vjn")
+look_at = NodePath("../Magician")
+duration = 0.75
+is_async = true
+metadata/_custom_type_script = "uid://d22hs771jan4i"
 
 [sub_resource type="Resource" id="Resource_e4vjn"]
 script = ExtResource("8_cwrer")
@@ -65,6 +88,13 @@ script = ExtResource("14_cwrer")
 pos_x = 3.0
 metadata/_custom_type_script = "uid://bd1mnsfmb01qi"
 
+[sub_resource type="Resource" id="Resource_kcxvs"]
+script = ExtResource("7_e4vjn")
+look_at = NodePath("../Magician")
+duration = 0.5
+is_async = true
+metadata/_custom_type_script = "uid://d22hs771jan4i"
+
 [sub_resource type="Resource" id="Resource_6i72p"]
 script = ExtResource("4_lrs6a")
 next_sprite = ExtResource("6_0v2vy")
@@ -85,6 +115,13 @@ duration = 1.5
 pos_x = -3.0
 metadata/_custom_type_script = "uid://bd1mnsfmb01qi"
 
+[sub_resource type="Resource" id="Resource_ukaaf"]
+script = ExtResource("7_e4vjn")
+look_at = NodePath("../Magician")
+duration = 0.5
+is_async = true
+metadata/_custom_type_script = "uid://d22hs771jan4i"
+
 [sub_resource type="Resource" id="Resource_udrrb"]
 script = ExtResource("4_lrs6a")
 next_sprite = ExtResource("6_0v2vy")
@@ -102,6 +139,13 @@ metadata/_custom_type_script = "uid://cshjplosaguh6"
 [sub_resource type="Resource" id="Resource_lui48"]
 script = ExtResource("14_cwrer")
 metadata/_custom_type_script = "uid://bd1mnsfmb01qi"
+
+[sub_resource type="Resource" id="Resource_1r46r"]
+script = ExtResource("7_e4vjn")
+look_at = NodePath("../Magician")
+duration = 0.5
+is_async = true
+metadata/_custom_type_script = "uid://d22hs771jan4i"
 
 [sub_resource type="Resource" id="Resource_1l6yu"]
 script = ExtResource("7_wk2ln")
@@ -138,5 +182,5 @@ metadata/_custom_type_script = "uid://1qnl6sg2gebf"
 
 [resource]
 script = ExtResource("2_0p13b")
-events = Array[ExtResource("1_56n7f")]([SubResource("Resource_cwrer"), SubResource("Resource_5f5wt"), SubResource("Resource_dwhyu"), SubResource("Resource_25acc"), SubResource("Resource_p1c7k"), SubResource("Resource_e4vjn"), SubResource("Resource_lrs6a"), SubResource("Resource_khprr"), SubResource("Resource_vgc8l"), SubResource("Resource_uxnp2"), SubResource("Resource_6i72p"), SubResource("Resource_11xvn"), SubResource("Resource_pvyc3"), SubResource("Resource_caqs7"), SubResource("Resource_udrrb"), SubResource("Resource_atyk2"), SubResource("Resource_8qkce"), SubResource("Resource_lui48"), SubResource("Resource_1l6yu"), SubResource("Resource_vne4c"), SubResource("Resource_d18h6"), SubResource("Resource_25cp6"), SubResource("Resource_7g122")])
+events = Array[ExtResource("1_56n7f")]([SubResource("Resource_cwrer"), SubResource("Resource_5f5wt"), SubResource("Resource_dwhyu"), SubResource("Resource_25acc"), SubResource("Resource_eki60"), SubResource("Resource_t4wox"), SubResource("Resource_p1c7k"), SubResource("Resource_sustq"), SubResource("Resource_e4vjn"), SubResource("Resource_lrs6a"), SubResource("Resource_khprr"), SubResource("Resource_vgc8l"), SubResource("Resource_uxnp2"), SubResource("Resource_kcxvs"), SubResource("Resource_6i72p"), SubResource("Resource_11xvn"), SubResource("Resource_pvyc3"), SubResource("Resource_caqs7"), SubResource("Resource_ukaaf"), SubResource("Resource_udrrb"), SubResource("Resource_atyk2"), SubResource("Resource_8qkce"), SubResource("Resource_lui48"), SubResource("Resource_1r46r"), SubResource("Resource_1l6yu"), SubResource("Resource_vne4c"), SubResource("Resource_d18h6"), SubResource("Resource_25cp6"), SubResource("Resource_7g122")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"
