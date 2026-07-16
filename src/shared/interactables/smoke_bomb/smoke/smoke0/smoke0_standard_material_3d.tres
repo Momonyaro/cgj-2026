@@ -1,13 +1,12 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://b7xfx4ngsht78"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g07r2"]
-load_path = "res://.godot/imported/smoke0.png-8faac06e8fd0d8841aefe0aa85797885.s3tc.ctex"
+[ext_resource type="Texture2D" uid="uid://dy7yndeqdklp4" path="res://src/shared/interactables/smoke_bomb/smoke/smoke0/smoke0.png" id="1_yof3d"]
 
 [resource]
 transparency = 1
 no_depth_test = true
 shading_mode = 0
-albedo_texture = SubResource("CompressedTexture2D_g07r2")
+albedo_texture = ExtResource("1_yof3d")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
