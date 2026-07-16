@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cpn03j74nonps" path="res://src/acts/act1/instructions/act1_notes.tscn" id="3_uddtq"]
 [ext_resource type="PackedScene" uid="uid://b8lftmrjj2j6u" path="res://src/shared/magician/magician.tscn" id="4_25tfw"]
 [ext_resource type="PackedScene" uid="uid://cdwskxhoytde1" path="res://src/acts/act_levitate/detection_area.tscn" id="4_eos0c"]
+[ext_resource type="Texture2D" uid="uid://eeixomoxrvfy" path="res://src/shared/magician/test_img_1.png" id="7_uddtq"]
 
 [sub_resource type="Animation" id="Animation_fisqf"]
 length = 0.001
@@ -61,6 +62,33 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0.35), Vector3(0, 2, 0.35)]
 }
 
+[sub_resource type="Animation" id="Animation_2cl60"]
+resource_name = "outro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DetectionArea:bounds")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.6, 0.6, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DetectionArea:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2, 0.35), Vector3(0, 0, 0.35)]
+}
+
 [sub_resource type="Animation" id="Animation_uddtq"]
 resource_name = "stage_1"
 length = 7.0
@@ -79,7 +107,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_25tfw"]
 resource_name = "stage_2"
-length = 5.0333333
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -105,18 +133,55 @@ tracks/1/keys = {
 "values": [Vector3(0.6, 0.6, 6), Vector3(0.6, 2.3, 6), Vector3(0.6, 0.6, 6), Vector3(3.6, 0.6, 6), Vector3(0.6, 0.6, 6), Vector3(2.1, 2.1, 6), Vector3(0.6, 0.6, 6), Vector3(2.1, 2.1, 6), Vector3(0.6, 0.6, 6)]
 }
 
+[sub_resource type="Animation" id="Animation_xk3cl"]
+resource_name = "stage_3"
+length = 8.033334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DetectionArea:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2333333, 1.9, 2.58, 3.28, 3.82, 4.58, 5.96, 8.033334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.7, 0.35), Vector3(0.9, 5, 0.35), Vector3(1.114, 1.5, 0.35), Vector3(1.3, 5, 0.35), Vector3(1.6, 1.5, 0.35), Vector3(3.7139068, 2.9411979, 0.35), Vector3(1.2828145, 5.2737017, 0.35), Vector3(-0.50554484, 2.8446121, 0.35), Vector3(0, 2, 0.35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DetectionArea:bounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8.033334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.6, 0.6, 6), Vector3(0.6, 0.6, 6)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uddtq"]
 _data = {
 &"RESET": SubResource("Animation_fisqf"),
 &"intro": SubResource("Animation_jgmku"),
+&"outro": SubResource("Animation_2cl60"),
 &"stage_1": SubResource("Animation_uddtq"),
-&"stage_2": SubResource("Animation_25tfw")
+&"stage_2": SubResource("Animation_25tfw"),
+&"stage_3": SubResource("Animation_xk3cl")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8f4u"]
+transparency = 4
+albedo_texture = ExtResource("7_uddtq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_40gng"]
+material = SubResource("StandardMaterial3D_a8f4u")
 
 [node name="ActLevitate" type="Node3D" unique_id=248595300 node_paths=PackedStringArray("animation_player", "detection_area")]
 script = ExtResource("1_jgmku")
 animation_player = NodePath("AnimationPlayer")
-animations_to_play = Array[StringName]([&"intro", &"stage_1", &"stage_2"])
+animations_to_play = Array[StringName]([&"intro", &"stage_1", &"stage_2", &"stage_3", &"outro"])
 detection_area = NodePath("DetectionArea")
 
 [node name="ActEngine" type="Node" parent="." unique_id=827167788 node_paths=PackedStringArray("magician")]
@@ -134,3 +199,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1398530726]
 libraries/ = SubResource("AnimationLibrary_uddtq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1353338525]
+transform = Transform3D(1.3569148, 0, -0.6393608, 0, 1.5, 0, 0.6393608, 0, 1.3569148, 18.164734, 5.3156567, -19.626766)
+mesh = SubResource("QuadMesh_40gng")
