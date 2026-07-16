@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cdwskxhoytde1"]
+
+[ext_resource type="Script" uid="uid://l2mcmgth0xdl" path="res://src/acts/act_seb/detection_area.gd" id="1_sjqy3"]
+[ext_resource type="Material" uid="uid://ce54lsussgn6h" path="res://src/acts/act_seb/detect_area_mat.tres" id="2_sjqy3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_40gng"]
+size = Vector3(1, 1, 6)
+
+[sub_resource type="QuadMesh" id="QuadMesh_40gng"]
+material = ExtResource("2_sjqy3")
+
+[node name="DetectionArea" type="Area3D" unique_id=601626447]
+monitorable = false
+script = ExtResource("1_sjqy3")
+area_material = ExtResource("2_sjqy3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1334553006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+shape = SubResource("BoxShape3D_40gng")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1539720120]
+mesh = SubResource("QuadMesh_40gng")
