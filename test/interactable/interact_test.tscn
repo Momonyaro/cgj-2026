@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ba51fdvs8604o" path="res://src/acts/act1/hat/hat_for_bunny.tscn" id="9_k2h86"]
 [ext_resource type="PackedScene" uid="uid://b776vcixoys55" path="res://src/shared/notes/note.tscn" id="10_sonte"]
 [ext_resource type="PackedScene" uid="uid://bmafyhpgrpmv6" path="res://src/stage/lights/spot_light.tscn" id="11_feo1p"]
+[ext_resource type="PackedScene" uid="uid://c65rj57k1yphf" path="res://src/acts/act_cups/cups_trick.tscn" id="12_ys6ab"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a1n5f"]
 
@@ -159,3 +160,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.0509386, 0)
 
 [node name="SpotLight2" parent="." unique_id=1163796045 instance=ExtResource("11_feo1p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7491264, 5.0509386, 0)
+
+[node name="CupsTrick" parent="." unique_id=1985509343 instance=ExtResource("12_ys6ab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22104931, 0, 0)
