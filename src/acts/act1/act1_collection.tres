@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://d2sknlfasl7rg" path="res://src/shared/act_engine/events/hide_event.gd" id="5_0v2vy"]
 [ext_resource type="Script" uid="uid://byrxo5l2e6swj" path="res://src/shared/act_engine/events/wait_scene_ready_event.gd" id="5_7g122"]
 [ext_resource type="Texture2D" uid="uid://c3bxey0y3qx1j" path="res://src/shared/magician/art/wizard_bow.png" id="6_0v2vy"]
+[ext_resource type="Script" uid="uid://dhlofec24y2d2" path="res://src/shared/act_engine/events/sfx_event.gd" id="6_5f5wt"]
 [ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="res://src/shared/act_engine/events/wait_expression_event.gd" id="6_lrs6a"]
 [ext_resource type="Script" uid="uid://d22hs771jan4i" path="res://src/shared/act_engine/events/angle_spotlight_event.gd" id="7_e4vjn"]
 [ext_resource type="Script" uid="uid://dlxwxd3ua60y4" path="res://src/shared/act_engine/events/captivate_event.gd" id="7_wk2ln"]
@@ -36,6 +37,12 @@ metadata/_custom_type_script = "uid://d2sknlfasl7rg"
 script = ExtResource("5_7g122")
 metadata/_custom_type_script = "uid://byrxo5l2e6swj"
 
+[sub_resource type="Resource" id="Resource_c7k3m"]
+script = ExtResource("6_5f5wt")
+sfx_key = "drum_roll_looping"
+sfx_space = "drums"
+metadata/_custom_type_script = "uid://dhlofec24y2d2"
+
 [sub_resource type="Resource" id="Resource_eki60"]
 script = ExtResource("7_e4vjn")
 spotlight = 0
@@ -63,6 +70,12 @@ look_at = NodePath("../Magician")
 duration = 0.75
 is_async = true
 metadata/_custom_type_script = "uid://d22hs771jan4i"
+
+[sub_resource type="Resource" id="Resource_gleor"]
+script = ExtResource("6_5f5wt")
+sfx_key = "drum_roll_finish"
+sfx_space = "drums"
+metadata/_custom_type_script = "uid://dhlofec24y2d2"
 
 [sub_resource type="Resource" id="Resource_e4vjn"]
 script = ExtResource("8_cwrer")
@@ -182,5 +195,5 @@ metadata/_custom_type_script = "uid://1qnl6sg2gebf"
 
 [resource]
 script = ExtResource("2_0p13b")
-events = Array[ExtResource("1_56n7f")]([SubResource("Resource_cwrer"), SubResource("Resource_5f5wt"), SubResource("Resource_dwhyu"), SubResource("Resource_25acc"), SubResource("Resource_eki60"), SubResource("Resource_t4wox"), SubResource("Resource_p1c7k"), SubResource("Resource_sustq"), SubResource("Resource_e4vjn"), SubResource("Resource_lrs6a"), SubResource("Resource_khprr"), SubResource("Resource_vgc8l"), SubResource("Resource_uxnp2"), SubResource("Resource_kcxvs"), SubResource("Resource_6i72p"), SubResource("Resource_11xvn"), SubResource("Resource_pvyc3"), SubResource("Resource_caqs7"), SubResource("Resource_ukaaf"), SubResource("Resource_udrrb"), SubResource("Resource_atyk2"), SubResource("Resource_8qkce"), SubResource("Resource_lui48"), SubResource("Resource_1r46r"), SubResource("Resource_1l6yu"), SubResource("Resource_vne4c"), SubResource("Resource_d18h6"), SubResource("Resource_25cp6"), SubResource("Resource_7g122")])
+events = Array[ExtResource("1_56n7f")]([SubResource("Resource_cwrer"), SubResource("Resource_5f5wt"), SubResource("Resource_dwhyu"), SubResource("Resource_25acc"), SubResource("Resource_c7k3m"), SubResource("Resource_eki60"), SubResource("Resource_t4wox"), SubResource("Resource_p1c7k"), SubResource("Resource_sustq"), SubResource("Resource_gleor"), SubResource("Resource_e4vjn"), SubResource("Resource_lrs6a"), SubResource("Resource_khprr"), SubResource("Resource_vgc8l"), SubResource("Resource_uxnp2"), SubResource("Resource_kcxvs"), SubResource("Resource_6i72p"), SubResource("Resource_11xvn"), SubResource("Resource_pvyc3"), SubResource("Resource_caqs7"), SubResource("Resource_ukaaf"), SubResource("Resource_udrrb"), SubResource("Resource_atyk2"), SubResource("Resource_8qkce"), SubResource("Resource_lui48"), SubResource("Resource_1r46r"), SubResource("Resource_1l6yu"), SubResource("Resource_vne4c"), SubResource("Resource_d18h6"), SubResource("Resource_25cp6"), SubResource("Resource_7g122")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"
