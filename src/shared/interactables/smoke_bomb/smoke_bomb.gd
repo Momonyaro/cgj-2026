@@ -4,7 +4,7 @@ const SMOKE := preload("res://src/shared/interactables/smoke_bomb/smoke/smoke.ts
 
 
 func _process(_delta: float) -> void:
-	if is_on_floor() and is_grabbed == false:
+	if is_on_floor() and is_grabbed == false and not in_hat:
 		_spawn_smoke()
 		queue_free.call_deferred()
 

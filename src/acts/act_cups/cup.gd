@@ -8,12 +8,12 @@ const BunnyInHat = preload("res://src/acts/act1/act1_bunny_in_hat.tres")
 const BunnyNotInHat = preload("res://src/acts/act1/act1_bunny_not_in_hat.tres")
 
 var is_full := false
-
+var interactable := false
 var index: int
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if is_full:
+	if is_full or not interactable:
 		return
 	if body is not GrabbableItem:
 		return

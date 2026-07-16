@@ -7,6 +7,9 @@ extends StaticBody3D
 @export_tool_button("Reset cups") var do_reset := reset_cups
 @export_tool_button("Reveal cup") var test_reveal := reveal.bind(1)
 
+const Perfection := preload("res://src/acts/act_cups/perfect_cups_collection.tres")
+const Bad := preload("res://src/acts/act_cups/bad_cups_collection.tres")
+
 const SWAP_DURATION := 0.3
 const REVEAL_DURATION := 0.2
 const NUM_SWAPS := 10
@@ -19,6 +22,7 @@ var has_grabbed_ball := false
 func _ready() -> void:
 	for i in len(cups):
 		cups[i].index = i
+		cups[i].interactable = false
 	ball.grabbed.connect(func(): has_grabbed_ball = true)
 
 
@@ -36,6 +40,7 @@ func play_and_check_if_done() -> bool:
 
 func has_placed_item() -> bool:
 	for cup in cups:
+		cup.interactable = true
 		if cup.is_full:
 			return true
 	return false
@@ -69,10 +74,12 @@ func play_trick() -> void:
 func play_reveal() -> void:
 	is_playing = true
 	ball.collision_layer &= ~0x02
+	var perfection := 0
 	if !cups[1].is_full and has_grabbed_ball:
 		Stage.audience.excite(0.2)
 		ScoreManager.add_score(87)
 		print("ball gone wow")
+		perfection += 1
 	else:
 		Stage.audience.bore(0.2)
 		print("ball remains boo")
@@ -80,13 +87,20 @@ func play_reveal() -> void:
 	SFX.stop("drums")
 	SFX.play("drum_roll_finish")
 	if cups[2].is_full:
-		Stage.audience.excite(0.4)
+		Stage.audience.excite(0.6)
 		ScoreManager.add_score(168)
+		perfection += 1
 	else:
 		Stage.audience.bore(0.4)
 		ScoreManager.add_score(16)
 	await reveal(2)
 	is_playing = false
+
+	if ActEngine.singleton:
+		if perfection >= 2:
+			ActEngine.singleton.append_events(Perfection.events)
+		else:
+			ActEngine.singleton.append_events(Bad.events)
 
 
 func perform_swaps() -> void:

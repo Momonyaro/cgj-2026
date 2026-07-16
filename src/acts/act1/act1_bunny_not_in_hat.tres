@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://4gi3mbocwio5" path="res://src/shared/act_engine/events/spawn_event.gd" id="4_hc5ir"]
 [ext_resource type="Script" uid="uid://cshjplosaguh6" path="res://src/shared/act_engine/events/swap_event.gd" id="5_1qj5p"]
 [ext_resource type="Script" uid="uid://dlxwxd3ua60y4" path="res://src/shared/act_engine/events/captivate_event.gd" id="6_dcx5r"]
+[ext_resource type="Script" uid="uid://dhlofec24y2d2" path="res://src/shared/act_engine/events/sfx_event.gd" id="6_hc5ir"]
 [ext_resource type="Script" uid="uid://bxsl188rk2b50" path="res://src/shared/act_engine/act_collection.gd" id="9_dpn03"]
 
 [sub_resource type="Resource" id="Resource_sc0kd"]
@@ -26,6 +27,11 @@ spawn_position = Vector3(2, 5, 0)
 track_spawned_node = false
 metadata/_custom_type_script = "uid://4gi3mbocwio5"
 
+[sub_resource type="Resource" id="Resource_og6aq"]
+script = ExtResource("6_hc5ir")
+sfx_key = "smoke_bomb"
+metadata/_custom_type_script = "uid://dhlofec24y2d2"
+
 [sub_resource type="Resource" id="Resource_1l6yu"]
 script = ExtResource("6_dcx5r")
 captivate = -1.0
@@ -38,5 +44,5 @@ metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
 [resource]
 script = ExtResource("9_dpn03")
-events = Array[ExtResource("1_0abtn")]([SubResource("Resource_sc0kd"), SubResource("Resource_8qkce"), SubResource("Resource_0v2vy"), SubResource("Resource_1l6yu"), SubResource("Resource_6oiti")])
+events = Array[ExtResource("1_0abtn")]([SubResource("Resource_sc0kd"), SubResource("Resource_8qkce"), SubResource("Resource_0v2vy"), SubResource("Resource_og6aq"), SubResource("Resource_1l6yu"), SubResource("Resource_6oiti")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"
