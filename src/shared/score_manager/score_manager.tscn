@@ -25,3 +25,9 @@ script = ExtResource("2_4l1ng")
 key = &"SpotLightRight"
 score_per_tick = 1
 tick_delay = 2.0
+
+[node name="TargetInDetectArea" type="Node" parent="." unique_id=1756892796]
+script = ExtResource("2_4l1ng")
+key = &"TargetInDetectArea"
+score_per_tick = 2
+tick_delay = 0.5

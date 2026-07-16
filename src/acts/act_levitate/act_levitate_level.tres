@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://banu2qw5hj7vv"]
+
+[ext_resource type="PackedScene" uid="uid://bnwbfsxmi3qim" path="res://src/acts/act_levitate/act_levitate.tscn" id="1_rn0xv"]
+[ext_resource type="Script" uid="uid://0kgyevokhecf" path="res://starter_kit/level_utils/level_resource.gd" id="2_g26cg"]
+
+[resource]
+script = ExtResource("2_g26cg")
+_name = &"ActLevitate"
+_scene = ExtResource("1_rn0xv")
+metadata/_custom_type_script = "uid://0kgyevokhecf"

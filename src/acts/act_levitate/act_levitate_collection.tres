@@ -1,0 +1,100 @@
+[gd_resource type="Resource" script_class="ActCollection" format=3 uid="uid://bnckrvenrakkk"]
+
+[ext_resource type="Script" uid="uid://5nkn7cxwp168" path="res://src/shared/act_engine/events/act_event.gd" id="1_mdbxg"]
+[ext_resource type="Script" uid="uid://b13mrlxyyg60r" path="res://src/shared/act_engine/events/wait_event.gd" id="2_hlie7"]
+[ext_resource type="Script" uid="uid://bxsl188rk2b50" path="res://src/shared/act_engine/act_collection.gd" id="2_isg2y"]
+[ext_resource type="Texture2D" uid="uid://0faansyjwojo" path="res://src/shared/magician/art/wizard_tip_hat.png" id="3_e7h3o"]
+[ext_resource type="Script" uid="uid://cshjplosaguh6" path="res://src/shared/act_engine/events/swap_event.gd" id="4_w7p4w"]
+[ext_resource type="Script" uid="uid://dlxwxd3ua60y4" path="res://src/shared/act_engine/events/captivate_event.gd" id="5_48eqa"]
+[ext_resource type="Script" uid="uid://byrxo5l2e6swj" path="res://src/shared/act_engine/events/wait_scene_ready_event.gd" id="5_jwlym"]
+[ext_resource type="Script" uid="uid://bd1mnsfmb01qi" path="res://src/shared/act_engine/events/walk_event.gd" id="6_e7h3o"]
+[ext_resource type="Texture2D" uid="uid://btse5kwcdcd0q" path="res://src/shared/magician/art/wizard_praise.png" id="7_w7p4w"]
+[ext_resource type="Texture2D" uid="uid://cc7l6ws8ao4ku" path="res://src/shared/magician/art/wizard_hat_magic.png" id="8_jwlym"]
+[ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="res://src/shared/act_engine/events/wait_expression_event.gd" id="9_wpwhe"]
+
+[sub_resource type="Resource" id="Resource_e5glq"]
+script = ExtResource("2_hlie7")
+duration = 0.2
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
+[sub_resource type="Resource" id="Resource_uf0g3"]
+script = ExtResource("4_w7p4w")
+next_sprite = ExtResource("3_e7h3o")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
+
+[sub_resource type="Resource" id="Resource_hlie7"]
+script = ExtResource("5_jwlym")
+metadata/_custom_type_script = "uid://byrxo5l2e6swj"
+
+[sub_resource type="Resource" id="Resource_jgmku"]
+script = ExtResource("5_48eqa")
+captivate = 0.3
+metadata/_custom_type_script = "uid://dlxwxd3ua60y4"
+
+[sub_resource type="Resource" id="Resource_egeec"]
+script = ExtResource("6_e7h3o")
+duration = 2.0
+pos_x = -3.0
+x_trans = 4
+height = 0.2
+metadata/_custom_type_script = "uid://bd1mnsfmb01qi"
+
+[sub_resource type="Resource" id="Resource_e7h3o"]
+script = ExtResource("4_w7p4w")
+next_sprite = ExtResource("7_w7p4w")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
+
+[sub_resource type="Resource" id="Resource_w7p4w"]
+script = ExtResource("2_hlie7")
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
+[sub_resource type="Resource" id="Resource_wpwhe"]
+script = ExtResource("4_w7p4w")
+next_sprite = ExtResource("8_jwlym")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
+
+[sub_resource type="Resource" id="Resource_jwlym"]
+script = ExtResource("9_wpwhe")
+context = NodePath("..")
+expression = "try_start()"
+metadata/_custom_type_script = "uid://1qnl6sg2gebf"
+
+[sub_resource type="Resource" id="Resource_xb3h7"]
+script = ExtResource("2_hlie7")
+duration = 0.1
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
+[sub_resource type="Resource" id="Resource_48eqa"]
+script = ExtResource("9_wpwhe")
+context = NodePath("..")
+expression = "current_animation != \"intro\""
+metadata/_custom_type_script = "uid://1qnl6sg2gebf"
+
+[sub_resource type="Resource" id="Resource_fogl0"]
+script = ExtResource("9_wpwhe")
+context = NodePath("..")
+expression = "bunny_ready_to_fly()"
+metadata/_custom_type_script = "uid://1qnl6sg2gebf"
+
+[sub_resource type="Resource" id="Resource_56ssh"]
+script = ExtResource("9_wpwhe")
+context = NodePath("..")
+expression = "drumroll_start()"
+metadata/_custom_type_script = "uid://1qnl6sg2gebf"
+
+[sub_resource type="Resource" id="Resource_55gvr"]
+script = ExtResource("9_wpwhe")
+context = NodePath("..")
+expression = "show_complete == true"
+metadata/_custom_type_script = "uid://1qnl6sg2gebf"
+
+[sub_resource type="Resource" id="Resource_e383d"]
+script = ExtResource("9_wpwhe")
+context = NodePath("..")
+expression = "drumroll_end()"
+metadata/_custom_type_script = "uid://1qnl6sg2gebf"
+
+[resource]
+script = ExtResource("2_isg2y")
+events = Array[ExtResource("1_mdbxg")]([SubResource("Resource_e5glq"), SubResource("Resource_uf0g3"), SubResource("Resource_hlie7"), SubResource("Resource_jgmku"), SubResource("Resource_egeec"), SubResource("Resource_e7h3o"), SubResource("Resource_w7p4w"), SubResource("Resource_wpwhe"), SubResource("Resource_jwlym"), SubResource("Resource_xb3h7"), SubResource("Resource_48eqa"), SubResource("Resource_fogl0"), SubResource("Resource_56ssh"), SubResource("Resource_55gvr"), SubResource("Resource_e383d")])
+metadata/_custom_type_script = "uid://bxsl188rk2b50"

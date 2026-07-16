@@ -1,16 +1,136 @@
 [gd_scene format=3 uid="uid://bnwbfsxmi3qim"]
 
 [ext_resource type="Script" uid="uid://cyvljmchtkt42" path="res://src/shared/act_engine/act_engine.gd" id="1_fisqf"]
+[ext_resource type="Script" uid="uid://bunue1buvymrk" path="res://src/acts/act_levitate/act_levitate.gd" id="1_jgmku"]
+[ext_resource type="Resource" uid="uid://bnckrvenrakkk" path="res://src/acts/act_levitate/act_levitate_collection.tres" id="2_fisqf"]
 [ext_resource type="PackedScene" uid="uid://cpn03j74nonps" path="res://src/acts/act1/instructions/act1_notes.tscn" id="3_uddtq"]
 [ext_resource type="PackedScene" uid="uid://b8lftmrjj2j6u" path="res://src/shared/magician/magician.tscn" id="4_25tfw"]
+[ext_resource type="PackedScene" uid="uid://cdwskxhoytde1" path="res://src/acts/act_levitate/detection_area.tscn" id="4_eos0c"]
 
-[node name="Act1" type="Node3D" unique_id=248595300]
+[sub_resource type="Animation" id="Animation_fisqf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DetectionArea:bounds")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DetectionArea:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.35)]
+}
+
+[sub_resource type="Animation" id="Animation_jgmku"]
+resource_name = "intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DetectionArea:bounds")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.6, 0.6, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DetectionArea:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.35), Vector3(0, 2, 0.35)]
+}
+
+[sub_resource type="Animation" id="Animation_uddtq"]
+resource_name = "stage_1"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DetectionArea:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.7666667, 5.4, 6.99),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 2, 0.35), Vector3(0, 4.340332, 0.35), Vector3(3.8997889, 4.340332, 0.35), Vector3(3.9, 2.5, 0.35), Vector3(0, 3, 0.35)]
+}
+
+[sub_resource type="Animation" id="Animation_25tfw"]
+resource_name = "stage_2"
+length = 5.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DetectionArea:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 3, 3.5, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3, 0.35), Vector3(0, 3.85, 0.35), Vector3(0, 4.7, 0.35), Vector3(1.5, 4.7, 0.35), Vector3(3, 4.7, 0.35), Vector3(2.25, 3.9499998, 0.35), Vector3(1.5, 3.2, 0.35), Vector3(0.75, 2.45, 0.35), Vector3(0, 1.7, 0.35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DetectionArea:bounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 3, 3.5, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.6, 0.6, 6), Vector3(0.6, 2.3, 6), Vector3(0.6, 0.6, 6), Vector3(3.6, 0.6, 6), Vector3(0.6, 0.6, 6), Vector3(2.1, 2.1, 6), Vector3(0.6, 0.6, 6), Vector3(2.1, 2.1, 6), Vector3(0.6, 0.6, 6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uddtq"]
+_data = {
+&"RESET": SubResource("Animation_fisqf"),
+&"intro": SubResource("Animation_jgmku"),
+&"stage_1": SubResource("Animation_uddtq"),
+&"stage_2": SubResource("Animation_25tfw")
+}
+
+[node name="ActLevitate" type="Node3D" unique_id=248595300 node_paths=PackedStringArray("animation_player", "detection_area")]
+script = ExtResource("1_jgmku")
+animation_player = NodePath("AnimationPlayer")
+animations_to_play = Array[StringName]([&"intro", &"stage_1", &"stage_2"])
+detection_area = NodePath("DetectionArea")
 
 [node name="ActEngine" type="Node" parent="." unique_id=827167788 node_paths=PackedStringArray("magician")]
 script = ExtResource("1_fisqf")
+act = ExtResource("2_fisqf")
 notes = ExtResource("3_uddtq")
 magician = NodePath("../Magician")
 metadata/_custom_type_script = "uid://cyvljmchtkt42"
 
 [node name="Magician" parent="." unique_id=1219081681 instance=ExtResource("4_25tfw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+
+[node name="DetectionArea" parent="." unique_id=601626447 instance=ExtResource("4_eos0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1398530726]
+libraries/ = SubResource("AnimationLibrary_uddtq")

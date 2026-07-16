@@ -4,12 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bswvvyf7pbi35" path="res://src/shared/main_menu/end_score.tscn" id="1_g6j2r"]
 [ext_resource type="Resource" uid="uid://dggq6b7gsjjym" path="res://src/acts/act1/act1_level.tres" id="2_g6j2r"]
 [ext_resource type="Script" uid="uid://05wudtwgmqgu" path="res://starter_kit/level_utils/game_layout_resource.gd" id="2_n44qs"]
+[ext_resource type="Resource" uid="uid://banu2qw5hj7vv" path="res://src/acts/act_levitate/act_levitate_level.tres" id="3_m3yia"]
 [ext_resource type="PackedScene" uid="uid://cc4i3boaqjvos" path="res://src/shared/main_menu/main_menu.tscn" id="3_wmsdu"]
 [ext_resource type="Resource" uid="uid://doarl5k5re8ou" path="res://src/acts/act_cups/act_cups_level.tres" id="4_m3yia"]
 
 [resource]
 script = ExtResource("2_n44qs")
 _main_menu = ExtResource("3_wmsdu")
-_levels = Array[ExtResource("1_1lyii")]([ExtResource("2_g6j2r"), ExtResource("4_m3yia")])
+_levels = Array[ExtResource("1_1lyii")]([ExtResource("2_g6j2r"), ExtResource("4_m3yia"), ExtResource("3_m3yia")])
 _end_screen = ExtResource("1_g6j2r")
 metadata/_custom_type_script = "uid://05wudtwgmqgu"

@@ -31,6 +31,9 @@ func _ready():
 	if not Engine.is_editor_hint():
 		$MeshInstance3D.mesh.material = _material
 
+func _exit_tree():
+	ScoreManager.set_ticker("TargetInDetectArea", false)
+
 func update_bounds(value: Vector3):
 	bounds = value
 	if Engine.is_editor_hint() or _is_ready:
@@ -50,4 +53,5 @@ func _on_target_update(in_bounds: bool) -> void:
 	if not _is_ready:
 		return
 	
+	ScoreManager.set_ticker("TargetInDetectArea", in_bounds)
 	_material.albedo_color = Color.WHITE if in_bounds else Color.RED
