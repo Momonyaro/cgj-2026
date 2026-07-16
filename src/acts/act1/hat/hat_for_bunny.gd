@@ -8,6 +8,7 @@ const BunnyNotInHat = preload("res://src/acts/act1/act1_bunny_not_in_hat.tres")
 
 var is_full := false
 
+
 func _on_body_entered(body: Node3D) -> void:
 	if body is not GrabbableItem:
 		return

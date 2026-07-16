@@ -19,9 +19,9 @@ func get_type() -> int:
 
 func execute():
 	var scene_root := Stage.level_loader.current_level
+	var spawner := scene_root.get_node(spawn_from)
 	var node := (load(scene) as PackedScene).instantiate()
 	
-	var spawner := scene_root.get_node(spawn_from)
 	
 	assert(spawner, str(spawn_from.get_concatenated_names()))
 
