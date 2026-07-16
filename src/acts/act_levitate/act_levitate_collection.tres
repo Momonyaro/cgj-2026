@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://byrxo5l2e6swj" path="res://src/shared/act_engine/events/wait_scene_ready_event.gd" id="5_jwlym"]
 [ext_resource type="Script" uid="uid://bd1mnsfmb01qi" path="res://src/shared/act_engine/events/walk_event.gd" id="6_e7h3o"]
 [ext_resource type="Texture2D" uid="uid://btse5kwcdcd0q" path="res://src/shared/magician/art/wizard_praise.png" id="7_w7p4w"]
+[ext_resource type="Script" uid="uid://d22hs771jan4i" path="res://src/shared/act_engine/events/angle_spotlight_event.gd" id="8_55gvr"]
 [ext_resource type="Texture2D" uid="uid://cc7l6ws8ao4ku" path="res://src/shared/magician/art/wizard_hat_magic.png" id="8_jwlym"]
 [ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="res://src/shared/act_engine/events/wait_expression_event.gd" id="9_wpwhe"]
 [ext_resource type="Texture2D" uid="uid://chyem2ekhb75v" path="res://src/shared/magician/art/wizard_hold_contents.png" id="11_xb3h7"]
@@ -40,6 +41,20 @@ pos_x = -3.0
 x_trans = 4
 height = 0.2
 metadata/_custom_type_script = "uid://bd1mnsfmb01qi"
+
+[sub_resource type="Resource" id="Resource_25tfw"]
+script = ExtResource("8_55gvr")
+spotlight = 0
+look_at = NodePath("../Magician")
+is_async = true
+metadata/_custom_type_script = "uid://d22hs771jan4i"
+
+[sub_resource type="Resource" id="Resource_uddtq"]
+script = ExtResource("8_55gvr")
+spotlight = 1
+look_at = NodePath("../BunnyPoint")
+is_async = true
+metadata/_custom_type_script = "uid://d22hs771jan4i"
 
 [sub_resource type="Resource" id="Resource_e7h3o"]
 script = ExtResource("4_w7p4w")
@@ -77,6 +92,12 @@ script = ExtResource("9_wpwhe")
 context = NodePath("..")
 expression = "bunny_ready_to_fly()"
 metadata/_custom_type_script = "uid://1qnl6sg2gebf"
+
+[sub_resource type="Resource" id="Resource_miswv"]
+script = ExtResource("8_55gvr")
+look_at = NodePath("../Magician")
+is_async = true
+metadata/_custom_type_script = "uid://d22hs771jan4i"
 
 [sub_resource type="Resource" id="Resource_56ssh"]
 script = ExtResource("9_wpwhe")
@@ -123,11 +144,11 @@ script = ExtResource("4_w7p4w")
 next_sprite = ExtResource("12_fogl0")
 metadata/_custom_type_script = "uid://cshjplosaguh6"
 
-[sub_resource type="Resource" id="Resource_uddtq"]
+[sub_resource type="Resource" id="Resource_5x2ja"]
 script = ExtResource("2_hlie7")
 metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
-[sub_resource type="Resource" id="Resource_25tfw"]
+[sub_resource type="Resource" id="Resource_5oju5"]
 script = ExtResource("4_w7p4w")
 next_sprite = ExtResource("7_w7p4w")
 metadata/_custom_type_script = "uid://cshjplosaguh6"
@@ -147,5 +168,5 @@ metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
 [resource]
 script = ExtResource("2_isg2y")
-events = Array[ExtResource("1_mdbxg")]([SubResource("Resource_e5glq"), SubResource("Resource_uf0g3"), SubResource("Resource_hlie7"), SubResource("Resource_jgmku"), SubResource("Resource_egeec"), SubResource("Resource_e7h3o"), SubResource("Resource_w7p4w"), SubResource("Resource_wpwhe"), SubResource("Resource_jwlym"), SubResource("Resource_xb3h7"), SubResource("Resource_48eqa"), SubResource("Resource_fogl0"), SubResource("Resource_56ssh"), SubResource("Resource_f3tbc"), SubResource("Resource_xn4ti"), SubResource("Resource_ig3ca"), SubResource("Resource_2c44w"), SubResource("Resource_55gvr"), SubResource("Resource_e383d"), SubResource("Resource_xsego"), SubResource("Resource_uddtq"), SubResource("Resource_25tfw"), SubResource("Resource_2cl60"), SubResource("Resource_0lxf4"), SubResource("Resource_mcekk")])
+events = Array[ExtResource("1_mdbxg")]([SubResource("Resource_e5glq"), SubResource("Resource_uf0g3"), SubResource("Resource_hlie7"), SubResource("Resource_jgmku"), SubResource("Resource_egeec"), SubResource("Resource_25tfw"), SubResource("Resource_uddtq"), SubResource("Resource_e7h3o"), SubResource("Resource_w7p4w"), SubResource("Resource_wpwhe"), SubResource("Resource_jwlym"), SubResource("Resource_xb3h7"), SubResource("Resource_48eqa"), SubResource("Resource_fogl0"), SubResource("Resource_miswv"), SubResource("Resource_56ssh"), SubResource("Resource_f3tbc"), SubResource("Resource_xn4ti"), SubResource("Resource_ig3ca"), SubResource("Resource_2c44w"), SubResource("Resource_55gvr"), SubResource("Resource_e383d"), SubResource("Resource_xsego"), SubResource("Resource_5x2ja"), SubResource("Resource_5oju5"), SubResource("Resource_2cl60"), SubResource("Resource_0lxf4"), SubResource("Resource_mcekk")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"
