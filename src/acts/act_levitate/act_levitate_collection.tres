@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="res://src/shared/act_engine/events/wait_expression_event.gd" id="9_wpwhe"]
 [ext_resource type="Texture2D" uid="uid://chyem2ekhb75v" path="res://src/shared/magician/art/wizard_hold_contents.png" id="11_xb3h7"]
 [ext_resource type="Texture2D" uid="uid://c3bxey0y3qx1j" path="res://src/shared/magician/art/wizard_bow.png" id="12_fogl0"]
+[ext_resource type="Script" uid="uid://dhlofec24y2d2" path="res://src/shared/act_engine/events/sfx_event.gd" id="13_56ssh"]
 
 [sub_resource type="Resource" id="Resource_e5glq"]
 script = ExtResource("2_hlie7")
@@ -105,6 +106,11 @@ context = NodePath("..")
 expression = "drumroll_start()"
 metadata/_custom_type_script = "uid://1qnl6sg2gebf"
 
+[sub_resource type="Resource" id="Resource_jppe3"]
+script = ExtResource("13_56ssh")
+sfx_key = "applause_1"
+metadata/_custom_type_script = "uid://dhlofec24y2d2"
+
 [sub_resource type="Resource" id="Resource_f3tbc"]
 script = ExtResource("9_wpwhe")
 context = NodePath("..")
@@ -121,6 +127,16 @@ script = ExtResource("9_wpwhe")
 context = NodePath("..")
 expression = "current_animation == \"stage_3\""
 metadata/_custom_type_script = "uid://1qnl6sg2gebf"
+
+[sub_resource type="Resource" id="Resource_7cdkc"]
+script = ExtResource("2_hlie7")
+duration = 0.5
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
+[sub_resource type="Resource" id="Resource_tm5e4"]
+script = ExtResource("13_56ssh")
+sfx_key = "shock_0"
+metadata/_custom_type_script = "uid://dhlofec24y2d2"
 
 [sub_resource type="Resource" id="Resource_2c44w"]
 script = ExtResource("4_w7p4w")
@@ -173,5 +189,5 @@ metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
 [resource]
 script = ExtResource("2_isg2y")
-events = Array[ExtResource("1_mdbxg")]([SubResource("Resource_e5glq"), SubResource("Resource_uf0g3"), SubResource("Resource_hlie7"), SubResource("Resource_jgmku"), SubResource("Resource_egeec"), SubResource("Resource_25tfw"), SubResource("Resource_uddtq"), SubResource("Resource_e7h3o"), SubResource("Resource_w7p4w"), SubResource("Resource_wpwhe"), SubResource("Resource_jwlym"), SubResource("Resource_xb3h7"), SubResource("Resource_48eqa"), SubResource("Resource_fogl0"), SubResource("Resource_miswv"), SubResource("Resource_56ssh"), SubResource("Resource_f3tbc"), SubResource("Resource_xn4ti"), SubResource("Resource_ig3ca"), SubResource("Resource_2c44w"), SubResource("Resource_55gvr"), SubResource("Resource_e383d"), SubResource("Resource_xsego"), SubResource("Resource_idrui"), SubResource("Resource_5x2ja"), SubResource("Resource_5oju5"), SubResource("Resource_2cl60"), SubResource("Resource_0lxf4"), SubResource("Resource_mcekk")])
+events = Array[ExtResource("1_mdbxg")]([SubResource("Resource_e5glq"), SubResource("Resource_uf0g3"), SubResource("Resource_hlie7"), SubResource("Resource_jgmku"), SubResource("Resource_egeec"), SubResource("Resource_25tfw"), SubResource("Resource_uddtq"), SubResource("Resource_e7h3o"), SubResource("Resource_w7p4w"), SubResource("Resource_wpwhe"), SubResource("Resource_jwlym"), SubResource("Resource_xb3h7"), SubResource("Resource_48eqa"), SubResource("Resource_fogl0"), SubResource("Resource_miswv"), SubResource("Resource_56ssh"), SubResource("Resource_jppe3"), SubResource("Resource_f3tbc"), SubResource("Resource_xn4ti"), SubResource("Resource_ig3ca"), SubResource("Resource_7cdkc"), SubResource("Resource_tm5e4"), SubResource("Resource_2c44w"), SubResource("Resource_55gvr"), SubResource("Resource_e383d"), SubResource("Resource_xsego"), SubResource("Resource_idrui"), SubResource("Resource_5x2ja"), SubResource("Resource_5oju5"), SubResource("Resource_2cl60"), SubResource("Resource_0lxf4"), SubResource("Resource_mcekk")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"
