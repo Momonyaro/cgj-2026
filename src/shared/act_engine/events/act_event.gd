@@ -4,7 +4,10 @@ class_name ActEvent
 
 signal finished()
 
-enum { WALK, SWAP, WAIT, WAIT_EXPRESSION, WAIT_SCENE_READY, SPAWN, CAPTIVATE, CALL }
+enum { WALK, SWAP, WAIT, WAIT_EXPRESSION, WAIT_SCENE_READY, SPAWN, CAPTIVATE, CALL, VISIBILITY }
+
+# -- Bindings --
+var engine: ActEngine = null
 
 @abstract
 func get_type() -> int

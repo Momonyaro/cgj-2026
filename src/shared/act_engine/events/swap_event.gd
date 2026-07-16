@@ -6,7 +6,6 @@ const Magician := preload("res://src/shared/magician/magician.gd")
 @export var next_sprite: Texture2D = null
 
 # -- Binds --
-var engine: ActEngine
 var magician: Magician
 
 

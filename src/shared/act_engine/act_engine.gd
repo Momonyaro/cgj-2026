@@ -81,6 +81,7 @@ func _finish():
 # -- Bindings --
 func _bind_events(events):
 	for event in events:
+		event.engine = self
 		match event.get_type():
 			ActEvent.WALK:
 				_bind_walk_event(event)
@@ -91,7 +92,7 @@ func _bind_events(events):
 			ActEvent.SPAWN:
 				_bind_spawn_event(event)
 			ActEvent.WAIT_EXPRESSION:
-				_bind_condition_event(event)
+				_bind_wait_expression_event(event)
 			ActEvent.CAPTIVATE:
 				_bind_captivate_event(event)
 			ActEvent.WAIT_SCENE_READY:
@@ -105,7 +106,6 @@ func _bind_walk_event(event: WalkEvent):
 
 func _bind_swap_event(event: SwapEvent):
 	event.magician = magician
-	event.engine = self
 
 
 func _bind_wait_event(event: WaitEvent):
@@ -113,10 +113,10 @@ func _bind_wait_event(event: WaitEvent):
 
 
 func _bind_spawn_event(event: SpawnEvent):
-	event.engine = self
+	pass
 
 
-func _bind_condition_event(event: WaitExpressionEvent):
+func _bind_wait_expression_event(event: WaitExpressionEvent):
 	pass
 
 
@@ -126,6 +126,8 @@ func _bind_captivate_event(_event: CaptivateEvent):
 func _bind_wait_scene_ready_event(_event: WaitSceneReadyEvent):
 	pass
 
+func _bind_visibility_events(event):
+	pass
 
 # -- Helpers
 func clear_spawned():
