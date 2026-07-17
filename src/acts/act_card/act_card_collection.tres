@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://gchpd3jmhi2l" path="res://src/shared/act_engine/events/rand_sfx.gd" id="15_i1cdt"]
 [ext_resource type="Texture2D" uid="uid://0faansyjwojo" path="res://src/shared/magician/art/wizard_tip_hat.png" id="16_2tl1l"]
 [ext_resource type="Script" uid="uid://bd1mnsfmb01qi" path="res://src/shared/act_engine/events/walk_event.gd" id="16_ljqir"]
+[ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="res://src/shared/act_engine/events/wait_expression_event.gd" id="18_cqper"]
 
 [sub_resource type="Resource" id="Resource_6g7i2"]
 script = ExtResource("5_ktbh5")
@@ -41,6 +42,7 @@ metadata/_custom_type_script = "uid://byrxo5l2e6swj"
 
 [sub_resource type="Resource" id="Resource_lsaky"]
 script = ExtResource("13_lsaky")
+captivate = 0.4
 metadata/_custom_type_script = "uid://dlxwxd3ua60y4"
 
 [sub_resource type="Resource" id="Resource_1rr34"]
@@ -68,7 +70,7 @@ metadata/_custom_type_script = "uid://baao3s0qntpbv"
 
 [sub_resource type="Resource" id="Resource_lx6gh"]
 script = ExtResource("5_ktbh5")
-duration = 1.5
+duration = 2.0
 metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
 [sub_resource type="Resource" id="Resource_ktbh5"]
@@ -95,8 +97,28 @@ metadata/_custom_type_script = "uid://nxapp7wxfbq0"
 
 [sub_resource type="Resource" id="Resource_ljqir"]
 script = ExtResource("5_ktbh5")
-duration = 5.0
+duration = 10.0
 metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
+[sub_resource type="Resource" id="Resource_2tl1l"]
+script = ExtResource("11_tfnt5")
+animator = NodePath("../CardAnimationPlayer")
+animation = &"to_hat"
+metadata/_custom_type_script = "uid://nxapp7wxfbq0"
+
+[sub_resource type="Resource" id="Resource_7bmks"]
+script = ExtResource("7_muyap")
+spotlight = 0
+look_at = NodePath("../../../SharedPropsInstance/BoxOfBombs")
+duration = 0.5
+is_async = true
+metadata/_custom_type_script = "uid://d22hs771jan4i"
+
+[sub_resource type="Resource" id="Resource_s4hod"]
+script = ExtResource("18_cqper")
+context = NodePath("../SmokeDetector")
+expression = "caught_smoke == true"
+metadata/_custom_type_script = "uid://1qnl6sg2gebf"
 
 [sub_resource type="Resource" id="Resource_5w07k"]
 script = ExtResource("11_6g7i2")
@@ -106,7 +128,7 @@ metadata/_custom_type_script = "uid://dhlofec24y2d2"
 
 [sub_resource type="Resource" id="Resource_25acc"]
 script = ExtResource("15_i1cdt")
-sfx_keys = Array[String](["applause_2", "shock_0", "murmur_looping"])
+sfx_keys = Array[String](["applause_2", "shock_0", "murmur_looping", "applause_1"])
 sfx_space = "card_reveal"
 metadata/_custom_type_script = "uid://gchpd3jmhi2l"
 
@@ -116,11 +138,13 @@ captivate = 0.5
 fire_sfx = false
 metadata/_custom_type_script = "uid://dlxwxd3ua60y4"
 
-[sub_resource type="Resource" id="Resource_2tl1l"]
-script = ExtResource("11_tfnt5")
-animator = NodePath("../CardAnimationPlayer")
-animation = &"to_hat"
-metadata/_custom_type_script = "uid://nxapp7wxfbq0"
+[sub_resource type="Resource" id="Resource_548la"]
+script = ExtResource("7_muyap")
+spotlight = 0
+look_at = NodePath("../Magician")
+duration = 0.5
+is_async = true
+metadata/_custom_type_script = "uid://d22hs771jan4i"
 
 [sub_resource type="Resource" id="Resource_cqper"]
 script = ExtResource("4_kqv5n")
@@ -162,6 +186,26 @@ script = ExtResource("5_ktbh5")
 duration = 0.25
 metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
+[sub_resource type="Resource" id="Resource_lmqn3"]
+script = ExtResource("4_kqv5n")
+next_sprite = ExtResource("6_6rbtg")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
+
+[sub_resource type="Resource" id="Resource_pgmtx"]
+script = ExtResource("5_ktbh5")
+duration = 0.25
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
+[sub_resource type="Resource" id="Resource_m8tvn"]
+script = ExtResource("4_kqv5n")
+next_sprite = ExtResource("3_w5y1o")
+metadata/_custom_type_script = "uid://cshjplosaguh6"
+
+[sub_resource type="Resource" id="Resource_5v6fd"]
+script = ExtResource("5_ktbh5")
+duration = 0.25
+metadata/_custom_type_script = "uid://b13mrlxyyg60r"
+
 [sub_resource type="Resource" id="Resource_jw7m3"]
 script = ExtResource("4_kqv5n")
 next_sprite = ExtResource("16_2tl1l")
@@ -180,5 +224,5 @@ metadata/_custom_type_script = "uid://dhlofec24y2d2"
 
 [resource]
 script = ExtResource("2_yuumm")
-events = Array[ExtResource("1_gy17v")]([SubResource("Resource_6g7i2"), SubResource("Resource_j6mao"), SubResource("Resource_prpgv"), SubResource("Resource_12om2"), SubResource("Resource_lsaky"), SubResource("Resource_1rr34"), SubResource("Resource_w5y1o"), SubResource("Resource_sd7fi"), SubResource("Resource_y8t0u"), SubResource("Resource_nd123"), SubResource("Resource_lx6gh"), SubResource("Resource_ktbh5"), SubResource("Resource_tfnt5"), SubResource("Resource_1vu64"), SubResource("Resource_i1cdt"), SubResource("Resource_ljqir"), SubResource("Resource_5w07k"), SubResource("Resource_25acc"), SubResource("Resource_c7k3m"), SubResource("Resource_2tl1l"), SubResource("Resource_cqper"), SubResource("Resource_w3bod"), SubResource("Resource_p2a0h"), SubResource("Resource_qyp2t"), SubResource("Resource_53hne"), SubResource("Resource_x0m1u"), SubResource("Resource_kwhtj"), SubResource("Resource_rdou6"), SubResource("Resource_jw7m3"), SubResource("Resource_bu05j"), SubResource("Resource_282r1")])
+events = Array[ExtResource("1_gy17v")]([SubResource("Resource_6g7i2"), SubResource("Resource_j6mao"), SubResource("Resource_prpgv"), SubResource("Resource_12om2"), SubResource("Resource_lsaky"), SubResource("Resource_1rr34"), SubResource("Resource_w5y1o"), SubResource("Resource_sd7fi"), SubResource("Resource_y8t0u"), SubResource("Resource_nd123"), SubResource("Resource_lx6gh"), SubResource("Resource_ktbh5"), SubResource("Resource_tfnt5"), SubResource("Resource_1vu64"), SubResource("Resource_i1cdt"), SubResource("Resource_ljqir"), SubResource("Resource_2tl1l"), SubResource("Resource_7bmks"), SubResource("Resource_s4hod"), SubResource("Resource_5w07k"), SubResource("Resource_25acc"), SubResource("Resource_c7k3m"), SubResource("Resource_548la"), SubResource("Resource_cqper"), SubResource("Resource_w3bod"), SubResource("Resource_p2a0h"), SubResource("Resource_qyp2t"), SubResource("Resource_53hne"), SubResource("Resource_x0m1u"), SubResource("Resource_kwhtj"), SubResource("Resource_rdou6"), SubResource("Resource_lmqn3"), SubResource("Resource_pgmtx"), SubResource("Resource_m8tvn"), SubResource("Resource_5v6fd"), SubResource("Resource_jw7m3"), SubResource("Resource_bu05j"), SubResource("Resource_282r1")])
 metadata/_custom_type_script = "uid://bxsl188rk2b50"

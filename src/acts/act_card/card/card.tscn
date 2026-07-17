@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhadgulf5erdl"]
 
 [ext_resource type="Script" uid="uid://dqkgal3hma7en" path="res://src/acts/act_card/card/drawable_card.gd" id="1_jqape"]
+[ext_resource type="Script" uid="uid://kqybtvieosgm" path="res://src/acts/act_card/card/disable_collision_with_visibility.gd" id="1_oelib"]
 [ext_resource type="Material" uid="uid://dei3yxv2xjbfu" path="res://src/acts/act_card/card_shader_material.tres" id="1_v5nc3"]
 [ext_resource type="Script" uid="uid://bvugg1bo83yy6" path="res://src/acts/act_card/card/card_drawer.gd" id="2_jqape"]
 
@@ -19,6 +20,11 @@ height = 10
 data = PackedVector3Array(0.945, -1.3199999, 0, -0.945, -1.3199999, 0, 0.945, 1.3199999, 0, -0.945, -1.3199999, 0, -0.945, 1.3199999, 0, 0.945, 1.3199999, 0)
 
 [node name="Card" type="Node3D" unique_id=115822046]
+
+[node name="DisableCollisionWithVisibility" type="Node" parent="." unique_id=1626478697 node_paths=PackedStringArray("target", "collider")]
+script = ExtResource("1_oelib")
+target = NodePath("..")
+collider = NodePath("../CardMesh/StaticBody3D/CollisionShape3D")
 
 [node name="CardMesh" type="MeshInstance3D" parent="." unique_id=1987638316]
 mesh = SubResource("QuadMesh_jqape")
