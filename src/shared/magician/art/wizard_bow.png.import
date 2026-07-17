@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3bxey0y3qx1j"
 path.s3tc="res://.godot/imported/wizard_bow.png-33afafc16e172ad95865c218f48530e9.s3tc.ctex"
+path.etc2="res://.godot/imported/wizard_bow.png-33afafc16e172ad95865c218f48530e9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/shared/magician/art/wizard_bow.png"
-dest_files=["res://.godot/imported/wizard_bow.png-33afafc16e172ad95865c218f48530e9.s3tc.ctex"]
+dest_files=["res://.godot/imported/wizard_bow.png-33afafc16e172ad95865c218f48530e9.s3tc.ctex", "res://.godot/imported/wizard_bow.png-33afafc16e172ad95865c218f48530e9.etc2.ctex"]
 
 [params]
 

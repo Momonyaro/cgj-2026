@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://be4mheobgerqy"
 path.s3tc="res://.godot/imported/wizard_placed_hat.png-2d8194e0547c9b80aa3b27fe5cafc317.s3tc.ctex"
+path.etc2="res://.godot/imported/wizard_placed_hat.png-2d8194e0547c9b80aa3b27fe5cafc317.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/shared/magician/art/wizard_placed_hat.png"
-dest_files=["res://.godot/imported/wizard_placed_hat.png-2d8194e0547c9b80aa3b27fe5cafc317.s3tc.ctex"]
+dest_files=["res://.godot/imported/wizard_placed_hat.png-2d8194e0547c9b80aa3b27fe5cafc317.s3tc.ctex", "res://.godot/imported/wizard_placed_hat.png-2d8194e0547c9b80aa3b27fe5cafc317.etc2.ctex"]
 
 [params]
 
