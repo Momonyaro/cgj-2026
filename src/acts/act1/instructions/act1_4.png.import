@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://28tg8dph5ej3"
 path.s3tc="res://.godot/imported/act1_4.png-791d29b26530e059a1fff456ee563064.s3tc.ctex"
+path.etc2="res://.godot/imported/act1_4.png-791d29b26530e059a1fff456ee563064.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/acts/act1/instructions/act1_4.png"
-dest_files=["res://.godot/imported/act1_4.png-791d29b26530e059a1fff456ee563064.s3tc.ctex"]
+dest_files=["res://.godot/imported/act1_4.png-791d29b26530e059a1fff456ee563064.s3tc.ctex", "res://.godot/imported/act1_4.png-791d29b26530e059a1fff456ee563064.etc2.ctex"]
 
 [params]
 

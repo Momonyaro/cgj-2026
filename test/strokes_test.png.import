@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6xg345i607n6"
-path.s3tc="res://.godot/imported/act_card_3.png-aea35478a543fc435f3520de09dcf7b1.s3tc.ctex"
-path.etc2="res://.godot/imported/act_card_3.png-aea35478a543fc435f3520de09dcf7b1.etc2.ctex"
+uid="uid://d1j60nnv34fu0"
+path.s3tc="res://.godot/imported/strokes_test.png-e1b4e21dfb59e9eee0456fc328fc4608.s3tc.ctex"
+path.etc2="res://.godot/imported/strokes_test.png-e1b4e21dfb59e9eee0456fc328fc4608.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://src/acts/act_card/instructions/act_card_3.png"
-dest_files=["res://.godot/imported/act_card_3.png-aea35478a543fc435f3520de09dcf7b1.s3tc.ctex", "res://.godot/imported/act_card_3.png-aea35478a543fc435f3520de09dcf7b1.etc2.ctex"]
+source_file="res://test/strokes_test.png"
+dest_files=["res://.godot/imported/strokes_test.png-e1b4e21dfb59e9eee0456fc328fc4608.s3tc.ctex", "res://.godot/imported/strokes_test.png-e1b4e21dfb59e9eee0456fc328fc4608.etc2.ctex"]
 
 [params]
 

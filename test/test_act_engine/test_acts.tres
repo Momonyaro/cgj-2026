@@ -3,9 +3,7 @@
 [ext_resource type="Script" uid="uid://5nkn7cxwp168" path="res://src/shared/act_engine/events/act_event.gd" id="1_vodn8"]
 [ext_resource type="Script" uid="uid://b13mrlxyyg60r" path="res://src/shared/act_engine/events/wait_event.gd" id="2_rwcc3"]
 [ext_resource type="Script" uid="uid://bd1mnsfmb01qi" path="res://src/shared/act_engine/events/walk_event.gd" id="3_t4wox"]
-[ext_resource type="Texture2D" uid="uid://cndepsblf1eo" path="res://src/shared/magician/test_img_2.png" id="4_y46ol"]
 [ext_resource type="Script" uid="uid://cshjplosaguh6" path="res://src/shared/act_engine/events/swap_event.gd" id="5_1hhkv"]
-[ext_resource type="Texture2D" uid="uid://eeixomoxrvfy" path="res://src/shared/magician/test_img_1.png" id="6_huerw"]
 [ext_resource type="Script" uid="uid://bxsl188rk2b50" path="res://src/shared/act_engine/act_collection.gd" id="7_5lek6"]
 [ext_resource type="Script" uid="uid://4gi3mbocwio5" path="res://src/shared/act_engine/events/spawn_event.gd" id="7_rwcc3"]
 [ext_resource type="Script" uid="uid://1qnl6sg2gebf" path="res://src/shared/act_engine/events/wait_expression_event.gd" id="8_t4wox"]
@@ -20,9 +18,12 @@ script = ExtResource("3_t4wox")
 pos_x = 3.0
 metadata/_custom_type_script = "uid://bd1mnsfmb01qi"
 
+[sub_resource type="Resource" id="Resource_vodn8"]
+metadata/__load_path__ = "res://src/shared/magician/test_img_2.png"
+
 [sub_resource type="Resource" id="Resource_7doi7"]
 script = ExtResource("5_1hhkv")
-next_sprite = ExtResource("4_y46ol")
+next_sprite = SubResource("Resource_vodn8")
 metadata/_custom_type_script = "uid://cshjplosaguh6"
 
 [sub_resource type="Resource" id="Resource_5nkoa"]
@@ -44,9 +45,12 @@ x_trans = 1
 height = 0.15
 metadata/_custom_type_script = "uid://bd1mnsfmb01qi"
 
+[sub_resource type="Resource" id="Resource_rwcc3"]
+metadata/__load_path__ = "res://src/shared/magician/test_img_1.png"
+
 [sub_resource type="Resource" id="Resource_1kpxg"]
 script = ExtResource("5_1hhkv")
-next_sprite = ExtResource("6_huerw")
+next_sprite = SubResource("Resource_rwcc3")
 metadata/_custom_type_script = "uid://cshjplosaguh6"
 
 [resource]

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8mgkijd44tr1"
 path.s3tc="res://.godot/imported/wizard_hold_contents_alt.png-b3b201b602511185b48436b900182a55.s3tc.ctex"
+path.etc2="res://.godot/imported/wizard_hold_contents_alt.png-b3b201b602511185b48436b900182a55.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/shared/magician/art/wizard_hold_contents_alt.png"
-dest_files=["res://.godot/imported/wizard_hold_contents_alt.png-b3b201b602511185b48436b900182a55.s3tc.ctex"]
+dest_files=["res://.godot/imported/wizard_hold_contents_alt.png-b3b201b602511185b48436b900182a55.s3tc.ctex", "res://.godot/imported/wizard_hold_contents_alt.png-b3b201b602511185b48436b900182a55.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7g57b72aagls"
 path.s3tc="res://.godot/imported/act_cups_4.PNG-32d07368607ec2bef58484a0e083470f.s3tc.ctex"
+path.etc2="res://.godot/imported/act_cups_4.PNG-32d07368607ec2bef58484a0e083470f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/acts/act_cups/instructions/act_cups_4.PNG"
-dest_files=["res://.godot/imported/act_cups_4.PNG-32d07368607ec2bef58484a0e083470f.s3tc.ctex"]
+dest_files=["res://.godot/imported/act_cups_4.PNG-32d07368607ec2bef58484a0e083470f.s3tc.ctex", "res://.godot/imported/act_cups_4.PNG-32d07368607ec2bef58484a0e083470f.etc2.ctex"]
 
 [params]
 

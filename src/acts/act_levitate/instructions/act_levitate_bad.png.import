@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ditu35g2bkh8r"
 path.s3tc="res://.godot/imported/act_levitate_bad.png-3def17b07cfd4e08623c546ae3f412d7.s3tc.ctex"
+path.etc2="res://.godot/imported/act_levitate_bad.png-3def17b07cfd4e08623c546ae3f412d7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/acts/act_levitate/instructions/act_levitate_bad.png"
-dest_files=["res://.godot/imported/act_levitate_bad.png-3def17b07cfd4e08623c546ae3f412d7.s3tc.ctex"]
+dest_files=["res://.godot/imported/act_levitate_bad.png-3def17b07cfd4e08623c546ae3f412d7.s3tc.ctex", "res://.godot/imported/act_levitate_bad.png-3def17b07cfd4e08623c546ae3f412d7.etc2.ctex"]
 
 [params]
 

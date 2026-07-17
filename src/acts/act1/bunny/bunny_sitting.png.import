@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b35dpwamaqcj4"
 path.s3tc="res://.godot/imported/bunny_sitting.png-c2418079ac50cdcb96cc5b814d5f9304.s3tc.ctex"
+path.etc2="res://.godot/imported/bunny_sitting.png-c2418079ac50cdcb96cc5b814d5f9304.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/acts/act1/bunny/bunny_sitting.png"
-dest_files=["res://.godot/imported/bunny_sitting.png-c2418079ac50cdcb96cc5b814d5f9304.s3tc.ctex"]
+dest_files=["res://.godot/imported/bunny_sitting.png-c2418079ac50cdcb96cc5b814d5f9304.s3tc.ctex", "res://.godot/imported/bunny_sitting.png-c2418079ac50cdcb96cc5b814d5f9304.etc2.ctex"]
 
 [params]
 

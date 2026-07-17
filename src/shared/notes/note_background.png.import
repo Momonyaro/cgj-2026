@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctcvxl7t0tiyh"
 path.s3tc="res://.godot/imported/note_background.png-740b19aee37ffe0ae4689130119ced6d.s3tc.ctex"
+path.etc2="res://.godot/imported/note_background.png-740b19aee37ffe0ae4689130119ced6d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/shared/notes/note_background.png"
-dest_files=["res://.godot/imported/note_background.png-740b19aee37ffe0ae4689130119ced6d.s3tc.ctex"]
+dest_files=["res://.godot/imported/note_background.png-740b19aee37ffe0ae4689130119ced6d.s3tc.ctex", "res://.godot/imported/note_background.png-740b19aee37ffe0ae4689130119ced6d.etc2.ctex"]
 
 [params]
 

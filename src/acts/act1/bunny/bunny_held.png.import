@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ohfoyyhib6xx"
 path.s3tc="res://.godot/imported/bunny_held.png-a75e46ece6a4e445cb4ac31a991bd06c.s3tc.ctex"
+path.etc2="res://.godot/imported/bunny_held.png-a75e46ece6a4e445cb4ac31a991bd06c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/acts/act1/bunny/bunny_held.png"
-dest_files=["res://.godot/imported/bunny_held.png-a75e46ece6a4e445cb4ac31a991bd06c.s3tc.ctex"]
+dest_files=["res://.godot/imported/bunny_held.png-a75e46ece6a4e445cb4ac31a991bd06c.s3tc.ctex", "res://.godot/imported/bunny_held.png-a75e46ece6a4e445cb4ac31a991bd06c.etc2.ctex"]
 
 [params]
 
