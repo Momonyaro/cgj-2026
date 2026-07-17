@@ -88,7 +88,7 @@ fov = 107.4
 
 [node name="CameraShake3D" type="Node" parent="Camera3D" unique_id=51681373]
 script = ExtResource("1_60fcs")
-decay = 0.1
+decay = 0.4
 max_offset = Vector2(4, 4)
 metadata/_custom_type_script = "uid://dn2xq61jyauf"
 

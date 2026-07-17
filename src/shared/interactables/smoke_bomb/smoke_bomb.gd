@@ -14,4 +14,4 @@ func _spawn_smoke():
 	Stage.level_loader.current_level.add_child(smoke)
 	smoke.global_position = global_position + Vector3.BACK + Vector3.UP
 	SFX.play("smoke_bomb")
-	Stage.camera_shake.add_trauma(.1)
+	Stage.camera_shake.add_trauma(.3)
