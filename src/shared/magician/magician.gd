@@ -71,6 +71,6 @@ func _do_spin() -> void:
 
 func _spin_tween(x: float) -> void:
 	if _spin_direction > 0:
-		face_root.rotation_degrees.y = 180.0 - (180.0 * x)
+		face_root.rotation_degrees.y = 180.0 * (1.0 - x)
 	else:
-		face_root.rotation_degrees.y = -180.0 + (180.0 * x)
+		face_root.rotation_degrees.y = 180.0 * (x - 1.0)
