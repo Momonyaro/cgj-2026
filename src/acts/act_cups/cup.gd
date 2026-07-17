@@ -18,7 +18,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if body is not GrabbableItem:
 		return
 	var grabbable := body as GrabbableItem
-	if not grabbable.is_grabbed:
+	if not grabbable.is_grabbed and not grabbable.in_hat:
 		grabbable.enter_hat(false)
 		if grabbable.get_parent():
 			grabbable.get_parent().remove_child.call_deferred(grabbable)
