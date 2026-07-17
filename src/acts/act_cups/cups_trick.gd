@@ -25,6 +25,7 @@ func _ready() -> void:
 		cups[i].index = i
 		cups[i].interactable = false
 	ball.grabbed.connect(func(): has_grabbed_ball = true)
+	ball.axis_lock_linear_x = true
 
 
 func play_and_check_if_done() -> bool:
@@ -46,10 +47,12 @@ func get_ball_mat() -> StandardMaterial3D:
 
 func has_placed_item() -> bool:
 	get_ball_mat().no_depth_test = true
+	ball.axis_lock_linear_x = false
 	for cup in cups:
 		cup.interactable = true
 		if cup.is_full:
 			get_ball_mat().no_depth_test = false
+			ball.axis_lock_linear_x = true
 			return true
 	return false
 
