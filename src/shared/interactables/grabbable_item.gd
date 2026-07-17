@@ -34,6 +34,7 @@ func grab(p_cursor: Cursor) -> CollisionObject3D:
 	freeze = true
 	cursor = p_cursor
 	grabbed.emit()
+	collision_layer &= ~0x02
 	if Stage._singleton:
 		Stage.audience.excite(.1, false)
 	return self
@@ -44,6 +45,7 @@ func ungrab(_cursor: Cursor) -> void:
 	freeze = false
 	linear_velocity = linear_velocity.limit_length(MAX_THROW_SPEED)
 	released.emit()
+	collision_layer |= 0x02
 	if linear_velocity.length() > 0:
 		SFX.play("bomb_throw")
 	if Stage._singleton:

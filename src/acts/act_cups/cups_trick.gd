@@ -6,6 +6,7 @@ extends StaticBody3D
 @export_tool_button("Swap cups") var test_swap := play_trick
 @export_tool_button("Reset cups") var do_reset := reset_cups
 @export_tool_button("Reveal cup") var test_reveal := reveal.bind(1)
+@export var cup_material: StandardMaterial3D
 
 const Perfection := preload("res://src/acts/act_cups/perfect_cups_collection.tres")
 const Bad := preload("res://src/acts/act_cups/bad_cups_collection.tres")
@@ -38,10 +39,17 @@ func play_and_check_if_done() -> bool:
 	return false
 
 
+func get_ball_mat() -> StandardMaterial3D:
+	var ball_mesh := ball.get_node("BallMesh") as MeshInstance3D
+	return ball_mesh.material_override as StandardMaterial3D
+
+
 func has_placed_item() -> bool:
+	get_ball_mat().no_depth_test = true
 	for cup in cups:
 		cup.interactable = true
 		if cup.is_full:
+			get_ball_mat().no_depth_test = false
 			return true
 	return false
 
@@ -49,6 +57,8 @@ func has_placed_item() -> bool:
 func reveal_and_check_if_done() -> bool:
 	if not has_started:
 		has_started = true
+		for cup in cups:
+			cup.interactable = false
 		play_reveal()
 
 	if not is_playing:
