@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cpn03j74nonps" path="res://src/acts/act_levitate/instructions/act_levitate_notes.tscn" id="3_uddtq"]
 [ext_resource type="PackedScene" uid="uid://b8lftmrjj2j6u" path="res://src/shared/magician/magician.tscn" id="4_25tfw"]
 [ext_resource type="PackedScene" uid="uid://cdwskxhoytde1" path="res://src/acts/act_levitate/detection_area.tscn" id="4_eos0c"]
-[ext_resource type="Texture2D" uid="uid://eeixomoxrvfy" path="res://src/shared/magician/test_img_1.png" id="7_uddtq"]
 
 [sub_resource type="Animation" id="Animation_fisqf"]
 length = 0.001
@@ -171,13 +170,6 @@ _data = {
 &"stage_3": SubResource("Animation_xk3cl")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uddtq"]
-transparency = 4
-albedo_texture = ExtResource("7_uddtq")
-
-[sub_resource type="QuadMesh" id="QuadMesh_40gng"]
-material = SubResource("StandardMaterial3D_uddtq")
-
 [node name="ActLevitate" type="Node3D" unique_id=248595300 node_paths=PackedStringArray("animation_player", "detection_area")]
 script = ExtResource("1_jgmku")
 animation_player = NodePath("AnimationPlayer")
@@ -199,10 +191,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1398530726]
 libraries/ = SubResource("AnimationLibrary_uddtq")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1353338525]
-transform = Transform3D(1.3569148, 0, -0.6393608, 0, 1.5, 0, 0.6393608, 0, 1.3569148, 18.164734, 5.3156567, -19.626766)
-mesh = SubResource("QuadMesh_40gng")
 
 [node name="BunnyPoint" type="Node3D" parent="." unique_id=993815351]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7505503, 0, 0)

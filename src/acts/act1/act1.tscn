@@ -5,17 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://b8lftmrjj2j6u" path="res://src/shared/magician/magician.tscn" id="2_dr7gf"]
 [ext_resource type="PackedScene" uid="uid://vhq46a2kpoir" path="res://src/acts/act1/instructions/act1_notes.tscn" id="3_6oiti"]
 [ext_resource type="Script" uid="uid://bsim8g73xve5k" path="res://src/acts/act1/smoke_detector/smoke_detector.gd" id="5_6oiti"]
-[ext_resource type="Texture2D" uid="uid://cndepsblf1eo" path="res://src/shared/magician/test_img_2.png" id="6_6oiti"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_25acc"]
 size = Vector3(10, 1, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqq6o"]
-transparency = 4
-albedo_texture = ExtResource("6_6oiti")
-
-[sub_resource type="QuadMesh" id="QuadMesh_qs07l"]
-material = SubResource("StandardMaterial3D_rqq6o")
 
 [node name="Act1" type="Node3D" unique_id=248595300]
 
@@ -34,7 +26,3 @@ script = ExtResource("5_6oiti")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SmokeDetector" unique_id=640147170]
 shape = SubResource("BoxShape3D_25acc")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=885802185]
-transform = Transform3D(1.3569148, 0, -0.6393608, 0, 1.5, 0, 0.6393608, 0, 1.3569148, -7.456, 5.961, -19.627)
-mesh = SubResource("QuadMesh_qs07l")

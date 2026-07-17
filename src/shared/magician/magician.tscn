@@ -4,8 +4,6 @@
 [ext_resource type="Material" uid="uid://2mgs1yamtmew" path="res://src/shared/magician/front_face.tres" id="2_5bege"]
 [ext_resource type="Material" uid="uid://bdqrh3o8060kn" path="res://src/shared/magician/back_face.tres" id="3_vvj04"]
 [ext_resource type="Texture2D" uid="uid://bk7v3becpgcki" path="res://src/shared/transparent.png" id="4_ryh7p"]
-[ext_resource type="Texture2D" uid="uid://cndepsblf1eo" path="res://src/shared/magician/test_img_2.png" id="4_sd5qa"]
-[ext_resource type="Texture2D" uid="uid://eeixomoxrvfy" path="res://src/shared/magician/test_img_1.png" id="5_oalhj"]
 [ext_resource type="Script" uid="uid://cc3ctbjjne6qe" path="res://src/shared/magician/look_at.gd" id="6_2pqni"]
 [ext_resource type="Script" uid="uid://cwwncwtq62qe6" path="res://src/shared/magician/lag_point.gd" id="6_oalhj"]
 
@@ -22,7 +20,6 @@ script = ExtResource("1_n2g5r")
 front_material = ExtResource("2_5bege")
 back_material = ExtResource("3_vvj04")
 default_texture = ExtResource("4_ryh7p")
-debug_textures = Array[Texture2D]([ExtResource("5_oalhj"), ExtResource("4_sd5qa")])
 
 [node name="BodyPivot" type="Node3D" parent="." unique_id=1857960705 node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
