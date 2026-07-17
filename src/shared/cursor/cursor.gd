@@ -29,6 +29,12 @@ func _process(delta: float) -> void:
 	var physics := cam.get_world_3d().direct_space_state
 	var hit := physics.intersect_ray(get_pick_ray(pos3d, normal))
 	hovered_object = hit.collider as CollisionObject3D if hit else null
+	if (
+		hovered_object and
+		Stage.level_loader.curtain_controller.closed and
+		not hovered_object.is_in_group("unblockable_interactable")
+	):
+		hovered_object = null
 
 	if Input.is_action_just_pressed("click"):
 		SFX.play("grab")

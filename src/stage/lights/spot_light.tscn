@@ -8,7 +8,7 @@
 height = 1.0
 radius = 0.4
 
-[node name="SpotLight" type="Area3D" unique_id=1692074200]
+[node name="SpotLight" type="Area3D" unique_id=1692074200 groups=["unblockable_interactable"]]
 collision_layer = 3
 script = ExtResource("1_fd74t")
 min_rotation = -0.7853981633974483
