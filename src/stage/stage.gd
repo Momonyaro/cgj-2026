@@ -24,12 +24,16 @@ static var right_spot_light: WindableItem:
 	get():
 		return _singleton._right_spot_light
 
+static var camera_shake: CameraShake3D:
+	get():
+		return _singleton._camera_shake
+
 var _level_loader: LevelLoader = null
 var _audience: Audience = null
 var _notes_board: NotesBoard = null
 var _left_spot_light: WindableItem = null
 var _right_spot_light: WindableItem = null
-
+var _camera_shake: CameraShake3D = null
 
 func _enter_tree():
 	if _singleton != null:
@@ -44,6 +48,7 @@ func _ready():
 	_notes_board = $NotesBoard
 	_left_spot_light = $SpotLightLeft
 	_right_spot_light = $SpotLightRight
+	_camera_shake = $Camera3D/CameraShake3D
 
 
 static func reset_spotlights() -> void:

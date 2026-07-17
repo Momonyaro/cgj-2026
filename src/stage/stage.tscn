@@ -88,6 +88,7 @@ fov = 107.4
 
 [node name="CameraShake3D" type="Node" parent="Camera3D" unique_id=51681373]
 script = ExtResource("1_60fcs")
+decay = 0.3
 metadata/_custom_type_script = "uid://dn2xq61jyauf"
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1814900562]
