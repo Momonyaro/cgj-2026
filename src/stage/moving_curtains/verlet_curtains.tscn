@@ -4,12 +4,16 @@
 [ext_resource type="Script" uid="uid://cmsne5i2ksrpl" path="res://src/stage/moving_curtains/curtain_controller.gd" id="1_ra165"]
 [ext_resource type="Material" uid="uid://dt3yq4pjpmovu" path="res://src/stage/curtain_mat_unlit.tres" id="3_5exsh"]
 
-[node name="VerletCurtains" type="Node3D" unique_id=224548086 node_paths=PackedStringArray("curtain_l", "curtain_r")]
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_a1n5f"]
+plane = Plane(0, 0, 1, 0)
+
+[node name="VerletCurtains" type="Node3D" unique_id=224548086 node_paths=PackedStringArray("curtain_l", "curtain_r", "collider")]
 script = ExtResource("1_ra165")
 curtain_l = NodePath("VerletCurtainL")
 curtain_r = NodePath("VerletCurtainR")
+collider = NodePath("StaticBody3D/CollisionShape3D")
 min_max_move = Vector2(0, 5.7)
-move_amount = 1.0
+move_amount = 0.15
 
 [node name="Top" type="Node3D" parent="." unique_id=750394654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
@@ -35,3 +39,10 @@ gravity = Vector3(0, -5, 0)
 iterations = 4
 damping = 0.88
 curtain_material = ExtResource("3_5exsh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1160603655]
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=320622438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+shape = SubResource("WorldBoundaryShape3D_a1n5f")

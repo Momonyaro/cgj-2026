@@ -34,6 +34,10 @@ window/stretch/aspect="keep_width"
 
 import/blender/enabled=false
 
+[global_group]
+
+unblockable_interactable=""
+
 [input]
 
 click={
@@ -47,6 +51,7 @@ click={
 3d_render/layer_2="Spotlittable"
 3d_render/layer_3="NotesBoard"
 3d_physics/layer_2="Interactable"
+3d_physics/layer_3="BlockInteract"
 
 [physics]
 
