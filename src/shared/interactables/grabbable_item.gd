@@ -18,7 +18,9 @@ func process_grab(_delta: float) -> void:
 	if grab_point:
 		target_position -= grab_point.position
 	var motion = target_position - global_position
-	move_and_collide(motion)
+	var collision := move_and_collide(motion)
+	if collision:
+		move_and_collide(collision.get_remainder().slide(collision.get_normal()))
 
 
 func is_on_floor() -> bool:
