@@ -59,7 +59,7 @@ metadata/_custom_type_script = "uid://cshjplosaguh6"
 
 [sub_resource type="Resource" id="Resource_yebmo"]
 script = ExtResource("2_emy5e")
-duration = 0.6
+duration = 0.4
 metadata/_custom_type_script = "uid://b13mrlxyyg60r"
 
 [resource]
