@@ -58,6 +58,18 @@ func _ready():
 	_cursor = $Cursor
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("fullscreen"):
+		if get_window().mode not in [Window.MODE_FULLSCREEN, Window.MODE_EXCLUSIVE_FULLSCREEN]:
+			get_window().mode = Window.MODE_FULLSCREEN
+		else:
+			get_window().mode = Window.MODE_WINDOWED
+
+
 static func reset_spotlights() -> void:
 	left_spot_light.reset()
 	right_spot_light.reset()
+
+
+func restart_game() -> void:
+	LevelLoader
