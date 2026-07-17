@@ -27,7 +27,7 @@ static var right_spot_light: WindableItem:
 static var camera_shake: CameraShake3D:
 	get():
 		return _singleton._camera_shake
-		
+
 static var cursor: Cursor:
 	get():
 		return _singleton._cursor
@@ -39,6 +39,7 @@ var _left_spot_light: WindableItem = null
 var _right_spot_light: WindableItem = null
 var _camera_shake: CameraShake3D = null
 var _cursor: Cursor
+
 
 func _enter_tree():
 	if _singleton != null:

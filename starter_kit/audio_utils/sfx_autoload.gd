@@ -46,10 +46,11 @@ func _process(delta: float):
 
 # ---- Public Functions ----
 
+
 ## Specify space to have "override" behaviour without needing to track what audio key was played
 func play(key: String, space := "") -> void:
 	space = space if !space.is_empty() else key
-	
+
 	var stream := _get_active_stream()
 	var play_index = stream.play_stream(_sfx_library.get_item(key), 0, 0, randf_range(0.99, 1.01))
 
@@ -58,11 +59,13 @@ func play(key: String, space := "") -> void:
 			_stream_lookup.erase(existing) # Duplicate entry, this stream will be dead
 	_stream_lookup[space] = play_index
 
+
 func is_playing(key: String) -> bool:
 	if !_stream_lookup.has(key):
 		return false
 	var stream := _get_active_stream()
 	return stream.is_stream_playing(_stream_lookup[key])
+
 
 func stop(key: String) -> void:
 	var stream := _get_active_stream()
@@ -70,12 +73,20 @@ func stop(key: String) -> void:
 		stream.stop_stream(_stream_lookup[key])
 		_stream_lookup.erase(key)
 
+
+func stop_all() -> void:
+	var stream := _get_active_stream()
+	for key in _stream_lookup:
+		stream.stop_stream(_stream_lookup[key])
+
+
 func stop_from_collection_and_play(key: String, collection: Array[StringName] = []):
 	for k in collection:
 		if is_playing(k):
 			stop(k)
 	if !is_playing(key):
 		play(key)
+
 
 func fade_out(key: String) -> void:
 	if _stream_lookup.has(key):

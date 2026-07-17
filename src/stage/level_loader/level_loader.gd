@@ -54,6 +54,7 @@ func load_next():
 	is_loading = false
 	loaded_next.emit()
 
+
 func load_main_menu():
 	is_loading = true
 	if current_level != null:
@@ -63,6 +64,21 @@ func load_main_menu():
 	await _transition_out()
 	is_loading = false
 	loaded_next.emit()
+
+
+func restart_game():
+	SFX.stop_all()
+	get_tree().reload_current_scene()
+	# if is_loading:
+	# 	await loaded_next
+
+	# is_loading = true
+	# Stage.notes_board.dismiss()
+	# if not curtain_controller.closed:
+	# 	await _transition_in()
+
+	# await load_main_menu()
+
 
 # -- Loads --
 func _load_next_act():
@@ -103,16 +119,18 @@ func _reset_shared_props():
 		shared_props_instance.queue_free()
 	_create_props.call_deferred()
 
+
 func _create_props():
 	shared_props_instance = shared_props_placeholder.create_instance()
 	shared_props_instance.name = "SharedPropsInstance"
 
 
 func await_notes():
-	while Stage.notes_board.currently_shown:
+	while Stage.notes_board.currently_shown and get_tree():
 		await get_tree().process_frame
 
 
 func await_curtains():
 	await curtain_tween.finished
-	await get_tree().create_timer(curtain_rest_durr).timeout
+	if get_tree():
+		await get_tree().create_timer(curtain_rest_durr).timeout

@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://dmlhvbxquam8y" path="res://src/stage/level_loader/level_loader.gd" id="8_pvnpy"]
 [ext_resource type="PackedScene" uid="uid://cni3xupdf6ci8" path="res://src/shared/notes/notes_board.tscn" id="10_itwdx"]
 [ext_resource type="PackedScene" uid="uid://bmafyhpgrpmv6" path="res://src/stage/lights/spot_light.tscn" id="10_paren"]
+[ext_resource type="Texture2D" uid="uid://cms5dkkymts7g" path="res://src/shared/main_menu/button_hover.png" id="13_m8600"]
+[ext_resource type="FontFile" uid="uid://dhdfnm4agkxmd" path="res://src/shared/fonts/Deanna.ttf" id="14_jrhno"]
 
 [sub_resource type="Environment" id="Environment_40gng"]
 ambient_light_source = 2
@@ -53,6 +55,17 @@ plane = Plane(1, 0, 0, 0)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_paren"]
 plane = Plane(-1, 0, 0, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vhebv"]
+load_path = "res://.godot/imported/button_anim_0.png-80ce541724fa5726e05be735b5dd70f3.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_clrh6"]
+line_spacing = 0.5
+font = ExtResource("14_jrhno")
+font_size = 72
+font_color = Color(1, 0.96862745, 0.31764707, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Stage" type="Node3D" unique_id=1423160689]
 script = ExtResource("1_puyty")
@@ -281,3 +294,39 @@ transform = Transform3D(0.965926, -0.25881907, -1.5163991e-08, 0.22414389, 0.836
 
 [node name="SpotLightRight" parent="." unique_id=1692074200 instance=ExtResource("10_paren")]
 transform = Transform3D(0.9659258, 0.258819, 0, -0.22414386, 0.8365162, -0.4999999, -0.12940952, 0.48296288, 0.8660252, 2.5, 5.564, 1.262324)
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=521451274]
+custom_minimum_size = Vector2(250, 106)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -290.0
+offset_top = -146.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 3
+texture_normal = SubResource("CompressedTexture2D_vhebv")
+texture_hover = ExtResource("13_m8600")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=804044714]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -36.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "restart"
+label_settings = SubResource("LabelSettings_clrh6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="LevelLoader" method="restart_game"]

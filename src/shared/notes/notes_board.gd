@@ -26,6 +26,8 @@ func reveal(notes_scene: PackedScene) -> void:
 
 
 func dismiss() -> void:
+	if not currently_shown:
+		return
 	animation.play("exit")
 	SFX.play("button_click")
 	ui_root.hide()
