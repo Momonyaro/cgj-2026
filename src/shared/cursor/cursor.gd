@@ -8,6 +8,7 @@ extends Node2D
 const RAY_LENGTH = 1000.0
 const MAX_OVERDRAG_BEFORE_DROPPING := 2.0
 
+var hovered_card := false
 var hovered_object: CollisionObject3D
 var grabbed_object: CollisionObject3D
 var interact_plane: Plane
@@ -70,6 +71,8 @@ func get_grab_position() -> Vector3:
 
 
 func get_animation() -> String:
+	if hovered_card:
+		return "brush"
 	if grabbed_object:
 		return "grab"
 	if hovered_object:

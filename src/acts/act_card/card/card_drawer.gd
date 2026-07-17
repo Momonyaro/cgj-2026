@@ -6,13 +6,18 @@ var last_uv := Vector2(-1, -1)
 var is_drawing := false
 
 func _physics_process(_delta: float) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		shoot_ray_from_mouse()
+	var result := shoot_ray_from_mouse()
+	if result["ray"] and result["mesh"]:
+		Stage.cursor.hovered_card = true
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			_handle_target_mesh(result["ray"], result["mesh"])
+		else:
+			_reset()
 	else:
-		is_drawing = false
-		last_uv = Vector2(-1, -1)
+		Stage.cursor.hovered_card = false
+		_reset()
 
-func shoot_ray_from_mouse() -> void:
+func shoot_ray_from_mouse() -> Dictionary:
 	var mouse_pos := get_viewport().get_mouse_position()
 	
 	var ray_start := camera.project_ray_origin(mouse_pos)
@@ -29,14 +34,20 @@ func shoot_ray_from_mouse() -> void:
 	if result:
 		var hit_collider = result.collider
 		var target_mesh := hit_collider.get_parent() as DrawableCard
-		
-		if target_mesh:
-			_handle_target_mesh(result.get("position"), result.get("uv"), target_mesh)
+		return {
+			"ray": result,
+			"mesh": target_mesh,
+		}
 	else:
-		is_drawing = false
-		last_uv = Vector2(-1, -1)
+		return {
+			"ray": result,
+			"mesh": null
+		}
 
-func _handle_target_mesh(hit_position, uv, target_mesh: DrawableCard):
+func _handle_target_mesh(ray, target_mesh: DrawableCard):
+	var hit_position = ray.get("position")
+	var uv = ray.get("uv")
+	
 	var local_hit_pos: Vector3 = target_mesh.global_transform.inverse() * hit_position
 	if uv == null:
 		var mesh_size: Vector2 = Vector2(DrawableCard.SIZE_X, DrawableCard.SIZE_Y)
@@ -57,3 +68,7 @@ func _handle_target_mesh(hit_position, uv, target_mesh: DrawableCard):
 		target_mesh.paint_line(last_uv, uv)
 		
 	last_uv = uv
+
+func _reset():
+	is_drawing = false
+	last_uv = Vector2(-1, -1)
