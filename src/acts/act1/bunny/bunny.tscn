@@ -23,7 +23,7 @@ held_texture = ExtResource("2_ffc3o")
 grab_point = NodePath("GrabPoint")
 
 [node name="GrabPoint" type="Marker3D" parent="." unique_id=1283241300]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03325928, 0.6741202, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023376472, 0.8520075, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=515053521]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06641388, 0.35297203, 0)
@@ -33,12 +33,12 @@ shape = SubResource("BoxShape3D_r5hf4")
 transform = Transform3D(1.0097826, 0, 0, 0, 1.0097826, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D" unique_id=579492501]
-transform = Transform3D(0.050000004, 0, 0, 0, 0.050000004, 0, 0, 0, 0.050000004, 0, 0.29, 0)
+transform = Transform3D(0.049999997, 0, 0, 0, 0.049999997, 0, 0, 0, 0.050000004, 0, 0.50797856, 0)
 layers = 3
 cast_shadow = 2
 shaded = true
 alpha_cut = 2
-texture = ExtResource("2_me03j")
+texture = ExtResource("2_ffc3o")
 
 [node name="SpriteBouncer" type="Node" parent="Node3D" unique_id=1334464296 node_paths=PackedStringArray("sprite")]
 script = ExtResource("4_me03j")

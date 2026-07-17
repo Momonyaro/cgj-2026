@@ -13,7 +13,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if body is not GrabbableItem:
 		return
 	var grabbable := body as GrabbableItem
-	if not grabbable.is_grabbed and not grabbable.is_on_floor():
+	if not grabbable.is_grabbed:
 		grabbable.enter_hat()
 		anything_entered.emit()
 		SFX.play("eat_up")
