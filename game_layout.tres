@@ -12,6 +12,6 @@
 [resource]
 script = ExtResource("2_n44qs")
 _main_menu = ExtResource("3_wmsdu")
-_levels = Array[ExtResource("1_1lyii")]([ExtResource("2_g6j2r"), ExtResource("4_m3yia"), ExtResource("6_stxrg"), ExtResource("3_m3yia")])
+_levels = Array[ExtResource("1_1lyii")]([ExtResource("4_m3yia"), ExtResource("2_g6j2r"), ExtResource("6_stxrg"), ExtResource("3_m3yia")])
 _end_screen = ExtResource("1_g6j2r")
 metadata/_custom_type_script = "uid://05wudtwgmqgu"
